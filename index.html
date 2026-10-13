@@ -1,0 +1,2129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天体マスター①（地球と宇宙：天体の動き・月と惑星・太陽系）| KATE APP</title>
+<style>
+:root{
+  --blue:#2fbdea;
+  --green:#8dc63f;
+  --yellow:#f7d000;
+  --ink:#1c3a47;
+  --bg:#f2fafd;
+  --red:#e05d5d;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+header{background:linear-gradient(135deg,var(--blue),#1ea5d4);color:#fff;padding:14px 16px;box-shadow:0 2px 8px rgba(31,120,150,.25);}
+.brand{display:flex;align-items:center;gap:10px;max-width:760px;margin:0 auto;}
+.logo{background:#fff;color:var(--blue);font-weight:800;border-radius:10px;padding:4px 10px;font-size:15px;letter-spacing:.5px;white-space:nowrap;}
+.logo span{color:var(--green);}
+.brand-txt{flex:1;min-width:0;}
+.brand-txt h1{font-size:17px;line-height:1.3;}
+.brand-txt p{font-size:11px;opacity:.92;}
+main{max-width:760px;margin:0 auto;padding:16px 14px 50px;}
+.hidden{display:none !important;}
+
+/* ===== home ===== */
+.lead{background:#fff;border-radius:14px;padding:14px 16px;margin-bottom:14px;box-shadow:0 2px 6px rgba(31,120,150,.08);font-size:13.5px;}
+.lead b{color:#1491bd;}
+.course-grid{display:grid;grid-template-columns:1fr;gap:12px;}
+.course{background:#fff;border-radius:16px;padding:16px;border:2px solid transparent;cursor:pointer;box-shadow:0 2px 8px rgba(31,120,150,.10);transition:transform .12s;position:relative;overflow:hidden;text-align:left;width:100%;font:inherit;color:inherit;}
+.course:active{transform:scale(.98);}
+.course .pt{font-size:30px;font-weight:900;line-height:1;}
+.course .pt small{font-size:14px;font-weight:700;}
+.course h2{font-size:16px;margin:6px 0 4px;}
+.course p{font-size:12.5px;color:#48616d;}
+.course .best{display:inline-block;margin-top:8px;font-size:11.5px;background:#eef7fb;border-radius:999px;padding:2px 10px;color:#1491bd;font-weight:700;}
+.course .stripe{position:absolute;top:0;left:0;width:8px;height:100%;}
+.c50 .stripe{background:var(--green);} .c50 .pt{color:var(--green);}
+.c70 .stripe{background:var(--blue);} .c70 .pt{color:var(--blue);}
+.c90 .stripe{background:var(--yellow);} .c90 .pt{color:#d4a900;}
+.badge{display:inline-block;font-size:11px;font-weight:800;color:#fff;border-radius:999px;padding:2px 10px;margin-bottom:2px;}
+.c50 .badge{background:var(--green);} .c70 .badge{background:var(--blue);} .c90 .badge{background:#d4a900;}
+.range-note{margin-top:14px;font-size:11.5px;color:#64808c;text-align:center;}
+
+/* ===== welcome（0ページ目） ===== */
+.wl-card{background:#fff;border-radius:16px;padding:18px 16px;box-shadow:0 2px 8px rgba(31,120,150,.10);border-top:6px solid var(--blue);}
+.wl-card h2{font-size:17px;color:#1491bd;margin-bottom:8px;}
+.wl-card>p{font-size:14px;margin-bottom:10px;}
+.wl-alert{background:#fdeeee;border:2px solid var(--red);border-radius:12px;padding:11px 13px;font-size:13.5px;line-height:1.75;margin-bottom:14px;}
+.wl-alert b{color:#c0392b;}
+.wl-steps{display:flex;flex-direction:column;gap:2px;margin-bottom:14px;}
+.wl-step{border-radius:12px;padding:10px 13px;border-left:7px solid;}
+.wl-step.s50{background:#f3f9ea;border-color:var(--green);}
+.wl-step.s70{background:#eaf7fc;border-color:var(--blue);}
+.wl-step.s90{background:#fffbe8;border-color:var(--yellow);}
+.wl-pt{font-size:12px;font-weight:900;}
+.s50 .wl-pt{color:#5f9a1d;} .s70 .wl-pt{color:#1491bd;} .s90 .wl-pt{color:#9c7c00;}
+.wl-h{font-size:15px;font-weight:900;margin:1px 0 2px;}
+.wl-d{font-size:12.5px;color:#48616d;}
+.wl-arrow{text-align:center;color:#8aa0ab;font-weight:900;font-size:13px;line-height:1.2;}
+.wl-note{background:#eef7fb;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.75;margin-bottom:14px;}
+.wl-lab{background:linear-gradient(135deg,#f3eefe,#eaf7fd);border:2px solid #c9b8f2;border-radius:12px;padding:11px 13px;margin-bottom:14px;font-size:12.5px;line-height:1.7;}
+.wl-lab .wl-pt{color:#6a4fc4;}
+.wl-lab ul{list-style:none;margin:5px 0;}
+.wl-lab li{background:#fff;border-radius:8px;padding:4px 9px;margin:3px 0;font-size:12.5px;}
+.wl-lab li b{color:#6a4fc4;}
+.wl-lab .when{background:#fffbe8;border-radius:8px;padding:6px 9px;margin-top:5px;}
+.wl-link{display:block;margin:14px auto 0;background:none;border:none;color:#1491bd;font:inherit;font-size:13px;font-weight:800;text-decoration:underline;cursor:pointer;}
+
+/* ===== set picker ===== */
+.set-grid{display:grid;gap:10px;}
+.setbtn{background:#fff;border:2px solid #d7e9f1;border-radius:14px;padding:13px 15px;text-align:left;cursor:pointer;font:inherit;color:inherit;box-shadow:0 2px 6px rgba(31,120,150,.08);display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;}
+.setbtn:active{transform:scale(.98);}
+.setbtn .sn{font-size:14.5px;font-weight:800;}
+.setbtn .sd{font-size:11.5px;color:#64808c;margin-top:2px;}
+.setbtn .sb{font-size:11.5px;font-weight:800;color:#1491bd;background:#eef7fb;border-radius:999px;padding:3px 10px;white-space:nowrap;flex-shrink:0;}
+.blank{color:var(--red);font-weight:900;}
+
+/* ===== quiz ===== */
+#quiz-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;flex-wrap:wrap;}
+#course-tag{font-size:12px;font-weight:800;color:#fff;border-radius:999px;padding:3px 12px;}
+#course-tag.c50{background:var(--green);} #course-tag.c70{background:var(--blue);} #course-tag.c90{background:#d4a900;}
+#score-box{font-size:13px;font-weight:800;color:#1491bd;background:#fff;border-radius:999px;padding:3px 12px;box-shadow:0 1px 4px rgba(31,120,150,.12);}
+#dots{display:flex;gap:5px;margin-bottom:12px;}
+.dot{flex:1;height:7px;border-radius:99px;background:#d7e9f1;}
+.dot.done{background:var(--green);}
+.dot.now{background:var(--blue);}
+.dot.miss{background:#f0b4b4;}
+.qcard{background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 8px rgba(31,120,150,.10);}
+#q-num{font-size:12px;font-weight:800;color:#1491bd;margin-bottom:4px;}
+#q-type{display:inline-block;font-size:11px;font-weight:800;background:#fdf3cc;color:#9c7c00;border-radius:6px;padding:1px 8px;margin-left:6px;}
+#shiryo{margin:10px 0;}
+#shiryo .shiryo-box{border:1.5px solid #cfe6f0;border-radius:12px;padding:10px;background:#fbfeff;}
+#shiryo .shiryo-title{font-size:12px;font-weight:800;color:#1491bd;margin-bottom:6px;}
+#shiryo svg{width:100%;height:auto;display:block;}
+#q-text{font-size:15px;font-weight:700;margin:8px 0 12px;white-space:pre-wrap;}
+#q-text .wrong-word{color:var(--red);}
+#choices{display:grid;gap:9px;}
+.choice{width:100%;text-align:left;background:#f4fafd;border:2px solid #d7e9f1;border-radius:12px;padding:11px 13px;font-size:14px;font-family:inherit;color:var(--ink);cursor:pointer;display:flex;gap:9px;align-items:flex-start;transition:background .1s;}
+.choice:active{background:#e5f3f9;}
+.choice .mark{font-weight:900;color:var(--blue);flex-shrink:0;}
+.choice.correct{background:#f0f8e2;border-color:var(--green);}
+.choice.wrongpick{background:#fdeaea;border-color:var(--red);}
+.choice.dim{opacity:.5;}
+.choice:disabled{cursor:default;}
+.choice.sel{background:#dff4fc;border-color:var(--blue);box-shadow:0 0 0 2px rgba(47,189,234,.25);}
+.choice.sel .mark::after{content:" ✔";color:var(--blue);}
+.choice.missed{background:#fffbe8;border-color:var(--yellow);}
+#decide-btn{margin-top:4px;width:100%;background:var(--green);color:#fff;border:none;border-radius:12px;padding:13px;font-size:16px;font-weight:800;font-family:inherit;cursor:pointer;box-shadow:0 3px 0 #74a82c;}
+#decide-btn:disabled{opacity:.45;cursor:default;box-shadow:none;}
+#decide-btn:not(:disabled):active{transform:translateY(2px);box-shadow:none;}
+.verdict.part{color:#e08a00;}
+.fb-title{font-size:12.5px;font-weight:900;color:#1491bd;margin-bottom:6px;}
+.fb-item{background:#fff;border:1.5px solid #d7e9f1;border-radius:10px;padding:8px 11px;font-size:12.5px;margin-bottom:7px;line-height:1.65;}
+.fb-item b{color:#1c5a72;}
+
+/* 90点コース導入画面 */
+.intro-card{background:#fff;border-radius:16px;padding:18px 16px;box-shadow:0 2px 8px rgba(31,120,150,.10);border-top:6px solid var(--yellow);}
+.intro-card h2{font-size:17px;color:#9c7c00;margin-bottom:10px;}
+.intro-card p{font-size:13.5px;margin-bottom:10px;}
+.intro-steps{display:grid;gap:8px;margin:12px 0;}
+.intro-step{background:#fffbe8;border-radius:10px;padding:9px 12px;font-size:13px;display:flex;gap:9px;align-items:flex-start;}
+.intro-step .no{background:#d4a900;color:#fff;font-weight:900;border-radius:999px;min-width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
+.intro-note{background:#eef7fb;border-radius:10px;padding:9px 12px;font-size:12.5px;margin-bottom:14px;}
+
+/* feedback */
+#feedback{margin-top:14px;}
+.verdict{font-size:19px;font-weight:900;margin-bottom:6px;}
+.verdict.ok{color:var(--green);}
+.verdict.ng{color:var(--red);}
+.gotpt{font-size:12.5px;font-weight:800;color:#d4a900;margin-bottom:8px;}
+.expl{background:#eef7fb;border-radius:12px;padding:11px 13px;font-size:13.5px;}
+.expl b{color:#1491bd;}
+.model-box{margin-top:10px;background:#fffbe8;border:2px solid var(--yellow);border-radius:12px;padding:11px 13px;}
+.model-box .mb-title{font-size:12px;font-weight:900;color:#9c7c00;margin-bottom:4px;}
+.model-box .mb-text{font-size:14px;font-weight:700;line-height:1.75;}
+.ondoku{margin-top:10px;background:linear-gradient(135deg,#8dc63f,#6fae23);color:#fff;border-radius:12px;padding:10px 13px;font-size:14px;font-weight:800;display:flex;align-items:center;gap:8px;}
+.ondoku .spk{font-size:20px;}
+#next-btn{margin-top:14px;width:100%;background:var(--blue);color:#fff;border:none;border-radius:12px;padding:13px;font-size:16px;font-weight:800;font-family:inherit;cursor:pointer;box-shadow:0 3px 0 #1a97c2;}
+#next-btn:active{transform:translateY(2px);box-shadow:none;}
+
+/* ===== result ===== */
+.result-card{background:#fff;border-radius:16px;padding:22px 14px;text-align:center;box-shadow:0 2px 8px rgba(31,120,150,.10);}
+#rank{font-size:56px;font-weight:900;line-height:1;}
+#rank.S{color:#d4a900;} #rank.A{color:var(--blue);} #rank.B{color:var(--green);} #rank.C{color:#8aa0ab;}
+#stars{font-size:26px;letter-spacing:4px;margin:6px 0;}
+#result-msg{font-size:15px;font-weight:800;margin-bottom:4px;}
+#result-score{font-size:13.5px;color:#48616d;margin-bottom:6px;}
+#result-best{font-size:12px;color:#1491bd;font-weight:700;margin-bottom:12px;}
+.review{margin-top:16px;text-align:left;}
+.review h3{font-size:13.5px;color:#1491bd;margin-bottom:8px;}
+.review-item{background:#fdf6f6;border-left:4px solid var(--red);border-radius:8px;padding:9px 11px;font-size:12.5px;margin-bottom:8px;}
+.review-item b{color:#2a7a12;}
+.rv-lead{font-size:12px;color:#64808c;margin-bottom:10px;}
+.rv-perfect{background:#f0f8e2;border-radius:12px;padding:12px;font-size:13.5px;font-weight:800;color:#4d7d17;text-align:center;}
+.rv-card{background:#fff;border:1.5px solid #d7e9f1;border-left:5px solid var(--red);border-radius:12px;padding:12px 13px;margin-bottom:14px;box-shadow:0 1px 5px rgba(31,120,150,.08);}
+.rv-no{display:inline-block;font-size:11px;font-weight:900;color:#fff;background:var(--red);border-radius:999px;padding:1px 10px;margin-bottom:5px;}
+.rv-q{font-size:13.5px;font-weight:700;margin-bottom:8px;line-height:1.6;}
+.rv-sec{border-radius:10px;padding:9px 11px;margin-top:8px;font-size:13px;line-height:1.7;}
+.rv-lbl{font-size:11.5px;font-weight:900;margin-bottom:3px;}
+.rv-line{margin:3px 0;}
+.rv-why{font-size:12.5px;color:#34505c;margin-top:2px;}
+.rv-why b{color:#1c5a72;}
+.rv-you{background:#fdeeee;} .rv-you .rv-lbl{color:#c0392b;}
+.rv-right{background:#f0f8e2;} .rv-right .rv-lbl{color:#4d7d17;}
+.rv-good{background:#f0f8e2;} .rv-good .rv-lbl{color:#4d7d17;}
+.rv-miss{background:#fffbe8;} .rv-miss .rv-lbl{color:#9c7c00;}
+.rv-model{background:#fffbe8;border:1.5px solid var(--yellow);} .rv-model .rv-lbl{color:#9c7c00;}
+.rv-mtext{font-weight:700;}
+.rv-sh,.rv-more{margin-top:8px;font-size:12.5px;}
+.rv-sh summary,.rv-more summary{cursor:pointer;font-weight:800;color:#1491bd;padding:4px 0;}
+.rv-more{background:#f4fafd;border-radius:10px;padding:6px 11px;}
+.btn-row{display:grid;gap:10px;margin-top:18px;}
+.btn{width:100%;border:none;border-radius:12px;padding:13px;font-size:15px;font-weight:800;font-family:inherit;cursor:pointer;}
+.btn.retry{background:var(--green);color:#fff;box-shadow:0 3px 0 #74a82c;}
+.btn.home{background:#e4eef3;color:var(--ink);box-shadow:0 3px 0 #c3d4dc;}
+.btn:active{transform:translateY(2px);box-shadow:none;}
+
+/* shiryo tables & flow */
+.shiryo-table{width:100%;border-collapse:collapse;font-size:12.5px;}
+.shiryo-table th,.shiryo-table td{border:1px solid #cfe6f0;padding:5px 7px;}
+.shiryo-table th{background:#e5f3f9;color:#1c5a72;font-size:12px;}
+.shiryo-table .blank{color:var(--red);font-weight:900;}
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:2px;}
+.flow .fbox{background:#e5f3f9;border:1.5px solid #9ed3ea;border-radius:10px;padding:7px 10px;font-size:12.5px;text-align:center;font-weight:700;}
+.flow .fbox .blank{color:var(--red);font-weight:900;}
+.flow .farrow{text-align:center;color:#1491bd;font-weight:900;font-size:14px;line-height:1.1;}
+footer{text-align:center;font-size:11.5px;color:#7a95a1;padding:18px 10px 26px;}
+footer b{color:var(--blue);}
+@media(min-width:560px){
+  .course-grid{grid-template-columns:repeat(3,1fr);}
+  .brand-txt h1{font-size:19px;}
+}
+#choices>*{min-width:0;}
+.num-row{display:flex;align-items:center;gap:8px;background:#f4fafd;border:2px solid #d7e9f1;border-radius:12px;padding:8px 12px;}
+.num-row .nl{font-weight:900;color:var(--red);min-width:22px;font-size:16px;}
+.num-row input{flex:1;min-width:0;font-size:20px;font-weight:800;padding:8px 10px;border:2px solid #9ed3ea;border-radius:10px;font-family:inherit;text-align:right;color:var(--ink);background:#fff;}
+.num-row .nu{font-weight:800;font-size:15px;}
+.num-row.nok{background:#f0f8e2;border-color:var(--green);}
+.num-row.nng{background:#fdeaea;border-color:var(--red);}
+.ord-item .ono{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:26px;height:26px;border-radius:50%;background:#fff;border:2px dashed #9ed3ea;font-weight:900;color:#fff;}
+.ord-item.sel .ono{background:var(--blue);border:2px solid var(--blue);}
+.ord-item.sel .mark::after{content:"";}
+.ord-btns{text-align:right;}
+.ord-reset{background:#fff;border:1.5px solid #9ed3ea;color:#1491bd;border-radius:999px;padding:5px 14px;font-weight:700;font-family:inherit;font-size:13px;cursor:pointer;}
+/* ===== lab ===== */
+.lab-entry{display:flex;align-items:center;gap:12px;width:100%;margin-top:12px;background:linear-gradient(135deg,#f3eefe,#eaf7fd);border:2px solid #c9b8f2;border-radius:16px;padding:14px 16px;text-align:left;font:inherit;color:var(--ink);cursor:pointer;box-shadow:0 2px 8px rgba(110,80,200,.12);}
+.lab-entry .le-ic{font-size:30px;}
+.lab-entry b{font-size:16px;color:#6a4fc4;}
+.lab-entry small{font-size:11.5px;color:#48616d;}
+.lab-entry .le-go{margin-left:auto;color:#6a4fc4;font-weight:900;}
+.lab-head{font-size:17px;font-weight:900;color:#6a4fc4;margin:2px 0 10px;}
+.lab-card{background:#fff;border-radius:16px;padding:14px;box-shadow:0 2px 8px rgba(31,120,150,.10);}
+.lab-lbl{font-size:12px;font-weight:800;color:#1491bd;margin:10px 0 4px;}
+.lab-note{font-size:12px;color:#48616d;margin:6px 0;}
+.seg{display:flex;flex-wrap:wrap;gap:6px;}
+.segbtn{flex:1;min-width:64px;background:#f4fafd;border:2px solid #d7e9f1;border-radius:999px;padding:8px 10px;font:inherit;font-size:13.5px;font-weight:800;color:var(--ink);cursor:pointer;}
+.segbtn.on{background:var(--blue);border-color:var(--blue);color:#fff;}
+.segbtn:disabled{opacity:.4;cursor:default;}
+.lab-pun{border-collapse:separate;border-spacing:5px;margin:8px auto;}
+.lab-pun th{background:#e5f3f9;border-radius:8px;padding:6px 14px;font-size:15px;color:#1c5a72;}
+.lab-pun th.corner{font-size:10px;padding:4px;background:none;color:#7a95a1;}
+.lab-pun td{border-radius:10px;padding:7px 18px;text-align:center;font-size:17px;}
+.lab-pun td small{font-size:11px;font-weight:700;}
+.lab-pun td.dom{background:#e3f0ff;border:2px solid #9cc4f0;}
+.lab-pun td.rec{background:#fdeaea;border:2px solid #f1a9a9;}
+.lab-res{background:#eef7fb;border-radius:12px;padding:10px 12px;font-size:13.5px;margin:8px 0;line-height:1.7;}
+.lab-res small{font-size:11.5px;color:#48616d;}
+.lab-bar{display:flex;height:22px;border-radius:999px;overflow:hidden;margin:6px 0 2px;background:#e1edf2;}
+.lab-bar span{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;white-space:nowrap;overflow:hidden;transition:width .3s;}
+.b-dom{background:#2f84d0;} .b-rec{background:#e05d5d;}
+.lab-tip{background:#fffbe8;border:1.5px solid #f2dc7a;border-radius:12px;padding:9px 12px;font-size:12.5px;margin-top:8px;line-height:1.7;}
+.lab-svg{width:100%;height:auto;display:block;margin:6px 0;}
+.lab-ctrl{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;}
+.lab-steps{display:flex;justify-content:center;gap:6px;}
+.lab-steps span{width:26px;height:26px;border-radius:50%;background:#e1edf2;color:#7a95a1;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;}
+.lab-steps span.done{background:#cfe8b0;color:#4f7a1e;} .lab-steps span.on{background:var(--blue);color:#fff;}
+.lab-big{font-size:22px;font-weight:900;text-align:center;color:#1c3a47;}
+.lab-big small{font-size:13px;color:#5b7884;margin-left:4px;}
+.lab-range{width:100%;margin:8px 0;accent-color:#6a4fc4;height:28px;}
+.ms-flow{margin:10px 0;}
+.ms-row{display:flex;align-items:center;justify-content:center;gap:8px;margin:4px 0;}
+.ms-arr{font-size:11px;font-weight:800;color:#1491bd;text-align:center;line-height:1.2;}
+.ms-arr.big{font-size:13px;margin:2px 0;}
+.lab-cell{text-align:center;}
+.lab-cell .lc-in{width:84px;height:84px;border:2.5px solid #9ed3ea;border-radius:50%;background:#fff;display:flex;align-items:flex-end;justify-content:center;padding-bottom:22px;margin:0 auto;}
+.lab-cell.small .lc-in{width:66px;height:66px;padding-bottom:16px;}
+.lab-cell.kid .lc-in{border-color:#8dc63f;background:#f7fcef;}
+.lab-cell .lc-l{font-size:11px;font-weight:800;margin-top:2px;}
+.cbar{display:inline-block;width:8px;border-radius:4px;margin:0 2px;}
+
+header{position:sticky;top:0;z-index:50;}
+.home-btn{display:none;flex-shrink:0;background:#fff;color:#1491bd;border:none;border-radius:999px;padding:7px 12px;font-family:inherit;font-weight:900;font-size:13px;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.12);}
+body.inapp .home-btn{display:block;}
+body.inapp .brand-txt p{display:none;}
+#shiryo .shiryo-box{text-align:center;}
+#shiryo .shiryo-table{text-align:center;}
+.lab-chip{display:inline-block;background:#eef7fb;color:#1491bd;border-radius:999px;padding:1px 9px;font-size:12px;font-weight:800;margin-left:4px;}
+.segbtn.sm{font-size:12px;padding:6px 8px;min-width:0;}
+.lab-mini{background:#6a4fc4;color:#fff;border:none;border-radius:999px;padding:3px 11px;font:inherit;font-size:12px;font-weight:800;cursor:pointer;margin-left:6px;}
+.lab-two{display:grid;grid-template-columns:1fr;gap:6px;margin-top:8px;}
+@media(min-width:620px){.lab-two{grid-template-columns:1fr 1fr;}}
+.lab-cap{font-size:11.5px;font-weight:800;color:#5b7884;margin-top:4px;}
+.lab-chk{display:flex;align-items:center;gap:6px;font-size:12.5px;margin:6px 0;cursor:pointer;}
+.lab-chk input{width:18px;height:18px;accent-color:#6a4fc4;}
+.lab-train{margin-top:14px;background:linear-gradient(135deg,#fff9db,#fff);border:2px solid #f2dc7a;border-radius:14px;padding:10px 12px;}
+.lab-train .lab-lbl{color:#9c7c00;margin-top:0;}
+.lab-qtext{font-size:14px;font-weight:700;margin:4px 0 8px;line-height:1.65;}
+.lab-ans{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:6px 0;}
+.lab-ans span{font-weight:800;}
+.lab-al{min-width:62px;font-size:13px;color:#1491bd;}
+.lab-in{width:76px;font-size:18px;font-weight:800;padding:6px 8px;border:2px solid #9ed3ea;border-radius:10px;font-family:inherit;text-align:right;color:var(--ink);}
+.lab-go{background:var(--blue);color:#fff;border:none;border-radius:999px;padding:8px 16px;font:inherit;font-weight:800;font-size:13.5px;cursor:pointer;margin-top:6px;box-shadow:0 2px 0 #1a97c2;}
+.lab-go.next{background:var(--green);box-shadow:0 2px 0 #74a82c;}
+.lab-go:active{transform:translateY(2px);box-shadow:none;}
+.lab-fb{border-radius:12px;padding:9px 12px;margin:8px 0 2px;font-weight:900;font-size:15px;line-height:1.6;}
+.lab-fb small{font-weight:600;font-size:12.5px;color:#34505c;}
+.lab-fb.ok{background:#f0f8e2;color:#4d7d17;border:2px solid var(--green);}
+.lab-fb.ng{background:#fdeeee;color:#c0392b;border:2px solid var(--red);}
+.lab-alert{margin-top:8px;background:#fff0f6;border:2px solid #f783ac;border-radius:10px;padding:7px 10px;font-weight:800;color:#a61e4d;}
+.lab-moons{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.lab-moonbtn{background:#fff;border:2px solid #d7e9f1;border-radius:12px;padding:5px;cursor:pointer;font:inherit;font-weight:900;color:#1491bd;}
+.lab-moonbtn svg{width:100%;height:auto;display:block;}
+.lab-res .shiryo-table{background:#fff;margin-top:4px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="logo">KATE <span>APP</span></div>
+    <div class="brand-txt">
+      <h1>天体マスター①</h1>
+      <p>中3理科 地球と宇宙（天体の1日の動き・1年の動き・月と惑星・太陽系）｜つまずきを、プラスに。</p>
+    </div>
+    <button class="home-btn" onclick="goHomeBtn()">🏠 ホーム</button>
+  </div>
+</header>
+
+<main>
+  <!-- ========== WELCOME（0ページ目：はじめに） ========== -->
+  <section id="welcome">
+    <div class="wl-card">
+      <h2>👋 はじめに ― このアプリの使い方</h2>
+      <p>このアプリには <b>50点・70点・90点</b> の3つのコースがあるよ。</p>
+      <div class="wl-alert">
+        ⚠️ <b>いきなり90点コースからはやらないで！</b><br>
+        90点コースの説明問題は、50点コースの「用語」と70点コースの「図・資料の読み方」を<b>部品として組み立てて</b>答える問題。土台がないと解けないんだ。<br>
+        <b>50点 → 70点 → 90点</b> の順に、ちょっとずつ積み重ねていこう！
+      </div>
+      <div class="wl-steps">
+        <div class="wl-step s50">
+          <div class="wl-pt">STEP 1｜50点コース</div>
+          <div class="wl-h">暗記問題が中心</div>
+          <div class="wl-d">テストに必ず出る基本用語（日周運動・南中高度・黄道・上弦の月・よいの明星・黒点…）を4択でおぼえる。まずは知識の「部品」をそろえよう。</div>
+        </div>
+        <div class="wl-arrow">▼</div>
+        <div class="wl-step s70">
+          <div class="wl-pt">STEP 2｜70点コース</div>
+          <div class="wl-h">図・資料の読み取りと計算が中心</div>
+          <div class="wl-d">透明半球・紙テープ・北の空の星・月や金星の位置の図を見て、選択・<b>数値入力</b>（南中高度や時刻の計算）・<b>並べ替え</b>で答える。差がつくところ！</div>
+        </div>
+        <div class="wl-arrow">▼</div>
+        <div class="wl-step s90">
+          <div class="wl-pt">STEP 3｜90点コース</div>
+          <div class="wl-h">説明・記述問題に対応</div>
+          <div class="wl-d">「〜の理由を説明しなさい」に答える力をつける。正しい部品を選ぶと、そのまま記述の模範解答が完成するよ。</div>
+        </div>
+      </div>
+      <div class="wl-lab">
+        <div class="wl-pt">🧪 おまけ｜インタラクティブ教材（シミュレーション）</div>
+        <div class="wl-h">さわって・動かして、天体の動きを理解する</div>
+        ホーム画面の<b>紫色の「🧪 インタラクティブ教材」ボタン</b>から開けるよ。教材の<b>「トレーニング」の問題</b>を、動かして確かめられるようにしたもの。点数はつかないので、気軽に何度でもさわってOK！
+        <ul><li><b>南中高度シミュレーター</b>：緯度と季節を変えると、地球の図の上で南中高度の角が変わる</li><li><b>透明半球と太陽の通り道</b>：季節・場所・時刻を動かして、通り道を斜めと真横から見る</li><li><b>紙テープで時刻計算ドリル</b>：日の出・日の入り・南中の時刻を求める問題が何度でも出る</li><li><b>北の空の星時計</b>：時刻と月を動かすと北斗七星が回る</li><li><b>月の満ち欠けと日食・月食</b>：月を公転させると、形・見える方角が変わる</li><li><b>金星の見え方</b>：よいの明星・明けの明星、形と大きさの変化</li><li><b>地球の公転と季節の星座</b>：真夜中・夕方・明け方に南の空に見える星座</li></ul>
+        <div class="when">💡 <b>こんなときに使おう</b>：①50点コースで用語がピンとこないとき ②70点コースの前に、図の「意味」をつかみたいとき ③計算問題を何度も練習したいとき（各教材の🎯練習モード）</div>
+      </div>
+      <div class="wl-note">
+        📱 1プレイは10問。どの画面でも右上の <b>🏠ホーム</b> でもどれるよ。<br>
+        📒 最後の結果画面で、まちがえた問題を「なぜ違うのか」までくわしく解説するよ。<b>ここを読むのが一番伸びる！</b>
+      </div>
+      <button class="btn retry" onclick="closeWelcome()">わかった！コースを選ぶ ▶</button>
+    </div>
+  </section>
+
+  <!-- ========== HOME ========== -->
+  <section id="home" class="hidden">
+    <div class="lead">
+      目指す点数のコースを選ぼう！同じ範囲を <b>50点（暗記）→ 70点（図・計算）→ 90点（説明できる）</b> と段階的にレベルアップしていくよ。1プレイ10問。
+    </div>
+    <div class="course-grid">
+      <button class="course c50" id="btn-c50" onclick="startCourse('50')">
+        <div class="stripe"></div>
+        <span class="badge">まずはここから</span>
+        <div class="pt">50<small>点コース</small></div>
+        <h2>基礎用語をおぼえる</h2>
+        <p>テストに必ず出る基本用語の4択。単元ごとに基礎を全部つぶそう！</p>
+        <span class="best">全40問｜4単元 各10問＋全範囲ミックス</span>
+      </button>
+      <button class="course c70" id="btn-c70" onclick="startCourse('70')">
+        <div class="stripe"></div>
+        <span class="badge">差がつく</span>
+        <div class="pt">70<small>点コース</small></div>
+        <h2>図を読み取る・計算する</h2>
+        <p>透明半球・星・月・金星の図や、南中高度・時刻の計算。<b>選択・数値入力・並べ替え</b>の3タイプ！</p>
+        <span class="best">全20問｜資料セット①②</span>
+      </button>
+      <button class="course c90" id="btn-c90" onclick="startCourse('90')">
+        <div class="stripe"></div>
+        <span class="badge">説明できたら本物</span>
+        <div class="pt">90<small>点コース</small></div>
+        <h2>理由・しくみを説明する</h2>
+        <p>説明の「部品」をすべて選ぶと模範解答が完成。音読して「書ける」力をつける！</p>
+        <span class="best">全20問｜説明セット①②</span>
+      </button>
+    </div>
+    <button class="lab-entry" onclick="openLab()">
+      <span class="le-ic">🧪</span>
+      <span><b>インタラクティブ教材</b><br><small>南中高度・透明半球・テープ計算・星時計・月の満ち欠け・金星・季節の星座｜動かして理解＋🎯練習！</small></span>
+      <span class="le-go">▶</span>
+    </button>
+    <button class="wl-link" onclick="openWelcome()">📖 はじめに（使い方）をもう一度読む</button>
+    <p class="range-note">出題範囲：中3理科「地球と宇宙」（天体の1日の動き／天体の1年の動き／月や惑星の動きと見え方／太陽系と恒星）<br>※収録問題はすべて KATE APP のオリジナル問題です。</p>
+  </section>
+
+  <!-- ========== LAB（インタラクティブ教材） ========== -->
+  <section id="lab" class="hidden"><div id="lab-body"></div></section>
+
+  <!-- ========== SET PICKER ========== -->
+  <section id="sets" class="hidden">
+    <div class="lead" id="sets-lead"></div>
+    <div class="set-grid" id="set-list"></div>
+    <div class="btn-row">
+      <button class="btn home" onclick="goHome()">コース選択にもどる</button>
+    </div>
+  </section>
+
+  <!-- ========== 90点コース 導入 ========== -->
+  <section id="intro90" class="hidden">
+    <div class="intro-card">
+      <h2>🏆 90点コースの遊び方（ここ大事！）</h2>
+      <p>記述・説明問題は、バラバラに覚えた知識の<b>「点」を1本の「線」につなげて書く</b>問題。このコースでは、その「つなげ方」を練習するよ。</p>
+      <div class="intro-steps">
+        <div class="intro-step"><span class="no">1</span><span>「◯◯を説明したい」というお題が出る</span></div>
+        <div class="intro-step"><span class="no">2</span><span>説明の<b>部品として正しいものをすべて</b>選ぶ（いくつ正解があるかはヒミツ！）</span></div>
+        <div class="intro-step"><span class="no">3</span><span>正しい部品を組み合わせると、<b>そのまま記述の模範解答</b>が完成する</span></div>
+        <div class="intro-step"><span class="no">4</span><span>模範解答を<b>2回音読</b>して、自分の言葉にする</span></div>
+      </div>
+      <div class="intro-note">💡 まちがい選択肢の解説には「その知識が本当はどこの話なのか」も書いてある。<b>全部読む</b>と勘違いが直って一気に伸びるよ。採点は部分点あり：正しい部品 +7pt／誤りを選ぶと −4pt／完答でボーナス！</div>
+      <button class="btn retry" onclick="ackIntro90()">了解しました！スタート</button>
+    </div>
+  </section>
+
+  <!-- ========== QUIZ ========== -->
+  <section id="quiz" class="hidden">
+    <div id="quiz-top">
+      <span id="course-tag"></span>
+      <span id="score-box">スコア 0</span>
+    </div>
+    <div id="dots"></div>
+    <div class="qcard">
+      <div id="q-num"></div>
+      <div id="shiryo"></div>
+      <div id="q-text"></div>
+      <div id="choices"></div>
+      <div id="feedback" class="hidden">
+        <div id="verdict" class="verdict"></div>
+        <div id="gotpt" class="gotpt"></div>
+        <div id="expl" class="expl"></div>
+        <div id="model-wrap"></div>
+        <button id="next-btn" onclick="nextQ()">次へ ▶</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESULT ========== -->
+  <section id="result" class="hidden">
+    <div class="result-card">
+      <div id="rank"></div>
+      <div id="stars"></div>
+      <div id="result-msg"></div>
+      <div id="result-score"></div>
+      <div id="result-best"></div>
+      <div id="review" class="review"></div>
+      <div class="btn-row">
+        <button class="btn retry" id="retry-btn" onclick="retry()">もう一度チャレンジ</button>
+        <button class="btn home" onclick="backToSets()">セット選択にもどる</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <b>KATE APP</b>（カテアプ）｜つまずきを、プラスに。<br>天体マスター①｜収録問題はすべてオリジナル問題です
+</footer>
+
+<script>
+"use strict";
+/* ================================================================
+   天体マスター①（地球と宇宙）  50点=基礎暗記 / 70点=資料・計算 / 90点=説明・記述 / 🧪インタラクティブ教材
+   ================================================================ */
+/* ================= 天体の計算・作図ヘルパー（問題・教材で共通） ================= */
+const D2R=Math.PI/180;
+const SEASON={su:{n:"夏至",d:23.4,col:"#e8590c"},eq:{n:"春分・秋分",d:0,col:"#2f9e44"},wi:{n:"冬至",d:-23.4,col:"#1c7ed6"}};
+function r1(x){return Math.round(x*10)/10;}
+function fmtN(x){return String(Math.round(x*100)/100);}
+/* 太陽（天体）の位置：e=東, n=北, z=上（単位ベクトル）。lat:緯度, dec:赤緯, H:時角(度) */
+function sunVec(lat,dec,H){
+  const p=lat*D2R,d=dec*D2R,h=H*D2R;
+  return {e:-Math.cos(d)*Math.sin(h), n:Math.sin(d)*Math.cos(p)-Math.cos(d)*Math.cos(h)*Math.sin(p), z:Math.sin(d)*Math.sin(p)+Math.cos(d)*Math.cos(h)*Math.cos(p)};
+}
+/* 日の出の時角（度）。null=沈まない(白夜) / 0=昇らない(極夜) */
+function riseH(lat,dec){
+  const L=Math.min(89.9,Math.max(-89.9,lat));
+  const c=-Math.tan(L*D2R)*Math.tan(dec*D2R);
+  if(c<=-1)return null; if(c>=1)return 0;
+  return Math.acos(c)/D2R;
+}
+function noonAlt(lat,dec){return 90-Math.abs(lat-dec);}
+function hm(hours){let t=Math.round(hours*60);t=((t%1440)+1440)%1440;return Math.floor(t/60)+"時"+(t%60<10?"0":"")+(t%60)+"分";}
+function latName(l){return l===0?"赤道":l>=89.9?"北極点":l<=-89.9?"南極点":(l>0?"北緯":"南緯")+Math.abs(l)+"°";}
+/* 透明半球（斜めから見た図）の投影 */
+function domeP(v,R,cx,cy){return [cx+R*v.n, cy+R*0.38*v.e-R*0.925*v.z];}
+function domeBase(R,cx,cy,opt){
+  opt=opt||{};
+  let s='<ellipse cx="'+cx+'" cy="'+cy+'" rx="'+R+'" ry="'+(R*0.38)+'" fill="#eaf6ee" stroke="#6b8f71" stroke-width="1.5"/>';
+  s+='<path d="M'+(cx-R)+','+cy+' A'+R+','+R+' 0 0 1 '+(cx+R)+','+cy+'" fill="rgba(170,215,240,.25)" stroke="#5aa9d6" stroke-width="2"/>';
+  s+='<line x1="'+(cx-R)+'" y1="'+cy+'" x2="'+(cx+R)+'" y2="'+cy+'" stroke="#9bb8a1" stroke-dasharray="3 3"/>';
+  s+='<line x1="'+cx+'" y1="'+(cy-R*0.38)+'" x2="'+cx+'" y2="'+(cy+R*0.38)+'" stroke="#9bb8a1" stroke-dasharray="3 3"/>';
+  if(!opt.noLabel){
+    const f='font-size="12" font-weight="800" fill="#1c3a47" text-anchor="middle"';
+    s+='<text x="'+(cx-R-12)+'" y="'+(cy+4)+'" '+f+'>南</text><text x="'+(cx+R+12)+'" y="'+(cy+4)+'" '+f+'>北</text>';
+    s+='<text x="'+cx+'" y="'+(cy+R*0.38+15)+'" '+f+'>東</text><text x="'+(cx+16)+'" y="'+(cy-R*0.38-3)+'" '+f+'>西</text>';
+  }
+  return s;
+}
+/* 季節sの1日の通り道（地平線より上）を点列で */
+function dayPath(lat,dec,R,cx,cy){
+  const pts=[];
+  for(let H=-180;H<=180;H+=2){const v=sunVec(lat,dec,H);if(v.z>=-0.001)pts.push(domeP(v,R,cx,cy));}
+  return pts;
+}
+function polyPts(pts){return pts.map(p=>p[0].toFixed(1)+","+p[1].toFixed(1)).join(" ");}
+/* 真横から見た図（北が左・南が右） */
+function sideP(v,R,cx,cy){return [cx-R*v.n, cy-R*v.z];}
+function sideBase(R,cx,cy,ticks){
+  let s='<path d="M'+(cx-R)+','+cy+' A'+R+','+R+' 0 0 1 '+(cx+R)+','+cy+'" fill="#f4fbff" stroke="#5aa9d6" stroke-width="2"/>';
+  s+='<line x1="'+(cx-R-6)+'" y1="'+cy+'" x2="'+(cx+R+6)+'" y2="'+cy+'" stroke="#6b8f71" stroke-width="2"/>';
+  if(ticks){
+    for(let a=0;a<=180;a+=10){const x1=cx+R*Math.cos(a*D2R),y1=cy-R*Math.sin(a*D2R),k=a%30===0?9:5;
+      s+='<line x1="'+x1+'" y1="'+y1+'" x2="'+(cx+(R-k)*Math.cos(a*D2R))+'" y2="'+(cy-(R-k)*Math.sin(a*D2R))+'" stroke="#5aa9d6"/>';
+      if(a%30===0)s+='<text x="'+(cx+(R+13)*Math.cos(a*D2R))+'" y="'+(cy-(R+13)*Math.sin(a*D2R)+4)+'" font-size="10" fill="#5b7884" text-anchor="middle">'+a+'°</text>';}
+  }
+  s+='<text x="'+(cx-R-10)+'" y="'+(cy+16)+'" font-size="12" font-weight="800" text-anchor="middle">北</text><text x="'+(cx+R+10)+'" y="'+(cy+16)+'" font-size="12" font-weight="800" text-anchor="middle">南</text>';
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="3" fill="#1c3a47"/>';
+  return s;
+}
+function sideLine(lat,dec,R,cx,cy){
+  const H0=riseH(lat,dec);
+  const a=sideP(sunVec(lat,dec,0),R,cx,cy);
+  let b;
+  if(H0===null){b=sideP(sunVec(lat,dec,180),R,cx,cy);}else if(H0===0){return null;}else{b=sideP(sunVec(lat,dec,H0),R,cx,cy);}
+  return [b,a];
+}
+/* 月・金星の見え方の形：th=0新月,90上弦(右半分),180満月,270下弦(左半分) */
+function phaseSvg(th,r,cx,cy,opt){
+  opt=opt||{};
+  th=((th%360)+360)%360;
+  const lit=opt.lit||"#ffd43b",dark=opt.dark||"#3b4a5a";
+  let s='<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+dark+'"/>';
+  if(th<1||th>359)return s+'<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="#7d8a96" stroke-dasharray="2 2"/>';
+  if(Math.abs(th-180)<1)return s+'<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+lit+'"/>';
+  const rx=Math.abs(Math.cos(th*D2R))*r,T=(cx)+","+(cy-r),B=(cx)+","+(cy+r);
+  let d;
+  if(th<180){d="M"+T+" A"+r+","+r+" 0 0 1 "+B+" A"+rx+","+r+" 0 0 "+(th<90?0:1)+" "+T;}
+  else{d="M"+T+" A"+r+","+r+" 0 0 0 "+B+" A"+rx+","+r+" 0 0 "+(th>270?1:0)+" "+T;}
+  return s+'<path d="'+d+'" fill="'+lit+'"/>';
+}
+function moonName(th){
+  th=((th%360)+360)%360;
+  if(th<8||th>352)return "新月";
+  if(th<60)return "三日月（細い月）";
+  if(th<80)return "三日月〜上弦のあいだ";
+  if(th<=100)return "上弦の月";
+  if(th<170)return "満月に近い月（右側が大きく光る）";
+  if(th<=190)return "満月";
+  if(th<260)return "満月をすぎた月（左側が大きく光る）";
+  if(th<=280)return "下弦の月";
+  return "明け方の細い月（左側が光る）";
+}
+/* 北の空の星時計（a〜l：北極星を中心に12等分、aから反時計回り） */
+const STAR_L="abcdefghijkl";
+function starAng(i){return 60+30*i;}
+function dipper(cx,cy,R,ang,hl){
+  /* 星Aを角度angの位置に置いた北斗七星 */
+  const loc=[[0.86,0],[0.95,0.08],[1.05,0.03],[1.07,-0.08],[1.16,-0.14],[1.25,-0.1],[1.22,0.0]];
+  const c=Math.cos(ang*D2R),sn=Math.sin(ang*D2R);
+  const P=loc.map(p=>[cx+R*(p[0]*c-p[1]*sn), cy-R*(p[0]*sn+p[1]*c)]);
+  let s='<polyline points="'+polyPts(P.slice(0,4).concat([P[3]]))+'" fill="none" stroke="#ffd43b" stroke-width="1.2" opacity=".8"/>';
+  s+='<polyline points="'+polyPts([P[3],P[4],P[5],P[6],P[3]])+'" fill="none" stroke="#ffd43b" stroke-width="1.2" opacity=".8"/>';
+  P.forEach((p,i)=>{s+='<circle cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="'+(i===0?4.2:3)+'" fill="'+(i===0?(hl||"#ff922b"):"#fff3bf")+'"/>';});
+  s+='<text x="'+(P[0][0]-10*Math.cos(ang*D2R)).toFixed(1)+'" y="'+(P[0][1]+10*Math.sin(ang*D2R)+4).toFixed(1)+'" font-size="11" font-weight="900" fill="#ff922b" text-anchor="middle">A</text>';
+  return s;
+}
+function starClock(W,ang,opt){
+  opt=opt||{};
+  const cx=W/2,cy=W/2-14,R=W*0.28;
+  let s='<svg viewBox="0 0 '+W+' '+W+'" class="lab-svg"><rect x="0" y="0" width="'+W+'" height="'+W+'" rx="12" fill="#14213d"/>';
+  for(let i=0;i<12;i++){const a=starAng(i)*D2R;
+    s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+(cx+R*1.32*Math.cos(a))+'" y2="'+(cy-R*1.32*Math.sin(a))+'" stroke="#3d5a80" stroke-dasharray="2 3"/>';
+    s+='<text x="'+(cx+R*1.42*Math.cos(a))+'" y="'+(cy-R*1.42*Math.sin(a)+4)+'" font-size="12" font-weight="800" fill="'+(opt.mark===i?"#ffd43b":"#a5c8e4")+'" text-anchor="middle">'+STAR_L[i]+'</text>';}
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+(R*1.32)+'" fill="none" stroke="#3d5a80"/>';
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="4" fill="#fff"/><text x="'+cx+'" y="'+(cy+16)+'" font-size="10" fill="#fff" text-anchor="middle">北極星</text>';
+  if(opt.arrow){s+='<path d="M'+(cx+R*0.5)+','+(cy-R*0.18)+' A'+(R*0.53)+','+(R*0.53)+' 0 0 0 '+(cx+R*0.18)+','+(cy-R*0.5)+'" fill="none" stroke="#8ce99a" stroke-width="2" marker-end="url(#ah)"/><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8z" fill="#8ce99a"/></marker></defs>';}
+  s+=dipper(cx,cy,R,ang);
+  s+='<rect x="0" y="'+(W-22)+'" width="'+W+'" height="22" fill="#1b4332"/><text x="'+cx+'" y="'+(W-7)+'" font-size="12" font-weight="800" fill="#d8f3dc" text-anchor="middle">北</text>';
+  return s+'</svg>';
+}
+
+/* ---------- 50点コース：基礎用語（w=誤答解説、正解位置はnull） ---------- */
+const CH1 = [
+ {q:"太陽や星座の星のように、自ら光を出して輝いている天体を何という？",
+  c:["惑星","恒星","衛星","すい星"],a:1,
+  e:"自ら光を出して輝く天体＝<b>恒星</b>。太陽も恒星の1つ。",
+  w:["「惑星」は、恒星（太陽）のまわりを公転し、<b>太陽の光を反射して</b>光っている天体。自ら光は出さない。",null,
+     "「衛星」は、月のように<b>惑星のまわりを公転</b>している天体。自ら光は出さない。",
+     "「すい星」は、氷とちりでできた天体で、太陽に近づくと尾を引く。自ら光を出す天体ではない。"]},
+ {q:"天体の位置や動きを考えるために仮定した、観測者を中心とする見かけ上の大きな球面を何という？",
+  c:["天頂","地平線","天球","子午線"],a:2,
+  e:"観測者を中心とした、実際にはない大きな球面＝<b>天球</b>。星はすべてこの球面にはりついているように見える。",
+  w:["「天頂」は、天球上で<b>観測者の真上</b>にある1つの点。球面全体ではない。",
+     "「地平線」は、天球と地面（地平面）が交わる<b>線</b>。",null,
+     "「子午線」は、北極と南極を結ぶ経線（天球では真北・天頂・真南を通る線）。球面ではない。"]},
+ {q:"天球上で、観測者の真上にある点を何という？",
+  c:["天頂","南中","天の北極","赤道"],a:0,
+  e:"観測者の真上の点＝<b>天頂</b>。天頂の高度は<b>90°</b>。",
+  w:[null,"「南中」は、天体が<b>真南</b>にくること。点の名前ではない。",
+     "「天の北極」は、地軸を北へのばして天球と交わる点。<b>北極星</b>のすぐ近くで、観測者の真上ではない（北極点にいるときだけ真上）。",
+     "「赤道」は、地球の緯度0°の線。"]},
+ {q:"太陽が真南にくることを何という？",
+  c:["日周運動","日の出","南中","公転"],a:2,
+  e:"天体が真南にくる＝<b>南中</b>。太陽は南中したとき、1日でいちばん高くなる。",
+  w:["「日周運動」は、天体が1日に1回、東から西へ回るように見える<b>動き全体</b>のこと。",
+     "「日の出」は、太陽が<b>東の地平線から昇る</b>こと。",null,
+     "「公転」は、地球が太陽のまわりを<b>1年で1周</b>する運動。"]},
+ {q:"太陽が南中したときの、地平線からの太陽の角度を何という？",
+  c:["南中高度","緯度","方位","地軸の傾き"],a:0,
+  e:"南中したときの高度＝<b>南中高度</b>。高度は地平線から天体までの角度。",
+  w:[null,"「緯度」は、地球上の場所が赤道から南北にどれだけ離れているかを表す角度。南中高度を求めるときに使うが、別のもの。",
+     "「方位」は、東・西・南・北など<b>向き</b>のこと。角度の高さではない。",
+     "「地軸の傾き」は、公転面に垂直な方向に対して地軸が傾いている角度（約23.4°）。"]},
+ {q:"天体が、北極星付近を中心にして、東から西へ1日に1回転するように見える動きを何という？",
+  c:["年周運動","日周運動","自転","公転"],a:1,
+  e:"1日で1回転するように見える動き＝<b>日周運動</b>。これは地球の自転による<b>見かけの動き</b>。",
+  w:["「年周運動」は、同じ時刻に見える星座の位置が<b>1年かけて</b>移り変わる見かけの動き。",null,
+     "「自転」は、<b>地球自身</b>が地軸を中心に回転すること。日周運動の<b>原因</b>であって、見かけの動きの名前ではない。",
+     "「公転」は、地球が太陽のまわりを1年で1周すること。年周運動の原因。"]},
+ {q:"地球が、地軸を軸として西から東へ1日に1回転することを何という？",
+  c:["公転","日周運動","自転","南中"],a:2,
+  e:"地球自身が1日1回転＝<b>自転</b>。向きは<b>西から東</b>（北極側から見て反時計回り）。",
+  w:["「公転」は、太陽のまわりを<b>1年</b>で1周する運動。1日で1回転ではない。",
+     "「日周運動」は、自転によって天体が東から西へ動いて見える<b>見かけの動き</b>。地球の運動そのものではない。",null,
+     "「南中」は、天体が真南にくること。"]},
+ {q:"日周運動で、星は1時間に約何度動いて見える？",
+  c:["約1°","約15°","約30°","約360°"],a:1,
+  e:"地球は24時間で360°自転する → 360÷24＝<b>15°</b>。1時間に約15°動いて見える。",
+  w:["約1°は、<b>年周運動で1日に</b>動く角度（360°÷365日）。",null,
+     "約30°は、<b>年周運動で1か月に</b>動く角度（360°÷12か月）。",
+     "約360°は、<b>1日（24時間）</b>で動く角度。1時間ではない。"]},
+ {q:"北の空の星は、時間がたつとどのように動いて見える？",
+  c:["北極星を中心に、反時計回りに回転する","北極星を中心に、時計回りに回転する","東から昇り、南の空を通って西へ動く","地平線から右上に向かって動く"],a:0,
+  e:"北の空＝<b>北極星を中心に反時計回り</b>（1時間に約15°）。",
+  w:[null,"向きが逆。北の空を見たとき、星は<b>反時計回り</b>に回る。",
+     "これは<b>南の空</b>の星の動き。",
+     "これは<b>東の空</b>の星の動き。"]},
+ {q:"透明半球に太陽の位置を記録するとき、サインペンの先の影をどこに合わせて印をつける？",
+  c:["透明半球の縁","天頂","紙にかいた円の中心","真南の地平線"],a:2,
+  e:"ペン先の影が<b>円の中心（観測者の位置）</b>にくるようにして印をつける。中心から見た太陽の方向を記録するため。",
+  w:["縁は地平線にあたる部分。そこに影を合わせても太陽の位置は記録できない。",
+     "天頂は透明半球のてっぺんで、太陽がいつもそこにあるわけではない。",null,
+     "真南の地平線に合わせると、どの時刻も同じ点に向けてしまう。基準は<b>観測者の位置＝円の中心</b>。"]},
+];
+const CH2 = [
+ {q:"同じ時刻に見える星座の位置が、1年かけて東から西へ移り変わり、1年でもとの位置にもどる見かけの動きを何という？",
+  c:["日周運動","年周運動","自転","南中"],a:1,
+  e:"1年で1周する見かけの動き＝<b>年周運動</b>。原因は地球の<b>公転</b>。",
+  w:["「日周運動」は<b>1日</b>で1回転して見える動き（原因は自転）。",null,
+     "「自転」は地球自身が1日1回転すること。日周運動の原因。",
+     "「南中」は天体が真南にくること。"]},
+ {q:"地球が太陽を中心として、その周りを1年の周期で回る運動を何という？",
+  c:["自転","日周運動","公転","年周運動"],a:2,
+  e:"太陽のまわりを1年で1周＝<b>公転</b>。北極側から見て<b>反時計回り</b>（自転と同じ向き）。",
+  w:["「自転」は地軸を中心に<b>1日</b>で1回転すること。",
+     "「日周運動」は、自転によって天体が動いて見える<b>見かけの動き</b>。",null,
+     "「年周運動」は、公転によって星座や太陽が動いて見える<b>見かけの動き</b>。地球の運動そのものの名前ではない。"]},
+ {q:"同じ時刻に見える星座の位置は、1か月でおよそ何度移動する？",
+  c:["約1°","約15°","約23.4°","約30°"],a:3,
+  e:"1年（12か月）で360° → 360÷12＝<b>約30°</b>。1日では約1°。",
+  w:["約1°は<b>1日</b>に動く角度。",
+     "約15°は、日周運動で<b>1時間</b>に動く角度。",
+     "23.4°は<b>地軸の傾き</b>。星座の移動とは関係ない数字。",null]},
+ {q:"天球上での、太陽の見かけの通り道を何という？",
+  c:["赤道","黄道","子午線","地平線"],a:1,
+  e:"星座の間を動く太陽の通り道＝<b>黄道</b>。黄道上の星座を<b>黄道12星座</b>という。",
+  w:["「赤道」は地球の緯度0°の線。",null,
+     "「子午線」は真北・天頂・真南を通る線。",
+     "「地平線」は、天球と地面が交わる線。"]},
+ {q:"1年のうち、太陽の南中高度がいちばん高くなる日は？",
+  c:["春分の日","夏至の日","秋分の日","冬至の日"],a:1,
+  e:"南中高度が最も高い＝<b>夏至</b>（6月下旬）。昼の長さも最も長い。",
+  w:["春分の日の南中高度は、夏至と冬至のちょうど<b>中間</b>。",null,
+     "秋分の日も春分と同じく<b>中間</b>の高さ。",
+     "冬至は南中高度が<b>最も低い</b>日。"]},
+ {q:"1年のうち、昼の長さがいちばん短くなる日は？",
+  c:["春分の日","夏至の日","秋分の日","冬至の日"],a:3,
+  e:"昼が最も短い＝<b>冬至</b>（12月下旬）。南中高度も最も低い。",
+  w:["春分の日は、昼と夜の長さが<b>ほぼ同じ</b>。",
+     "夏至は昼が<b>最も長い</b>日。",
+     "秋分の日も昼と夜の長さが<b>ほぼ同じ</b>。",null]},
+ {q:"太陽が真東から昇り、真西に沈むのはいつ？",
+  c:["夏至の日","冬至の日","春分の日と秋分の日","1年中毎日"],a:2,
+  e:"真東→真西＝<b>春分・秋分</b>。夏至は北寄り（北東→北西）、冬至は南寄り（南東→南西）。",
+  w:["夏至の日は、真東より<b>北寄り</b>から昇り、真西より北寄りに沈む。",
+     "冬至の日は、真東より<b>南寄り</b>から昇り、真西より南寄りに沈む。",null,
+     "日の出・日の入りの位置は季節によって<b>変わる</b>。"]},
+ {q:"地球の地軸は、公転面に垂直な方向に対して約何度傾いている？",
+  c:["約23.4°","約35°","約66.6°","約90°"],a:0,
+  e:"地軸の傾き＝<b>約23.4°</b>。この傾きのせいで季節によって南中高度や昼の長さが変わる。",
+  w:[null,"35°は日本（北緯35°付近）の<b>緯度</b>の例。地軸の傾きではない。",
+     "66.6°は、地軸と<b>公転面</b>そのものとの間の角度（90°−23.4°）。「公転面に垂直な方向」に対しては23.4°。",
+     "90°傾いていたら地軸が公転面に寝てしまう。"]},
+ {q:"日本で、季節によって気温が変化するおもな理由はどれ？",
+  c:["太陽の南中高度と昼の長さが、季節によって変わるから","地球と太陽の距離が、季節によって大きく変わるから","太陽が出す光の量が、季節によって変わるから","地球の自転の速さが、季節によって変わるから"],a:0,
+  e:"南中高度が高いほど<b>同じ面積に受ける光の量が多く</b>、昼が長いほど<b>照らされる時間が長い</b> → 夏は気温が高くなる。",
+  w:[null,"よくある誤解。日本が夏のとき、地球は太陽から<b>むしろ少し遠い</b>。距離の変化は季節の原因ではない。",
+     "太陽が出す光の量は季節で変わらない。変わるのは<b>地面が受ける</b>光の量。",
+     "自転の速さは1年中ほぼ同じ（1日1回転）。"]},
+ {q:"北緯35°の地点で、春分・秋分の日の太陽の南中高度は何度？",
+  c:["35°","55°","78.4°","31.6°"],a:1,
+  e:"春分・秋分の南中高度＝<b>90°−緯度</b>＝90−35＝<b>55°</b>。",
+  w:["緯度の数字をそのまま答えている。南中高度は<b>90°から緯度を引く</b>。",null,
+     "78.4°は<b>夏至</b>の南中高度（55＋23.4）。",
+     "31.6°は<b>冬至</b>の南中高度（55−23.4）。"]},
+];
+const CH3 = [
+ {q:"月が光って見えるのはなぜ？",
+  c:["月が自ら光を出しているから","月が太陽の光を反射しているから","月が地球の光を反射しているから","月の内部の熱で光っているから"],a:1,
+  e:"月は自ら光を出さず、<b>太陽の光を反射</b>して光る。月の半分には常に太陽の光が当たっている。",
+  w:["自ら光を出すのは<b>恒星</b>（太陽など）。月は衛星で、自ら光らない。",null,
+     "月を照らしているのは<b>太陽</b>の光。",
+     "月は内部の熱で光ってはいない。"]},
+ {q:"月の満ち欠けの周期は約何日？",
+  c:["約1日","約7日","約29.5日","約365日"],a:2,
+  e:"新月→新月は<b>約29.5日</b>（約1か月）。月は約1か月で地球のまわりを公転する。",
+  w:["約1日は、地球の<b>自転</b>の周期。月が東から昇って西に沈む日周運動の周期。",
+     "約7日は、新月から<b>上弦の月</b>まで（4分の1）くらいの日数。",null,
+     "約365日は地球の<b>公転</b>の周期（1年）。"]},
+ {q:"夕方、南の空に見える、右半分が光った月を何という？",
+  c:["上弦の月","下弦の月","三日月","満月"],a:0,
+  e:"夕方南の空・<b>右（西）側が光る半月</b>＝<b>上弦の月</b>。下弦の月は明け方南の空で、左側が光る。",
+  w:[null,"下弦の月は<b>左（東）側</b>が光る半月で、<b>明け方</b>に南の空に見える。",
+     "三日月は細い月で、夕方<b>西の空</b>の低いところに見える。",
+     "満月は全体が光る月で、夕方は<b>東の空</b>から昇ってくる。"]},
+ {q:"毎日同じ時刻に月を観察すると、月の見える位置はどのように変わる？",
+  c:["東から西へ移っていく","西から東へ移っていく","毎日同じ位置に見える","北から南へ移っていく"],a:1,
+  e:"同じ時刻の月は、日がたつにつれて<b>西から東へ</b>移る（三日月は西、上弦は南、満月は東）。月が地球のまわりを公転しているため。",
+  w:["東から西へ動くのは、<b>1日の中</b>での月の動き（日周運動）。日を追って同じ時刻に見ると逆向き。",null,
+     "月は公転しているので、同じ時刻でも位置は<b>毎日変わる</b>。",
+     "月の位置は南北ではなく<b>東西</b>方向に変わっていく。"]},
+ {q:"北極側から見ると、月は地球のまわりをどの向きに公転している？",
+  c:["時計回り","反時計回り","向きは毎月変わる","公転していない"],a:1,
+  e:"月の公転は北極側から見て<b>反時計回り</b>（地球の自転・公転と同じ向き）。",
+  w:["逆。地球の自転・公転も月の公転も<b>反時計回り</b>（北極側から見て）。",null,
+     "公転の向きは<b>一定</b>。",
+     "月は約1か月で地球のまわりを<b>公転</b>している。だから満ち欠けする。"]},
+ {q:"太陽・月・地球の順に一直線に並び、太陽が月にかくされる現象を何という？",
+  c:["月食","日食","新月","満月"],a:1,
+  e:"太陽－<b>月</b>－地球の順＝<b>日食</b>。全体がかくれると皆既日食、一部なら部分日食、輪のようにはみ出すと金環日食。",
+  w:["月食は太陽－<b>地球</b>－月の順に並び、月が<b>地球の影</b>に入る現象。",null,
+     "日食のとき月は<b>新月</b>だが、「新月」は月の形の名前。新月のたびに日食が起こるわけではない。",
+     "満月のときに起こる可能性があるのは<b>月食</b>。"]},
+ {q:"太陽・地球・月の順に一直線に並び、月が地球の影に入る現象を何という？",
+  c:["日食","月食","上弦の月","金環日食"],a:1,
+  e:"太陽－<b>地球</b>－月の順＝<b>月食</b>。月が地球の影に入って欠けて見える。",
+  w:["日食は太陽－<b>月</b>－地球の順。月が太陽をかくす。",null,
+     "上弦の月は、月・地球・太陽が<b>直角</b>の位置関係のときの月の形。",
+     "金環日食は<b>日食</b>の一種（太陽が輪のようにはみ出して見える）。"]},
+ {q:"月食が起こるとき、月はどんな形の月の日？",
+  c:["新月","上弦の月","満月","下弦の月"],a:2,
+  e:"月食＝太陽－地球－月の順＝月は太陽の<b>反対側</b>＝<b>満月</b>のとき。",
+  w:["新月のときに起こる可能性があるのは<b>日食</b>。",
+     "上弦の月のとき、3つは一直線に並ばない。",null,
+     "下弦の月のときも、3つは一直線に並ばない。"]},
+ {q:"地球より内側を公転しているため、明け方の東の空か、夕方の西の空にしか見えない惑星は？",
+  c:["火星","金星","木星","土星"],a:1,
+  e:"地球の内側を公転する<b>金星</b>は、いつも太陽に近い方向にあるので、<b>真夜中には見えない</b>。",
+  w:["火星は地球の<b>外側</b>を公転する惑星。真夜中に見えることもある。",null,
+     "木星は地球の<b>外側</b>を公転。真夜中にも見える。",
+     "土星も地球の<b>外側</b>を公転。真夜中にも見える。"]},
+ {q:"夕方、西の空に見える金星を何という？",
+  c:["明けの明星","よいの明星","北極星","すい星"],a:1,
+  e:"夕方・西の空＝<b>よいの明星</b>。明け方・東の空に見える金星は<b>明けの明星</b>。",
+  w:["明けの明星は、<b>明け方・東の空</b>に見える金星。",null,
+     "北極星は北の空でほとんど動かない<b>恒星</b>。",
+     "すい星は、太陽に近づくと尾を引く氷とちりの天体。"]},
+];
+const CH4 = [
+ {q:"太陽の表面に見られる、黒いしみのような点を何という？",
+  c:["黒点","プロミネンス","コロナ","クレーター"],a:0,
+  e:"黒いしみのような点＝<b>黒点</b>。周りより温度が低い（約4000℃）ので黒く見える。",
+  w:[null,"「プロミネンス（紅炎）」は、太陽の表面から炎のように<b>ふき出す高温のガス</b>。",
+     "「コロナ」は、太陽の外側に広がる<b>高温でうすいガス</b>。",
+     "「クレーター」は、月などの表面にある<b>くぼみ</b>。"]},
+ {q:"黒点が黒く見えるのはなぜ？",
+  c:["周りより温度が低いから","周りより温度が高いから","太陽の表面に穴があいているから","月の影がうつっているから"],a:0,
+  e:"太陽の表面は約6000℃、黒点は約4000℃。<b>周りより温度が低い</b>ので暗く（黒く）見える。",
+  w:[null,"逆。温度が高いほど明るく光る。黒点は<b>低い</b>。",
+     "穴ではない。表面の<b>温度が低い部分</b>。",
+     "月の影が太陽をかくすのは<b>日食</b>。黒点は太陽表面そのものの模様。"]},
+ {q:"黒点を数日間観察すると、黒点が東から西へ移動していた。このことから分かることは？",
+  c:["太陽が自転していること","太陽が地球のまわりを公転していること","地球が自転していること","黒点が太陽の表面をすべるように動いていること"],a:0,
+  e:"黒点が同じ向きに少しずつ移動する → <b>太陽が自転している</b>（約25日で1回転・赤道付近）。",
+  w:[null,"太陽は地球のまわりを公転していない（公転しているのは<b>地球</b>）。",
+     "観察は毎日同じように太陽投影板に像をうつして記録しているので、地球の自転の影響ではない。",
+     "黒点はすべって動くのではなく、<b>太陽ごと回っている</b>。"]},
+ {q:"太陽の表面から、炎のようにふき出している高温のガスを何という？",
+  c:["コロナ","黒点","プロミネンス（紅炎）","太陽系外縁天体"],a:2,
+  e:"炎のようにふき出すガス＝<b>プロミネンス（紅炎）</b>（約10000℃）。",
+  w:["コロナは太陽の外側に<b>広がる</b>うすいガス（100万℃以上）。ふき出す炎の形ではない。",
+     "黒点は表面の<b>黒いしみ</b>のような部分。",null,
+     "太陽系外縁天体は、海王星の外側を公転する小天体（めい王星など）。"]},
+ {q:"太陽の外側に広がっている、高温でうすいガスの層を何という？",
+  c:["プロミネンス","コロナ","黒点","銀河"],a:1,
+  e:"外側に広がる高温・うすいガス＝<b>コロナ</b>（100万℃以上）。皆既日食のときによく見える。",
+  w:["プロミネンスは表面から<b>炎のようにふき出す</b>ガス。",null,
+     "黒点は表面の<b>温度が低い</b>部分。",
+     "銀河は、恒星などが数多く集まった<b>大集団</b>。"]},
+ {q:"水星・金星・地球・火星のように、小型で主に岩石からなり、密度が大きい惑星を何という？",
+  c:["木星型惑星","地球型惑星","小惑星","太陽系外縁天体"],a:1,
+  e:"小型・岩石・密度が大きい＝<b>地球型惑星</b>。木星・土星・天王星・海王星は<b>木星型惑星</b>。",
+  w:["木星型惑星は<b>大型</b>で、主に気体や氷からなり、<b>密度が小さい</b>。",null,
+     "小惑星は、主に<b>火星と木星の間</b>にある小さな天体（例：イトカワ）。",
+     "太陽系外縁天体は、<b>海王星の外側</b>を公転する小天体。"]},
+ {q:"主に火星と木星の間にある、たくさんの岩石質の小さな天体を何という？",
+  c:["衛星","すい星","小惑星","恒星"],a:2,
+  e:"火星と木星の間の小さな天体＝<b>小惑星</b>。はやぶさが探査した<b>イトカワ</b>が有名。",
+  w:["衛星は、<b>惑星のまわり</b>を公転する天体（月など）。",
+     "すい星は、氷とちりでできていて、太陽に近づくと<b>尾</b>を引く天体。",null,
+     "恒星は、<b>自ら光を出す</b>天体（太陽など）。"]},
+ {q:"氷と細かなちりでできており、細長いだ円軌道で太陽に近づくと尾を引くことがある天体を何という？",
+  c:["すい星","小惑星","衛星","惑星"],a:0,
+  e:"氷とちり・尾を引く＝<b>すい星</b>（例：ハレーすい星）。",
+  w:[null,"小惑星は<b>岩石質</b>で、尾は引かない。",
+     "衛星は惑星のまわりを公転する天体。",
+     "惑星は太陽のまわりを公転する大きな8つの天体。尾は引かない。"]},
+ {q:"太陽系をふくむ、約2000億個の恒星や天体からなる大集団を何という？",
+  c:["太陽系","銀河","銀河系","星団"],a:2,
+  e:"太陽系をふくむ大集団＝<b>銀河系</b>（直径約10万光年）。その外にある同じような集団が<b>銀河</b>（例：アンドロメダ銀河）。",
+  w:["太陽系は、太陽とそのまわりを回る惑星などの集まり。銀河系の<b>ほんの一部</b>。",
+     "「銀河」は、銀河系の<b>外</b>にある、銀河系と同じような大集団のこと。",null,
+     "星団は<b>恒星の集団</b>（例：すばる）。銀河系よりずっと小さい。"]},
+ {q:"光が1年間に進む距離を1として表す、恒星までの距離の単位を何という？",
+  c:["等級","光年","公転周期","南中高度"],a:1,
+  e:"光が1年間に進む距離＝<b>1光年</b>（約9兆4600億km）。",
+  w:["「等級」は恒星の<b>明るさ</b>の表し方。数値が小さいほど明るい。",null,
+     "「公転周期」は、1回公転するのにかかる<b>時間</b>。",
+     "「南中高度」は、南中したときの太陽の<b>角度</b>。"]},
+];
+const ALL50=[].concat(CH1,CH2,CH3,CH4);
+
+/* ---------- 70点コース：資料読み取り ---------- */
+function box(title,inner,src){return '<div class="shiryo-box"><div class="shiryo-title">'+title+'</div>'+inner+(src?'<div style="font-size:10px;color:#7a95a1;text-align:right;">'+src+'</div>':'')+'</div>';}
+
+/* 透明半球の記録（北緯35°・夏至）＋記号 */
+function domeFig(){
+  const W=360,H=245,R=140,cx=180,cy=165,lat=35,dec=23.4;
+  let s='<svg viewBox="0 0 '+W+' '+H+'">'+domeBase(R,cx,cy,{noLabel:true});
+  s+='<polyline points="'+polyPts(dayPath(lat,dec,R,cx,cy))+'" fill="none" stroke="#e8590c" stroke-width="2.4"/>';
+  for(let t=8;t<=16;t++){const p=domeP(sunVec(lat,dec,15*(t-12)),R,cx,cy);s+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="3.2" fill="#1c3a47"/>';}
+  const G=domeP(sunVec(lat,dec,0),R,cx,cy);
+  const pt={A:[cx-R,cy],B:[cx,cy+R*0.38],C:[cx+R,cy],D:[cx,cy-R*0.38]};
+  s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+G[0]+'" y2="'+G[1]+'" stroke="#1c3a47" stroke-dasharray="4 3"/>';
+  s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+(cx-R)+'" y2="'+cy+'" stroke="#1c3a47" stroke-width="1.6"/>';
+  const lb=(t,p,dx,dy)=>'<text x="'+(p[0]+dx)+'" y="'+(p[1]+dy)+'" font-size="14" font-weight="900" fill="#1491bd" text-anchor="middle">'+t+'</text>';
+  s+=lb("A",pt.A,-10,5)+lb("B",pt.B,0,17)+lb("C",pt.C,10,5)+lb("D",pt.D,10,-4)+lb("G",G,0,-9)+lb("O",[cx,cy],8,15);
+  s+='<circle cx="'+G[0]+'" cy="'+G[1]+'" r="5" fill="none" stroke="#e8590c" stroke-width="2"/>';
+  s+='</svg>';
+  return box("◆ある日の太陽の動きを透明半球に記録したもの（点は1時間ごと）",s,"A・B・C・Dは東西南北のいずれか。Gは太陽が最も高くなった位置、Oは円の中心");
+}
+/* 真横から見た3本の線 */
+function sideFig(){
+  const W=360,H=200,R=140,cx=180,cy=170,lat=35;
+  let s='<svg viewBox="0 0 '+W+' '+H+'">'+sideBase(R,cx,cy,false);
+  [["ア",23.4],["イ",0],["ウ",-23.4]].forEach(o=>{const L=sideLine(lat,o[1],R,cx,cy);
+    s+='<line x1="'+L[0][0]+'" y1="'+L[0][1]+'" x2="'+L[1][0]+'" y2="'+L[1][1]+'" stroke="#e8590c" stroke-width="2.4"/>';
+    s+='<text x="'+(L[1][0]+12)+'" y="'+(L[1][1]+2)+'" font-size="14" font-weight="900" fill="#1491bd">'+o[0]+'</text>';});
+  s+='</svg>';
+  return box("◆北緯35°の地点で、夏至・春分・冬至の太陽の動きを透明半球に記録し、真横（西）から見た図",s,"ア〜ウは、夏至・春分・冬至のいずれか");
+}
+/* 南中高度の1年の変化グラフ */
+function altGraph(){
+  const W=360,H=210,x0=42,y0=180,gw=300,gh=150;
+  let s='<svg viewBox="0 0 '+W+' '+H+'"><rect x="'+x0+'" y="'+(y0-gh)+'" width="'+gw+'" height="'+gh+'" fill="#fbfeff" stroke="#cfe6f0"/>';
+  for(let v=30;v<=80;v+=10){const y=y0-(v-25)/60*gh;s+='<line x1="'+x0+'" y1="'+y+'" x2="'+(x0+gw)+'" y2="'+y+'" stroke="#e1edf2"/><text x="'+(x0-6)+'" y="'+(y+4)+'" font-size="10" text-anchor="end" fill="#5b7884">'+v+'</text>';}
+  for(let m=1;m<=12;m++){const x=x0+(m-0.5)/12*gw;s+='<text x="'+x+'" y="'+(y0+14)+'" font-size="10" text-anchor="middle" fill="#5b7884">'+m+'</text>';}
+  const pts=[];for(let k=0;k<=120;k++){const m=k/10;const dec=23.4*Math.sin(2*Math.PI*(m-2.67)/12);const a=90-35+dec;pts.push([x0+m/12*gw,y0-(a-25)/60*gh]);}
+  s+='<polyline points="'+polyPts(pts)+'" fill="none" stroke="#e8590c" stroke-width="2.4"/>';
+  s+='<text x="'+(x0+gw)+'" y="'+(y0+28)+'" font-size="10" text-anchor="end" fill="#5b7884">（月）</text><text x="8" y="'+(y0-gh-6)+'" font-size="10" fill="#5b7884">南中高度〔度〕</text></svg>';
+  return box("◆北緯35°の地点での、太陽の南中高度の1年間の変化",s);
+}
+/* 星時計（a〜l） */
+function starFig(){return box("◆北の空。北極星を中心に空を12等分し、a〜lの記号をつけた（星Aは北斗七星の星）",starClock(300,starAng(0),{}),"ある日の午後8時、星Aはaの位置に見えた");}
+/* 月の公転（北極側から） */
+function moonOrbitFig(){
+  const W=360,H=250,cx=165,cy=125,R=88;
+  let s='<svg viewBox="0 0 '+W+' '+H+'">';
+  for(let y=40;y<=210;y+=34)s+='<line x1="'+(W-8)+'" y1="'+y+'" x2="'+(W-52)+'" y2="'+y+'" stroke="#f59f00" stroke-width="2" marker-end="url(#sa)"/>';
+  s+='<defs><marker id="sa" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8z" fill="#f59f00"/></marker></defs>';
+  s+='<text x="'+(W-30)+'" y="'+(H-8)+'" font-size="11" font-weight="800" fill="#e67700" text-anchor="middle">太陽の光</text>';
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+R+'" fill="none" stroke="#9ec5dd" stroke-dasharray="4 3"/>';
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="20" fill="#74c0fc"/><path d="M'+cx+','+(cy-20)+' A20,20 0 0 0 '+cx+','+(cy+20)+'z" fill="#1c3a47" opacity=".75"/><text x="'+cx+'" y="'+(cy+34)+'" font-size="10" font-weight="800" text-anchor="middle">地球</text>';
+  const labs="ABCDEFGH";
+  for(let i=0;i<8;i++){const th=90-45*i;const x=cx+R*Math.cos(th*D2R),y=cy-R*Math.sin(th*D2R);
+    s+='<circle cx="'+x+'" cy="'+y+'" r="10" fill="#3b4a5a"/><path d="M'+x+','+(y-10)+' A10,10 0 0 1 '+x+','+(y+10)+'z" fill="#ffd43b"/>';
+    s+='<text x="'+(cx+(R+20)*Math.cos(th*D2R))+'" y="'+(cy-(R+20)*Math.sin(th*D2R)+5)+'" font-size="13" font-weight="900" fill="#1491bd" text-anchor="middle">'+labs[i]+'</text>';}
+  s+='<path d="M'+(cx-R-26)+','+(cy+30)+' A'+(R+26)+','+(R+26)+' 0 0 0 '+(cx-R+4)+','+(cy+R-20)+'" fill="none" stroke="#1491bd" stroke-width="1.5" marker-end="url(#mo)"/><defs><marker id="mo" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8z" fill="#1491bd"/></marker></defs>';
+  s+='<text x="12" y="'+(cy+R+12)+'" font-size="10" fill="#1491bd">公転の向き</text></svg>';
+  return box("◆北極側から見た、地球と月の位置関係（A〜Hは月の位置）",s);
+}
+/* 金星の位置（北極側から） */
+const VEN_POS=[["ア",-130],["イ",160],["ウ",-50],["エ",20]];
+function venusFig(){
+  const W=360,H=250,cx=180,cy=118,RE=100,RV=72;
+  let s='<svg viewBox="0 0 '+W+' '+H+'">';
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+RE+'" fill="none" stroke="#9ec5dd" stroke-dasharray="4 3"/><circle cx="'+cx+'" cy="'+cy+'" r="'+RV+'" fill="none" stroke="#e599f7" stroke-dasharray="4 3"/>';
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="11" fill="#ffa94d"/><text x="'+cx+'" y="'+(cy+4)+'" font-size="9" font-weight="800" text-anchor="middle">太陽</text>';
+  const E=[cx,cy+RE];
+  s+='<circle cx="'+E[0]+'" cy="'+E[1]+'" r="9" fill="#74c0fc"/><text x="'+E[0]+'" y="'+(E[1]+22)+'" font-size="10" font-weight="800" text-anchor="middle">地球</text>';
+  VEN_POS.forEach(v=>{const x=cx+RV*Math.cos(v[1]*D2R),y=cy-RV*Math.sin(v[1]*D2R);
+    s+='<circle cx="'+x+'" cy="'+y+'" r="6" fill="#e599f7"/><text x="'+(cx+(RV-17)*Math.cos(v[1]*D2R))+'" y="'+(cy-(RV-17)*Math.sin(v[1]*D2R)+5)+'" font-size="13" font-weight="900" fill="#1491bd" text-anchor="middle">'+v[0]+'</text>';});
+  s+='<text x="'+(cx-RE-4)+'" y="'+(cy-RE+18)+'" font-size="10" fill="#7a95a1" text-anchor="middle">金星の軌道</text>';
+  s+='<text x="'+(E[0]-16)+'" y="'+(E[1]+4)+'" font-size="10.5" font-weight="800" fill="#1491bd" text-anchor="end">← 夕方</text><text x="'+(E[0]+16)+'" y="'+(E[1]+4)+'" font-size="10.5" font-weight="800" fill="#1491bd">明け方 →</text>';
+  s+='</svg>';
+  return box("◆北極側から見た、太陽・金星・地球の位置関係（ア〜エは金星の位置）",s,"地球の自転の向きは反時計回り");
+}
+function planetTable(){
+  const d=[["水星","0.38","5.43","0.24"],["金星","0.95","5.24","0.62"],["地球","1.00","5.51","1.00"],["火星","0.53","3.93","1.88"],["木星","11.21","1.33","11.86"],["土星","9.45","0.69","29.46"],["天王星","4.01","1.27","84.0"],["海王星","3.88","1.64","164.8"]];
+  return box("◆太陽系の惑星（太陽に近い順）",'<table class="shiryo-table"><tr><th>惑星</th><th>直径<br>（地球＝1）</th><th>密度<br>〔g/cm³〕</th><th>公転周期<br>〔年〕</th></tr>'+d.map(r=>'<tr><td><b>'+r[0]+'</b></td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+r[3]+'</td></tr>').join("")+'</table>');
+}
+function tapeFig(){
+  return box("◆透明半球の曲線に紙テープを当てて、印を写しとったもの（ある日）",
+  '<svg viewBox="0 0 360 80"><rect x="6" y="22" width="348" height="22" rx="3" fill="#fff9db" stroke="#c9a227"/>'+
+  [0,1,2,3].map(i=>{const x=153+i*40;return '<circle cx="'+x+'" cy="33" r="3.5" fill="#1c3a47"/><text x="'+x+'" y="16" font-size="11" text-anchor="middle">'+(9+i)+'時</text>';}).join("")+
+  '<line x1="6" y1="52" x2="153" y2="52" stroke="#1491bd"/><text x="80" y="66" font-size="12" font-weight="800" fill="#1491bd" text-anchor="middle">9.9cm</text>'+
+  '<line x1="153" y1="52" x2="193" y2="52" stroke="#e8590c"/><text x="173" y="66" font-size="12" font-weight="800" fill="#e8590c" text-anchor="middle">2.7cm</text>'+
+  '<text x="10" y="76" font-size="10" fill="#5b7884">↑東の縁（日の出の位置）</text></svg>',"1時間ごとの印の間隔はどこも2.7cm");
+}
+
+/* kind:"num"…blanks:[{l,a,u,tol,miss:{誤答値:解説}}] / kind:"order"…items:[正しい順] */
+const Q70 = [
+ {sh:domeFig,
+  q:"資料で、この日の太陽の南中高度を表す角はどれ？",
+  c:["∠AOG","∠COG","∠BOG","∠GOD"],a:0,
+  e:"太陽は<b>南</b>の空で最も高くなる → Aが<b>南</b>。南中高度は「南の地平線」から太陽までの角＝<b>∠AOG</b>。",
+  w:[null,"Cは<b>北</b>。南中高度は<b>南</b>の地平線（A）から測る。∠COGは北側から測った角になってしまう。",
+     "Bは<b>東</b>（日の出側）。南中高度は南の地平線からの角。",
+     "Dは<b>西</b>。南中高度は南の地平線からの角。"]},
+ {kind:"num",sh:tapeFig,
+  q:"資料から、この日の日の出の時刻を求めなさい。",
+  blanks:[{l:"時",a:5,u:"時",miss:{"6":"9.9÷2.7＝3.66…時間＝<b>3時間40分</b>。9時から引くと5時20分。時間の割り算のあとの<b>分への直し方</b>を確認しよう。","3":"「何時間前か」（3時間40分）をそのまま答えている。<b>9時から引く</b>。"}},
+          {l:"分",a:20,u:"分",miss:{"40":"40分は「9時の何時間<b>何分前</b>か」の分の部分。9時−3時間40分＝<b>5時20分</b>。","66":"3.66…時間の小数部分をそのまま分にしている。0.66…時間×60＝<b>40分</b>。"}}],
+  e:"1時間＝2.7cm なので、9.9÷2.7＝3.66…時間＝<b>3時間40分</b>。日の出は 9時の3時間40分前＝<b>5時20分</b>。"},
+ {kind:"num",
+  q:"北緯36°の地点で、夏至の日の太陽の南中高度は何度か。（地軸の傾きは23.4°とする）",
+  blanks:[{l:"",a:77.4,u:"°",tol:0.05,miss:{"54":"54°は<b>春分・秋分</b>の南中高度（90−36）。夏至は23.4°<b>足す</b>。","30.6":"30.6°は<b>冬至</b>（54−23.4）。夏至は足す。","36":"緯度をそのまま答えている。","59.4":"36に23.4を足している。90から緯度を引いた54°に23.4°を足す。"}}],
+  e:"春分・秋分＝90−36＝54°。夏至は＋23.4° → 54＋23.4＝<b>77.4°</b>。"},
+ {kind:"num",sh:domeFig,
+  q:"資料の透明半球で、Aから天頂を通ってCまでの曲線の長さは50.0cm、AからGまでの曲線の長さは20.0cmだった。この日の南中高度は何度か。",
+  blanks:[{l:"",a:72,u:"°",tol:0.05,miss:{"20":"長さ（cm）をそのまま答えている。長さを<b>角度に直す</b>。","144":"A〜Cの半円を<b>360°</b>として計算している。半円は<b>180°</b>。","40":"20÷50を<b>100倍</b>（%）している。180°にかける。"}}],
+  e:"A→天頂→C は半円＝<b>180°</b>。20.0÷50.0×180＝<b>72°</b>。"},
+ {sh:sideFig,
+  q:"資料で、冬至の日の太陽の動きを表している線はどれ？",
+  c:["ア","イ","ウ","どれも同じ線になる"],a:2,
+  e:"冬至は南中高度が<b>最も低い</b> → 一番下の<b>ウ</b>。3本の線は<b>平行</b>で、季節によって高さだけがずれる。",
+  w:["アは南中高度が<b>最も高い</b>線＝<b>夏至</b>。","イは真ん中＝<b>春分・秋分</b>（地平線と交わる点が円の中心＝真東・真西）。",null,
+     "季節によって南中高度が変わるので、線の<b>高さ</b>がちがう。傾きだけが同じ（平行）。"]},
+ {sh:altGraph,
+  q:"もし地軸が公転面に対して垂直だったとすると、資料のグラフはどうなると考えられるか。",
+  c:["1年中55°の、水平な直線になる","山がもっと高く、谷がもっと深くなる","山と谷の月が入れかわる","1年中90°の、水平な直線になる"],a:0,
+  e:"地軸が傾いていなければ、1年中<b>春分・秋分と同じ</b>状態 → 南中高度は 90−35＝<b>55°で一定</b>。季節の変化もなくなる。",
+  w:[null,"変化の大きさは<b>地軸の傾き</b>で決まる。傾きがなくなれば変化そのものがなくなる。",
+     "傾きがなければ、夏・冬という区別がなくなる。入れかわるのではない。",
+     "90°になるのは<b>赤道上</b>の春分・秋分。北緯35°では 90−35＝55°。"]},
+ {
+  q:"同じ時刻にオリオン座を観察すると、1か月後にはどの向きに約何度移動して見えるか。",
+  c:["東から西へ約30°","西から東へ約30°","東から西へ約15°","東から西へ約1°"],a:0,
+  e:"年周運動：同じ時刻の星座は<b>東から西へ、1か月で約30°</b>（360°÷12か月）。地球の<b>公転</b>による見かけの動き。",
+  w:[null,"向きが逆。星座は日周運動と同じく<b>東から西へ</b>ずれていく。",
+     "約15°は、日周運動で<b>1時間</b>に動く角度。",
+     "約1°は、<b>1日</b>で動く角度。1か月では約30°。"]},
+ {kind:"order",
+  q:"透明半球を使って太陽の1日の動きを記録する手順を、正しい順にタップして並べなさい。",
+  items:["紙に透明半球と同じ大きさの円をかき、中心に印をつけて方位を記入する","透明半球を円に合わせて固定し、方位を合わせて日当たりのよい水平な場所に置く","1時間ごとに、ペン先の影が円の中心にくる位置に印をつけ、時刻を記入する","記録した点をなめらかな線で結び、透明半球の縁までのばす","紙テープを曲線に当てて点を写しとり、点の間隔をはかる"],
+  e:"<b>円をかく → 透明半球を固定 → 1時間ごとに記録 → 線で結んで縁までのばす → テープで間隔をはかる</b>。縁までのばした点が<b>日の出・日の入りの位置</b>。",
+  w:"「点を結ぶ」は記録が<b>全部終わってから</b>。テープで間隔をはかるのは、曲線を縁までのばしたあと（日の出・日の入りの時刻を求めるため）。"},
+ {kind:"order",
+  q:"北緯35°の地点で、夏至の日の太陽が動いて見える順に、タップして並べなさい。",
+  items:["北東の地平線から昇る","南東の空を通る","南の空で最も高くなる（南中）","南西の空を通る","北西の地平線に沈む"],
+  e:"夏至は<b>北寄り（北東）から昇り</b>、南の空で南中し、<b>北寄り（北西）に沈む</b>。東→南→西の順は1年中同じ。",
+  w:"太陽は<b>東→南→西</b>の順に動く。夏至は昇る・沈む位置が<b>北寄り</b>（冬至は南寄り）。"},
+ {kind:"num",sh:starFig,
+  q:"この日の夜、星Aがcの位置に見えるのは、午後8時から何時間後か。",
+  blanks:[{l:"",a:4,u:"時間後",miss:{"2":"1時間に<b>30°</b>と考えている。日周運動は1時間に<b>15°</b>。","60":"角度（60°）を答えている。15°で1時間なので<b>60÷15</b>。","20":"<b>時計回り</b>に数えている。北の空の星は<b>反時計回り</b>（a→b→c）。"}}],
+  e:"aからcは<b>反時計回りに2目もり＝60°</b>。日周運動は1時間に15° → 60÷15＝<b>4時間後</b>。"},
+];
+
+const Q70B = [
+ {sh:moonOrbitFig,
+  q:"資料で、夕方、南の空に上弦の月が見えるのは、月がどの位置にあるときか。",
+  c:["A","C","E","G"],a:0,
+  e:"太陽の光が右から当たる図で、<b>Aの月</b>は地球から見ると<b>右半分</b>が光る＝上弦の月。夕方をむかえている地点（地球の上側）から見ると、南の空にある。",
+  w:[null,"Cは太陽と同じ方向＝<b>新月</b>。見えない。",
+     "Eは月の<b>左半分</b>が光って見える＝<b>下弦の月</b>（明け方に南の空）。",
+     "Gは太陽と反対側＝<b>満月</b>。夕方は東の空から昇ってくる。"]},
+ {kind:"order",
+  q:"毎日夕方の同じ時刻に月を観察した。見える月を、日がたつ順にタップして並べなさい。",
+  items:["西の空の細い三日月","南西の空の、半分より少し細い月","南の空の上弦の月","南東の空の、満月に近い月","東の空の満月"],
+  e:"同じ時刻の月は、日がたつにつれて<b>西→南→東</b>へ移り、形は<b>三日月→上弦→満月</b>と満ちていく。",
+  w:"位置は<b>西から東へ</b>移る（1日の中の動きとは逆）。形は細い→半月→まる、と満ちていく順。"},
+ {kind:"order",
+  q:"新月から次の新月までの月の満ち欠けを、正しい順にタップして並べなさい。",
+  items:["新月","三日月","上弦の月","満月","下弦の月"],
+  e:"<b>新月 → 三日月 → 上弦の月（右半分） → 満月 → 下弦の月（左半分） → 新月</b>。約29.5日の周期。",
+  w:"上弦（右半分が光る）は満月<b>の前</b>、下弦（左半分）は満月<b>のあと</b>。"},
+ {sh:venusFig,
+  q:"資料で、夕方の西の空に見え、しかも最も大きく見えて大きく欠けているのは、金星がどの位置にあるときか。",
+  c:["ア","イ","ウ","エ"],a:0,
+  e:"図の<b>左側（ア・イ）</b>が夕方西の空＝よいの明星。そのうち地球に<b>近い</b>アは、<b>大きく見えて大きく欠ける</b>。",
+  w:[null,"イも夕方西の空に見えるが、地球から<b>遠い</b>ので小さく、あまり欠けない（半月より丸い形）。",
+     "ウは図の<b>右側</b>＝<b>明け方の東の空</b>（明けの明星）。",
+     "エも<b>明け方の東の空</b>。地球から遠いので小さく、丸に近い形。"]},
+ {sh:venusFig,
+  q:"資料で、明け方の東の空に見える金星の位置の組み合わせはどれ？",
+  c:["アとイ","ウとエ","アとウ","イとエ"],a:1,
+  e:"地球の自転は反時計回り。図の<b>右側（ウ・エ）</b>の金星は、<b>明け方の東の空</b>に見える＝明けの明星。",
+  w:["アとイは図の<b>左側</b>＝<b>夕方の西の空</b>（よいの明星）。",null,
+     "アは夕方、ウは明け方。左右で分けて考える。",
+     "イは夕方、エは明け方。"]},
+ {sh:planetTable,
+  q:"資料から読み取れることとして、正しいものはどれ？",
+  c:["太陽から遠い惑星ほど、公転周期が長い","直径が大きい惑星ほど、密度も大きい","地球型惑星は、どれも地球より直径が大きい","密度が水（1.0g/cm³）より小さい惑星は1つもない"],a:0,
+  e:"公転周期は 水星0.24年 → 海王星164.8年と、<b>太陽から遠いほど長い</b>。",
+  w:[null,"逆。直径の大きい<b>木星型惑星</b>のほうが<b>密度は小さい</b>（木星1.33、土星0.69）。",
+     "水星（0.38）・金星（0.95）・火星（0.53）は地球より<b>小さい</b>。",
+     "<b>土星</b>は0.69g/cm³で、水より小さい。"]},
+ {kind:"num",sh:starFig,
+  q:"星Aが午後10時にkの位置に見えるのは、資料の日から約何か月後か。",
+  blanks:[{l:"",a:9,u:"か月後",miss:{"10":"aからkの<b>300°</b>を全部「月」で動かしている。午後8時→10時の<b>2時間分（30°）</b>も反時計回りに進むので、その分を引く。","11":"2時間分（30°）を<b>足して</b>いる。時刻がおそくなる分も同じ向きに進むので、月の分は<b>少なくてよい</b>。","2":"<b>時計回り</b>に数えている。星は反時計回り（a→b→c…）。"}}],
+  e:"a→kは反時計回りに10目もり＝<b>300°</b>。午後8時→10時の2時間で<b>30°</b>進むので、残り270°を年周運動（1か月30°）で動かす → 270÷30＝<b>9か月後</b>。"},
+ {kind:"num",
+  q:"ある星座が、1月15日の午後10時に南中した。2月15日に同じ星座が南中するのは、午後何時ごろか。",
+  blanks:[{l:"午後",a:8,u:"時ごろ",miss:{"12":"1か月で2時間<b>おそく</b>なると考えている。同じ位置にくる時刻は1か月で約2時間<b>早く</b>なる。","9":"1か月で1時間と考えている。1か月で30°＝日周運動の<b>2時間</b>分。","10":"年周運動で、同じ時刻に見える位置は1か月で約30°西へずれる。南中する時刻は<b>変わる</b>。"}}],
+  e:"1か月で星座は約30°西へずれる＝日周運動の<b>2時間分</b>早く同じ位置にくる。午後10時−2時間＝<b>午後8時ごろ</b>。"},
+ {kind:"num",
+  q:"黒点の観察から、太陽は赤道付近で約25日かけて1回自転していることが分かった。太陽は1日に約何度自転しているか。",
+  blanks:[{l:"",a:14.4,u:"°",tol:0.05,miss:{"15":"15°は地球の自転で、星が<b>1時間</b>に動く角度。","25":"日数をそのまま答えている。360°を25日で<b>割る</b>。","1":"1°は、地球の公転で星座が<b>1日</b>に動く角度。"}}],
+  e:"1回転＝360°。360÷25＝<b>14.4°</b>。"},
+ {kind:"order",sh:planetTable,
+  q:"次の惑星を、太陽に近い順にタップして並べなさい。",
+  items:["金星","地球","火星","木星","土星"],
+  e:"<b>水星 → 金星 → 地球 → 火星 → 木星 → 土星 → 天王星 → 海王星</b>。「すい・きん・ち・か・もく・ど・てん・かい」。",
+  w:"地球の<b>内側</b>は水星・金星、<b>外側</b>は火星から。火星と木星の間に<b>小惑星</b>が多い。"},
+];
+
+/* ---------- 90点コース：説明・記述（部品をすべて選ぶ） ---------- */
+const Q90 = [
+ {q:"「太陽が東から西へ動いて見える理由」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"地球が、地軸を中心に西から東へ自転している",ok:true,fb:"原因の中心。向きは<b>西から東</b>（北極側から見て反時計回り）。"},
+   {t:"そのため、太陽は東から西へ動くように見える（見かけの動き）",ok:true,fb:"結論。太陽が動いているのではなく<b>見かけの動き</b>＝日周運動。"},
+   {t:"地球は1日に1回自転するので、太陽は1時間に約15°ずつ動いて見える",ok:true,fb:"数値まで書けると説明が厚くなる（360°÷24時間＝15°）。"},
+   {t:"太陽が、地球のまわりを東から西へ回っているから",ok:false,fb:"太陽は地球のまわりを回っていない。動いているのは<b>地球（自転）</b>。"},
+   {t:"地球が、太陽のまわりを公転しているから",ok:false,fb:"公転は<b>年周運動</b>（1年での星座や太陽の移り変わり）の原因。1日の動きの原因は<b>自転</b>。"},
+  ],
+  m:"①地球が地軸を中心に西から東へ1日に1回自転しているため、②太陽は東から西へ動くように見える。③1時間あたりでは約15°ずつ動いて見える。"},
+ {q:"「透明半球上に、サインペンで太陽の位置を記録する方法」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"サインペンの先の影が、円の中心（O）にくるようにする",ok:true,fb:"一番大事な操作。中心＝<b>観測者の位置</b>。"},
+   {t:"その位置で、透明半球に印をつける",ok:true,fb:"影を中心に合わせた<b>その点</b>が、観測者から見た太陽の方向。"},
+   {t:"印のそばに時刻を記入する",ok:true,fb:"1時間ごとの印と時刻があるから、あとで間隔から日の出・日の入りの時刻を計算できる。"},
+   {t:"太陽を直接見ながら、ペン先を太陽に重ねて印をつける",ok:false,fb:"太陽を<b>直接見てはいけない</b>（目をいためる）。影を使うのはそのため。"},
+   {t:"ペンの影が、透明半球の縁にくるようにする",ok:false,fb:"縁は地平線。影を合わせるのは<b>円の中心</b>。"},
+  ],
+  m:"①サインペンの先の影が円の中心Oにくるようにして、②その位置で透明半球に印をつけ、③時刻を記入する。"},
+ {q:"「同じ日に、北緯31°の地点より北にある北緯40°の地点で太陽の動きを記録すると、記録がどう変わるか（夏の日）」を説明したい。正しい部品を【すべて】選びなさい。",
+  c:[
+   {t:"南中高度は低くなる",ok:true,fb:"春分・秋分なら 90−緯度。緯度が大きいほど<b>南中高度は低い</b>。"},
+   {t:"日の出の位置・日の入りの位置は、より北寄りになる",ok:true,fb:"夏の日は、緯度が高いほど日の出・日の入りの位置が<b>北寄り</b>になる（昼も長くなる）。"},
+   {t:"南中高度は高くなる",ok:false,fb:"逆。北へ行くほど太陽は<b>低く</b>なる。"},
+   {t:"日の出・日の入りの位置は、まったく変わらない",ok:false,fb:"緯度が変わると、日の出・日の入りの位置も<b>変わる</b>。"},
+   {t:"太陽の通り道は、北緯31°のときと平行なまま高さだけ変わる",ok:false,fb:"平行に高さだけ変わるのは<b>同じ地点で季節が変わるとき</b>。緯度が変わると<b>傾き</b>が変わる。"},
+  ],
+  m:"北緯40°の地点では、北緯31°の地点に比べて、①南中高度は低くなり、②日の出の位置と日の入りの位置はより北寄りになる。"},
+ {q:"「季節によって、太陽の1日の動きが変化する理由」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"地球は、地軸を公転面に垂直な方向から約23.4°傾けたまま公転している",ok:true,fb:"原因の中心。「<b>傾けたまま公転</b>」がキーワード。"},
+   {t:"そのため、季節によって太陽の南中高度が変わる",ok:true,fb:"結果①。夏至で最も高く、冬至で最も低い。"},
+   {t:"また、日の出・日の入りの位置や昼の長さも変わる",ok:true,fb:"結果②。夏は北寄りから昇って昼が長い。"},
+   {t:"季節によって、地球と太陽の距離が大きく変わるから",ok:false,fb:"よくある誤解。距離の変化は季節の原因<b>ではない</b>。"},
+   {t:"季節によって、地球の自転の速さが変わるから",ok:false,fb:"自転の速さは1年中ほぼ同じ。"},
+  ],
+  m:"①地球が地軸を公転面に垂直な方向から約23.4°傾けたまま公転しているため、②季節によって太陽の南中高度や、③日の出・日の入りの位置、昼の長さが変化する。"},
+ {q:"「日本で、夏に気温が高くなる理由」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"夏は太陽の南中高度が高い",ok:true,fb:"理由①の前半。"},
+   {t:"南中高度が高いと、同じ面積の地面が受ける光の量が多くなる",ok:true,fb:"理由①の後半。光が<b>垂直に近く</b>当たるほど、せまい面積に光が集まる。"},
+   {t:"夏は昼の時間が長く、地面が太陽に照らされる時間が長い",ok:true,fb:"理由②。南中高度とセットで書くと満点。"},
+   {t:"夏は地球が太陽に最も近づくから",ok:false,fb:"日本の夏、地球は太陽から<b>やや遠い</b>位置にある。距離は関係ない。"},
+   {t:"夏は太陽の黒点が少なくなり、太陽が明るくなるから",ok:false,fb:"黒点の数と日本の季節は関係ない。"},
+  ],
+  m:"夏は①太陽の南中高度が高いので、②同じ面積の地面が受ける光の量が多くなり、③さらに昼の時間が長く、地面が照らされる時間も長いため、気温が高くなる。"},
+ {q:"「季節によって、夜に見える星座が変わる理由」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"地球が、太陽のまわりを1年で1周公転している",ok:true,fb:"原因。年周運動の原因は<b>公転</b>。"},
+   {t:"地球の位置が変わるので、太陽と反対側（真夜中に南の空）に見える星座が変わっていく",ok:true,fb:"しくみ。太陽と同じ方向の星座は<b>昼の空</b>にあって見えない。"},
+   {t:"同じ時刻に見える星座の位置は、1か月に約30°東から西へ移る",ok:true,fb:"数値つきの説明。360°÷12か月＝30°。"},
+   {t:"地球が地軸を中心に自転しているから",ok:false,fb:"自転は<b>1日</b>の動き（日周運動）の原因。季節の変化の原因ではない。"},
+   {t:"星座をつくる星そのものが、季節ごとに宇宙空間を移動しているから",ok:false,fb:"星座の星は非常に遠く、1年でほとんど動かない。動いているのは<b>地球</b>。"},
+  ],
+  m:"①地球が太陽のまわりを1年で1周公転しているので、②地球から見て太陽と反対側にある、夜に見える星座が変わっていく。③同じ時刻に見える星座の位置は、1か月に約30°ずつ東から西へ移る。"},
+ {q:"「時間がたっても、北極星の位置がほとんど変わらない理由」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"北極星は、地軸を北に延長した方向（天の北極付近）にある",ok:true,fb:"理由の中心。"},
+   {t:"地球は地軸を中心に自転しているので、地軸の延長線上の星は動かないように見える",ok:true,fb:"回転の中心にあるものは回っても位置が変わらない。"},
+   {t:"北極星は、地球の自転と同じ速さで動いているから",ok:false,fb:"北極星が動いているのではない。<b>回転の中心</b>にあるから動かないように見える。"},
+   {t:"北極星は、地球からとても近いところにある恒星だから",ok:false,fb:"北極星もとても<b>遠い</b>恒星。距離は理由ではない。"},
+   {t:"北極星は、自ら光を出さない惑星だから",ok:false,fb:"北極星は<b>恒星</b>。"},
+  ],
+  m:"①北極星は地軸を北に延長した方向（天の北極付近）にあり、②地球は地軸を中心に自転しているので、時間がたっても位置がほとんど変わらないように見える。"},
+ {q:"「もし地軸が公転面に対して垂直だったら、北緯35°の地点で1年の太陽の動きはどうなるか」を説明したい。正しい部品を【すべて】選びなさい。",
+  c:[
+   {t:"南中高度は1年中変わらず、春分・秋分の日と同じ55°になる",ok:true,fb:"傾きがなければ1年中「春分・秋分」の状態。90−35＝55°。"},
+   {t:"昼と夜の長さは、1年中ほぼ同じになる",ok:true,fb:"昼の長さの変化も地軸の傾きが原因。"},
+   {t:"季節による気温の変化は、ほとんどなくなる",ok:true,fb:"南中高度も昼の長さも変わらないので、季節の変化が起こらない。"},
+   {t:"夏至の日の南中高度が、今よりも高くなる",ok:false,fb:"傾きがなければ「夏至」で高くなること自体がなくなる。"},
+   {t:"昼の長さの変化が、今よりも大きくなる",ok:false,fb:"逆。変化が<b>なくなる</b>。"},
+  ],
+  m:"地軸が公転面に垂直だと、①南中高度は1年中、春分・秋分と同じ55°で変わらず、②昼と夜の長さも1年中ほぼ同じになるので、③季節による気温の変化はほとんどなくなる。"},
+ {q:"「北緯35°の地点で、夏至の日の南中高度の求め方」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"春分・秋分の日の南中高度は、90°−緯度で求められる",ok:true,fb:"基準。90−35＝55°。"},
+   {t:"夏至の日は、地軸の傾きの23.4°を足す",ok:true,fb:"55＋23.4＝<b>78.4°</b>。"},
+   {t:"冬至の日なら、23.4°を引く",ok:true,fb:"対比の部品。55−23.4＝31.6°。"},
+   {t:"夏至の日は、90°−緯度−23.4°で求める",ok:false,fb:"それは<b>冬至</b>。夏至は太陽が高いので<b>足す</b>。"},
+   {t:"南中高度は、その地点の緯度と同じ角度になる",ok:false,fb:"緯度そのままではない。<b>90°から緯度を引く</b>のが基準。"},
+  ],
+  m:"①春分・秋分の日の南中高度は90°−緯度で求められ（90−35＝55°）、②夏至の日はこれに地軸の傾き23.4°を足して78.4°になる。③冬至の日なら23.4°を引く。"},
+ {q:"「星が1時間に約15°動いて見える理由」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"地球は24時間で1回（360°）自転する",ok:true,fb:"前提。"},
+   {t:"360°÷24時間＝15°なので、1時間に約15°動いて見える",ok:true,fb:"計算までセットで。"},
+   {t:"地球は1年で1回（360°）公転するので、1時間に15°動く",ok:false,fb:"公転は<b>1年で360°＝1日に約1°</b>。1時間15°は自転。"},
+   {t:"星座は1か月で約30°動くので、1時間に15°動く",ok:false,fb:"1か月30°は<b>年周運動</b>。日周運動とは別。"},
+   {t:"星が1時間に15°ずつ宇宙空間を移動しているから",ok:false,fb:"星が動くのではない。<b>地球の自転</b>による見かけの動き。"},
+  ],
+  m:"①地球は24時間で1回（360°）自転するので、②星は360°÷24＝15°より、1時間に約15°動いて見える。"},
+];
+
+const Q90B = [
+ {q:"「月が満ち欠けして見える理由」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"月は自ら光を出さず、太陽の光を反射して光っている",ok:true,fb:"前提。月の半分には常に太陽の光が当たっている。"},
+   {t:"月は、地球のまわりを約1か月かけて公転している",ok:true,fb:"原因。位置が変わる。"},
+   {t:"地球から見える、光っている部分の形が変わる",ok:true,fb:"結論。"},
+   {t:"地球の影が月にうつって、欠けて見えるから",ok:false,fb:"それは<b>月食</b>。ふだんの満ち欠けは影ではなく、<b>見る角度</b>のちがい。"},
+   {t:"月が自転して、光っていない面がこちらを向くから",ok:false,fb:"自転が原因ではない。地球との<b>位置関係</b>が変わるから。"},
+  ],
+  m:"①月は自ら光を出さず太陽の光を反射して光っており、②地球のまわりを公転しているので、③地球から見える光っている部分の形が変わり、満ち欠けして見える。"},
+ {q:"「毎日同じ時刻に見える月の位置が、西から東へ移っていく理由」を説明したい。正しい部品を【すべて】選びなさい。",
+  c:[
+   {t:"月は、地球のまわりを公転している",ok:true,fb:"原因。"},
+   {t:"月の公転の向きは、北極側から見て反時計回り（地球の自転と同じ向き）である",ok:true,fb:"向きの説明。反時計回り＝天球上では<b>西から東</b>へ動く。"},
+   {t:"そのため、同じ時刻に見ると、月は日ごとに東へずれて見える",ok:true,fb:"結論。三日月（西）→上弦（南）→満月（東）。"},
+   {t:"月は、地球のまわりを東から西へ公転しているから",ok:false,fb:"向きが逆。公転は<b>反時計回り</b>。"},
+   {t:"地球が太陽のまわりを公転しているから",ok:false,fb:"地球の公転は1年で1周。1か月で起こる月の位置の変化の原因は<b>月の公転</b>。"},
+  ],
+  m:"①月は地球のまわりを、②北極側から見て反時計回り（地球の自転と同じ向き）に公転しているので、③毎日同じ時刻に見ると、月の位置は西から東へ移っていく。"},
+ {q:"「日食が起こるしくみ」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"太陽・月・地球の順に一直線に並ぶ",ok:true,fb:"並び方。月が<b>真ん中</b>。"},
+   {t:"月が太陽をかくすことで、太陽が欠けて見える",ok:true,fb:"しくみ。全部かくれると皆既日食。"},
+   {t:"日食が起こるときの月は新月である",ok:true,fb:"月が太陽と同じ方向＝<b>新月</b>。"},
+   {t:"太陽・地球・月の順に一直線に並ぶ",ok:false,fb:"それは<b>月食</b>の並び方。"},
+   {t:"日食は満月のときに起こる",ok:false,fb:"満月のときに起こる可能性があるのは<b>月食</b>。"},
+  ],
+  m:"①太陽・月・地球の順に一直線に並び、②月が太陽をかくすことで、太陽が欠けて見える現象を日食という。③このとき月は新月である。"},
+ {q:"「月食が起こるしくみ」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"太陽・地球・月の順に一直線に並ぶ",ok:true,fb:"並び方。<b>地球</b>が真ん中。"},
+   {t:"月が地球の影に入ることで、月が欠けて見える",ok:true,fb:"しくみ。全部入ると皆既月食。"},
+   {t:"月食が起こるときの月は満月である",ok:true,fb:"月が太陽と反対側＝<b>満月</b>。"},
+   {t:"月が太陽の光をさえぎって、地球に影をつくる",ok:false,fb:"それは<b>日食</b>。"},
+   {t:"月食は新月のたびに必ず起こる",ok:false,fb:"新月は日食側。しかも月の通り道は少し傾いているので、<b>毎回は起こらない</b>。"},
+  ],
+  m:"①太陽・地球・月の順に一直線に並び、②月が地球の影に入ることで、月が欠けて見える現象を月食という。③このとき月は満月である。"},
+ {q:"「金星が真夜中に見えない理由」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"金星は、地球よりも内側を公転している",ok:true,fb:"原因。内側を回る惑星（内惑星）。"},
+   {t:"地球から見ると、金星はいつも太陽に近い方向にある",ok:true,fb:"しくみ。太陽から一定角度以上は離れない。"},
+   {t:"そのため、明け方の東の空か、夕方の西の空にしか見えない",ok:true,fb:"結論。真夜中は太陽と反対側を向いているので見えない。"},
+   {t:"金星は自ら光を出さないから",ok:false,fb:"正しい知識だが、火星も自ら光らないのに真夜中に見える。<b>理由にならない</b>。"},
+   {t:"金星は地球よりも外側を公転しているから",ok:false,fb:"金星は<b>内側</b>。外側の火星や木星は真夜中にも見える。"},
+  ],
+  m:"①金星は地球よりも内側を公転しているので、②地球から見ていつも太陽に近い方向にあり、③明け方の東の空か夕方の西の空にしか見えず、真夜中には見えない。"},
+ {q:"「金星の見かけの大きさと形が変化する理由」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"金星も地球も公転しているので、地球と金星の距離が変わる",ok:true,fb:"原因①。"},
+   {t:"地球に近いときほど大きく見え、大きく欠けて見える",ok:true,fb:"近い＝大きい・細い、遠い＝小さい・丸い。"},
+   {t:"金星は太陽の光を反射しているので、月のように満ち欠けする",ok:true,fb:"原因②。"},
+   {t:"金星そのものの大きさが、季節によって変わるから",ok:false,fb:"金星の大きさは変わらない。<b>距離</b>が変わるから見かけが変わる。"},
+   {t:"地球から遠いときほど大きく見える",ok:false,fb:"逆。近いほど大きく見える。"},
+  ],
+  m:"①金星は太陽の光を反射しているので月のように満ち欠けし、②公転によって地球との距離が変わるため、③地球に近いときほど大きく見え、大きく欠けて見える。"},
+ {q:"「火星は真夜中にも見えることがある理由」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"火星は、地球よりも外側を公転している",ok:true,fb:"原因。外側を回る惑星（外惑星）。"},
+   {t:"地球から見て、太陽と反対の方向にくることがある",ok:true,fb:"しくみ。太陽と反対側＝真夜中に南の空。"},
+   {t:"火星は、自ら光を出している恒星だから",ok:false,fb:"火星は<b>惑星</b>。太陽の光を反射している。"},
+   {t:"火星は、地球よりも内側を公転しているから",ok:false,fb:"内側は水星・金星。内側の惑星は真夜中に<b>見えない</b>。"},
+   {t:"火星は、金星と同じように大きく満ち欠けする",ok:false,fb:"火星は外側を回るので、金星のようには<b>大きく満ち欠けしない</b>。"},
+  ],
+  m:"①火星は地球よりも外側を公転しているので、②地球から見て太陽と反対の方向にくることがあり、真夜中にも観察できる。"},
+ {q:"「黒点の観察から分かること」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"黒点が東から西へ移動していくことから、太陽は自転していることが分かる",ok:true,fb:"結果①→考察①。約25日で1回転（赤道付近）。"},
+   {t:"中央部で円形の黒点が、縁に近づくと細長く見えることから、太陽は球形であることが分かる",ok:true,fb:"結果②→考察②。"},
+   {t:"黒点は周りより温度が低いので、黒く見える",ok:true,fb:"黒点の性質。約4000℃（表面は約6000℃）。"},
+   {t:"黒点は周りより温度が高いので、黒く見える",ok:false,fb:"逆。温度が<b>低い</b>。"},
+   {t:"黒点が移動することから、太陽は地球のまわりを公転していることが分かる",ok:false,fb:"太陽は地球のまわりを公転していない。黒点の移動は<b>太陽の自転</b>。"},
+  ],
+  m:"①黒点が東から西へ移動していくことから、太陽が自転していることが分かる。②また、中央部で円形の黒点が縁では細長く見えることから、太陽が球形であることが分かる。③黒点は周りより温度が低いため黒く見える。"},
+ {q:"「地球型惑星と木星型惑星のちがい」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"地球型惑星は、小型で主に岩石からなり、密度が大きい",ok:true,fb:"水星・金星・地球・火星。"},
+   {t:"木星型惑星は、大型で主に気体や氷からなり、密度が小さい",ok:true,fb:"木星・土星・天王星・海王星。"},
+   {t:"地球型惑星は太陽に近いところを、木星型惑星は遠いところを公転している",ok:true,fb:"位置のちがい。小惑星帯（火星と木星の間）がさかい目。"},
+   {t:"木星型惑星は、地球型惑星より密度が大きい",ok:false,fb:"逆。木星型は<b>密度が小さい</b>（土星は水より小さい）。"},
+   {t:"地球型惑星はすべて地球より大きい",ok:false,fb:"水星・金星・火星は地球より<b>小さい</b>。"},
+  ],
+  m:"①地球型惑星は小型で主に岩石からなり密度が大きく、②木星型惑星は大型で主に気体や氷からなり密度が小さい。③地球型惑星は太陽に近いところを、木星型惑星は遠いところを公転している。"},
+ {q:"「天の川が帯のように見える理由」を説明したい。説明の部品として正しいものを【すべて】選びなさい。",
+  c:[
+   {t:"太陽系は、銀河系という円盤状の恒星の大集団の中にある",ok:true,fb:"前提。銀河系は直径約10万光年。"},
+   {t:"地球からは銀河系を内側から見ているので、円盤の方向に遠くの恒星が数多く重なって見える",ok:true,fb:"しくみ。重なった方向が<b>帯</b>になる。"},
+   {t:"天の川は、銀河系の外にある別の銀河である",ok:false,fb:"天の川は<b>銀河系の中</b>の恒星。外にあるのはアンドロメダ銀河など。"},
+   {t:"天の川は、太陽系の惑星が帯のように並んで見えている",ok:false,fb:"惑星ではなく<b>無数の恒星</b>。"},
+   {t:"天の川は、すい星が通ったあとのちりが光っている",ok:false,fb:"すい星のちりは<b>流星</b>のもと。天の川とは別。"},
+  ],
+  m:"①太陽系は銀河系という円盤状の恒星の大集団の中にあり、②地球からは銀河系を内側から見ているため、円盤の方向に遠くの恒星が数多く重なって、帯のような天の川として見える。"},
+];
+
+/* ================= エンジン ================= */
+const COURSE_INFO={
+  "50":{label:"50点コース｜基礎暗記", cls:"c50", pts:10},
+  "70":{label:"70点コース｜資料読み取り", cls:"c70", pts:15},
+  "90":{label:"90点コース｜説明・記述", cls:"c90", pts:20},
+};
+const N=10;
+let S=null;
+
+function shuffle(arr){
+  const a=arr.slice();
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a;
+}
+function el(id){return document.getElementById(id);}
+function show(id){el(id).classList.remove("hidden");if(typeof syncHomeBtn==="function"&&el("home"))syncHomeBtn();}
+function hide(id){el(id).classList.add("hidden");}
+
+/* セット定義 */
+const SETS={
+ "50":[
+  {key:"ch1",name:"① 天体の1日の動き",sub:"恒星・天球・天頂・南中・日周運動・自転・透明半球（10問）",get:()=>shuffle(CH1)},
+  {key:"ch2",name:"② 天体の1年の動き",sub:"年周運動・公転・黄道・夏至/冬至・地軸の傾き・南中高度（10問）",get:()=>shuffle(CH2)},
+  {key:"ch3",name:"③ 月や惑星の動きと見え方",sub:"月の満ち欠け・上弦/下弦・日食・月食・金星（10問）",get:()=>shuffle(CH3)},
+  {key:"ch4",name:"④ 太陽系と恒星",sub:"黒点・プロミネンス・コロナ・地球型/木星型惑星・小惑星・銀河系（10問）",get:()=>shuffle(CH4)},
+  {key:"mix",name:"🔀 全範囲ミックス",sub:"全40問からランダム10問。仕上げの腕試し！",get:()=>shuffle(ALL50).slice(0,N)},
+ ],
+ "70":[
+  {key:"s1",name:"資料セット①（1日・1年の動き）",sub:"透明半球の角・テープで日の出・南中高度の計算・星の動き・手順の並べ替え（10問）",get:()=>shuffle(Q70)},
+  {key:"s2",name:"資料セット②（月・金星・太陽系）",sub:"月の位置と形・金星の見え方・星の年周運動の計算・惑星の表（10問）",get:()=>shuffle(Q70B)},
+ ],
+ "90":[
+  {key:"s1",name:"説明セット①（1日・1年の動き）",sub:"日周運動の理由・透明半球の記録・季節の変化・北極星・南中高度の求め方（10問）",get:()=>shuffle(Q90)},
+  {key:"s2",name:"説明セット②（月・惑星・太陽系）",sub:"満ち欠け・日食/月食・金星が真夜中に見えない理由・黒点・天の川（10問）",get:()=>shuffle(Q90B)},
+ ],
+};
+let curCourse=null;
+
+function startCourse(course){
+  curCourse=course;
+  hide("home");hide("result");hide("quiz");hide("sets");
+  if(course==="90"){show("intro90");window.scrollTo(0,0);return;}
+  renderSets();
+  show("sets");
+  window.scrollTo(0,0);
+}
+function ackIntro90(){
+  hide("intro90");
+  renderSets();
+  show("sets");
+  window.scrollTo(0,0);
+}
+
+function renderSets(){
+  const info=COURSE_INFO[curCourse];
+  const total=curCourse==="50"?"全40問（＋ミックス）":"全20問";
+  el("sets-lead").innerHTML="<b>"+info.label+"</b>（"+total+"）<br>セットを選んでスタート！全セット制覇で範囲マスターだ💪";
+  const list=el("set-list");list.innerHTML="";
+  SETS[curCourse].forEach((st,i)=>{
+    const best=localStorage.getItem("tenmon1-best-"+curCourse+"-"+st.key);
+    const b=document.createElement("button");
+    b.className="setbtn";
+    b.innerHTML='<span><span class="sn">'+st.name+'</span><br><span class="sd">'+st.sub+'</span></span>'+
+      '<span class="sb">'+(best?"ベスト "+best+"pt":"未挑戦")+'</span>';
+    b.onclick=()=>startSet(i);
+    list.appendChild(b);
+  });
+}
+
+function startSet(si){
+  const st=SETS[curCourse][si];
+  S={course:curCourse,setIdx:si,setKey:st.key,setName:st.name,
+     qs:st.get(),idx:0,correct:0,streak:0,score:0,wrongs:[],results:[]};
+  hide("sets");hide("result");show("quiz");
+  const info=COURSE_INFO[curCourse];
+  const tag=el("course-tag");
+  tag.textContent=info.label.split("｜")[0]+"｜"+st.name.replace("🔀 ","");
+  tag.className="";
+  tag.classList.add(info.cls);
+  tag.id="course-tag";
+  renderQ();
+  window.scrollTo(0,0);
+}
+
+function renderDots(){
+  const d=el("dots");d.innerHTML="";
+  for(let i=0;i<N;i++){
+    const sp=document.createElement("span");
+    sp.className="dot";
+    if(i<S.idx) sp.classList.add(S.results[i]?"done":"miss");
+    else if(i===S.idx) sp.classList.add("now");
+    d.appendChild(sp);
+  }
+}
+
+const MARKS=["ア","イ","ウ","エ","オ","カ"];
+function renderQ(){
+  const q=S.qs[S.idx];
+  const multi=!!q.c&&typeof q.c[0]==="object";
+  renderDots();
+  el("score-box").textContent="スコア "+S.score;
+  el("q-num").innerHTML="第"+(S.idx+1)+"問 / "+N+(multi?'<span id="q-type">すべて選べ</span>':q.kind==="num"?'<span id="q-type">🔢 数値入力</span>':q.kind==="order"?'<span id="q-type">🔀 並べ替え</span>':(q.type?'<span id="q-type">'+q.type+'</span>':""));
+  el("shiryo").innerHTML = q.sh ? (typeof q.sh==="function"?q.sh():q.sh) : "";
+  let qt=q.q.replace("【誤っているもの】",'<span class="wrong-word">【誤っているもの】</span>')
+            .replace("【すべて】",'<span class="wrong-word">【すべて】</span>');
+  if(multi) qt+='\n（いくつ正解があるかはヒミツ。選び終わったら「決定する！」）';
+  if(q.kind==="order") qt+='\n（タップした順に番号がつくよ。もう一度タップで取り消し）';
+  el("q-text").innerHTML=qt;
+  if(q.kind){
+    if(q.kind==="num") renderNum(q); else renderOrder(q);
+    hide("feedback");window.scrollTo({top:0,behavior:"smooth"});return;
+  }
+  const order=shuffle([...Array(q.c.length).keys()]);
+  S.order=order;
+  const box=el("choices");box.innerHTML="";
+  order.forEach((oi,di)=>{
+    const b=document.createElement("button");
+    b.className="choice";
+    const txt=multi?q.c[oi].t:q.c[oi];
+    b.innerHTML='<span class="mark">'+MARKS[di]+'</span><span>'+txt+'</span>';
+    if(multi) b.onclick=()=>toggleSel(b);
+    else b.onclick=()=>answer(di,b);
+    box.appendChild(b);
+  });
+  if(multi){
+    const d=document.createElement("button");
+    d.id="decide-btn";d.textContent="決定する！";d.disabled=true;
+    d.onclick=decide;
+    box.appendChild(d);
+  }
+  hide("feedback");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+
+/* ===== 数値入力・並べ替え ===== */
+function toHalf(s){return String(s).replace(/[０-９．－]/g,c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0)).replace(/[。、，]/g,".").replace(/[^\d.\-]/g,"");}
+function renderNum(q){
+  const box=el("choices");box.innerHTML="";
+  q.blanks.forEach((b,i)=>{
+    const r=document.createElement("div");r.className="num-row";
+    r.innerHTML=(b.l?'<span class="nl">'+b.l+'</span>':'<span class="nl">答</span>')+
+      '<input type="text" size="4" inputmode="decimal" autocomplete="off" id="num'+i+'" placeholder="数字を入力">'+
+      '<span class="nu">'+(b.u||"")+'</span>';
+    box.appendChild(r);
+  });
+  const d=document.createElement("button");
+  d.id="decide-btn";d.textContent="答える！";d.disabled=true;d.onclick=judgeNum;
+  box.appendChild(d);
+  box.querySelectorAll("input").forEach(inp=>{
+    inp.addEventListener("input",()=>{d.disabled=[...box.querySelectorAll("input")].some(x=>toHalf(x.value)==="");});
+    inp.addEventListener("keydown",e=>{if(e.key==="Enter"&&!d.disabled)judgeNum();});
+  });
+}
+function judgeNum(){
+  const q=S.qs[S.idx];
+  const inputs=[...el("choices").querySelectorAll("input")];
+  const vals=inputs.map(x=>toHalf(x.value));
+  let allOk=true;const lines=[];
+  q.blanks.forEach((b,i)=>{
+    const v=parseFloat(vals[i]);
+    const ok=!isNaN(v)&&Math.abs(v-b.a)<=(b.tol||0)+1e-9;
+    if(!ok)allOk=false;
+    inputs[i].disabled=true;
+    inputs[i].parentNode.classList.add(ok?"nok":"nng");
+    const lbl=b.l?b.l+"：":"";
+    let why="";
+    if(!ok&&b.miss){const k=Object.keys(b.miss).find(k=>Math.abs(parseFloat(k)-v)<1e-9);if(k)why='<div class="rv-why">🤔 '+b.miss[k]+'</div>';}
+    lines.push('<div class="fb-item">'+(ok?"✅ ":"❌ ")+lbl+'あなたの答え <b>'+(vals[i]||"（空）")+(b.u||"")+'</b>'+(ok?"":' → 正解は <b>'+b.a+(b.u||"")+'</b>')+why+'</div>');
+  });
+  el("decide-btn").remove();
+  finishSpecial(q,allOk,{ans:vals},lines.join("")+'<div style="margin-top:6px;">💡 '+q.e+'</div>');
+}
+function renderOrder(q){
+  const box=el("choices");box.innerHTML="";
+  S.ordSel=[];
+  const ord=shuffle([...Array(q.items.length).keys()]);
+  S.order=ord;
+  ord.forEach(oi=>{
+    const b=document.createElement("button");
+    b.className="choice ord-item";b.dataset.oi=oi;
+    b.innerHTML='<span class="ono"></span><span>'+q.items[oi]+'</span>';
+    b.onclick=()=>toggleOrd(b);
+    box.appendChild(b);
+  });
+  const row=document.createElement("div");row.className="ord-btns";
+  row.innerHTML='<button class="ord-reset" onclick="resetOrd()">↺ やり直す</button>';
+  const d=document.createElement("button");
+  d.id="decide-btn";d.textContent="決定する！";d.disabled=true;d.onclick=judgeOrder;
+  box.appendChild(row);box.appendChild(d);
+}
+function paintOrd(){
+  el("choices").querySelectorAll(".ord-item").forEach(b=>{
+    const k=S.ordSel.indexOf(+b.dataset.oi);
+    b.classList.toggle("sel",k>=0);
+    b.querySelector(".ono").textContent=k>=0?String(k+1):"";
+  });
+  el("decide-btn").disabled=S.ordSel.length!==S.qs[S.idx].items.length;
+}
+function toggleOrd(b){
+  const oi=+b.dataset.oi,k=S.ordSel.indexOf(oi);
+  if(k>=0)S.ordSel.splice(k,1);else S.ordSel.push(oi);
+  paintOrd();
+}
+function resetOrd(){S.ordSel=[];paintOrd();}
+function judgeOrder(){
+  const q=S.qs[S.idx];
+  const sel=S.ordSel.slice();
+  const okPos=sel.filter((oi,i)=>oi===i).length;
+  const allOk=okPos===q.items.length;
+  el("choices").querySelectorAll(".ord-item").forEach(b=>{
+    const oi=+b.dataset.oi,k=sel.indexOf(oi);
+    b.disabled=true;b.classList.remove("sel");
+    b.classList.add(k===oi?"correct":"wrongpick");
+  });
+  el("choices").querySelector(".ord-btns").remove();el("decide-btn").remove();
+  const yours='<div class="fb-item"><b>あなたの順番</b>'+sel.map((oi,i)=>'<div>'+(oi===i?"✅":"❌")+" "+(i+1)+". "+q.items[oi]+'</div>').join("")+'</div>';
+  const right='<div class="fb-item"><b>⭕ 正しい順番</b>'+q.items.map((t,i)=>'<div>'+(i+1)+". "+t+'</div>').join("")+'</div>';
+  finishSpecial(q,allOk,{ord:sel},(allOk?"":'<div style="margin-bottom:6px;">'+okPos+"/"+q.items.length+" か所が正しい位置。</div>"+yours)+right+
+    '<div style="margin-top:6px;">💡 '+q.e+'</div>'+(allOk||!q.w?"":'<div style="margin-top:6px;">🤔 '+q.w+'</div>'));
+}
+function finishSpecial(q,ok,rec,html){
+  S.results.push(ok);
+  let got=0;
+  if(ok){S.correct++;S.streak++;got=COURSE_INFO[S.course].pts+(S.streak>=2?(S.streak-1)*5:0);S.score+=got;}
+  else{S.streak=0;S.wrongs.push(Object.assign({no:S.idx+1,q:q},rec));}
+  el("score-box").textContent="スコア "+S.score;
+  el("verdict").textContent=ok?"⭕ 正解！":"❌ ざんねん…";
+  el("verdict").className="verdict "+(ok?"ok":"ng");
+  el("gotpt").textContent=ok?"+"+got+"pt"+(S.streak>=2?"（"+S.streak+"連続正解ボーナス！）":""):"";
+  el("expl").innerHTML=html;
+  el("model-wrap").innerHTML="";
+  el("next-btn").textContent=S.idx===N-1?"結果を見る ▶":"次へ ▶";
+  show("feedback");
+  renderDotsAfter();
+}
+function reviewSpecial(q,w){
+  let h='';
+  if(w.ans){
+    h+='<div class="rv-sec rv-you"><div class="rv-lbl">❌ あなたの答え</div>';
+    q.blanks.forEach((b,i)=>{
+      const v=parseFloat(w.ans[i]);const ok=!isNaN(v)&&Math.abs(v-b.a)<=(b.tol||0)+1e-9;
+      let why="";
+      if(!ok&&b.miss){const k=Object.keys(b.miss).find(k=>Math.abs(parseFloat(k)-v)<1e-9);if(k)why='<div class="rv-why">🤔 <b>なぜ違う？</b> '+b.miss[k]+'</div>';}
+      h+='<div class="rv-line">'+(ok?"✅ ":"❌ ")+(b.l?b.l+"：":"")+'<b>'+(w.ans[i]||"（空）")+(b.u||"")+'</b>'+why+'</div>';
+    });
+    h+='</div><div class="rv-sec rv-right"><div class="rv-lbl">⭕ 正しくは</div><div class="rv-line"><b>'+
+       q.blanks.map(b=>(b.l?b.l+"＝":"")+b.a+(b.u||"")).join("　")+'</b></div><div class="rv-why">💡 '+q.e+'</div></div>';
+  }else{
+    h+='<div class="rv-sec rv-you"><div class="rv-lbl">❌ あなたの順番</div>'+
+       w.ord.map((oi,i)=>'<div class="rv-line">'+(oi===i?"✅":"❌")+" "+(i+1)+". "+q.items[oi]+'</div>').join("")+
+       (q.w?'<div class="rv-why">🤔 <b>なぜ違う？</b> '+q.w+'</div>':'')+'</div>';
+    h+='<div class="rv-sec rv-right"><div class="rv-lbl">⭕ 正しい順番</div>'+
+       q.items.map((t,i)=>'<div class="rv-line">'+(i+1)+". "+t+'</div>').join("")+'<div class="rv-why">💡 '+q.e+'</div></div>';
+  }
+  return h;
+}
+
+function toggleSel(b){
+  b.classList.toggle("sel");
+  const any=el("choices").querySelectorAll(".choice.sel").length>0;
+  el("decide-btn").disabled=!any;
+}
+
+function decide(){
+  const q=S.qs[S.idx];
+  const btns=[...el("choices").querySelectorAll(".choice")];
+  const totalOk=q.c.filter(x=>x.ok).length;
+  let hits=0,fp=0;
+  const lines=[];
+  const selIdx=[];
+  btns.forEach((b,di)=>{
+    const ch=q.c[S.order[di]];
+    const sel=b.classList.contains("sel");
+    if(sel) selIdx.push(S.order[di]);
+    b.disabled=true;b.classList.remove("sel");
+    let icon,head;
+    if(ch.ok&&sel){hits++;b.classList.add("correct");icon="✅";head=MARKS[di]+"：正しい部品（選べた！）";}
+    else if(ch.ok&&!sel){b.classList.add("missed");icon="😮";head=MARKS[di]+"：これも正しい部品だった（選び忘れ）";}
+    else if(!ch.ok&&sel){fp++;b.classList.add("wrongpick");icon="❌";head=MARKS[di]+"：これは誤り";}
+    else{b.classList.add("dim");icon="🚫";head=MARKS[di]+"：誤りの選択肢（選ばなくて正解）";}
+    lines.push('<div class="fb-item"><b>'+icon+" "+head+'</b><br>'+ch.fb+'</div>');
+  });
+  const dbt=document.getElementById("decide-btn");
+  if(dbt) dbt.remove();
+  let got=7*hits-4*fp;
+  if(got<0) got=0;
+  const perfect = hits===totalOk && fp===0;
+  S.results.push(perfect);
+  if(perfect){
+    S.correct++;S.streak++;
+    got+=10+(S.streak>=2?(S.streak-1)*5:0);
+  }else{
+    S.streak=0;
+    S.wrongs.push({no:S.idx+1,q:q,sel:selIdx});
+  }
+  S.score+=got;
+  el("score-box").textContent="スコア "+S.score;
+  el("verdict").textContent = perfect ? "⭕ 完答！すばらしい！" : (hits>0 ? "🔺 おしい！正しい部品 "+hits+"/"+totalOk+" を発見" : "❌ ざんねん…");
+  el("verdict").className="verdict "+(perfect?"ok":(hits>0?"part":"ng"));
+  el("gotpt").textContent="+"+got+"pt（正しい部品 +7／誤り選択 −4"+(perfect?"／完答ボーナス +10"+(S.streak>=2?"＋連続ボーナス":""):"")+"）";
+  el("expl").innerHTML='<div class="fb-title">🔎 全選択肢の解説 ― まちがい知識はここで正しい場所へ！</div>'+lines.join("");
+  el("model-wrap").innerHTML='<div class="model-box"><div class="mb-title">🧩 正しい部品を組み合わせると…（記述の模範解答）</div><div class="mb-text">'+q.m+'</div></div>'+
+    '<div class="ondoku"><span class="spk">📢</span><span>模範解答を声に出して2回音読しよう！読めたら「次へ」</span></div>';
+  el("next-btn").textContent = S.idx===N-1 ? "結果を見る ▶" : "次へ ▶";
+  show("feedback");
+  renderDotsAfter();
+}
+
+function answer(di,btn){
+  const q=S.qs[S.idx];
+  const picked=S.order[di];
+  const ok=picked===q.a;
+  const buttons=el("choices").querySelectorAll(".choice");
+  buttons.forEach((b,i)=>{
+    b.disabled=true;
+    if(S.order[i]===q.a) b.classList.add("correct");
+    else if(i===di) b.classList.add("wrongpick");
+    else b.classList.add("dim");
+  });
+  S.results.push(ok);
+  let got=0;
+  if(ok){
+    S.correct++;S.streak++;
+    got=COURSE_INFO[S.course].pts+(S.streak>=2?(S.streak-1)*5:0);
+    S.score+=got;
+  }else{
+    S.streak=0;
+    S.wrongs.push({no:S.idx+1,q:q,picked:picked});
+  }
+  el("verdict").textContent= ok ? "⭕ 正解！" : "❌ ざんねん…";
+  el("verdict").className="verdict "+(ok?"ok":"ng");
+  el("gotpt").textContent= ok ? "+"+got+"pt"+(S.streak>=2?"（"+S.streak+"連続正解ボーナス！）":"") : "正解は上の緑の選択肢だよ";
+  el("expl").innerHTML="💡 "+q.e;
+  const mw=el("model-wrap");
+  if(q.m){
+    mw.innerHTML='<div class="model-box"><div class="mb-title">✍️ 実際に記述・説明するならこう書く！</div><div class="mb-text">'+q.m+'</div></div>'+
+      '<div class="ondoku"><span class="spk">📢</span><span>模範解答を声に出して2回音読しよう！読めたら「次へ」</span></div>';
+  }else{
+    mw.innerHTML="";
+  }
+  el("next-btn").textContent = S.idx===N-1 ? "結果を見る ▶" : "次へ ▶";
+  show("feedback");
+  renderDotsAfter();
+}
+function renderDotsAfter(){
+  const d=el("dots").children;
+  d[S.idx].className="dot "+(S.results[S.idx]?"done":"miss");
+}
+
+function nextQ(){
+  S.idx++;
+  if(S.idx>=N){showResult();}
+  else{renderQ();}
+}
+
+function showResult(){
+  hide("quiz");show("result");
+  const c=S.correct;
+  let rank,msg;
+  if(c===10){rank="S";msg="パーフェクト！この範囲はマスターだ！";}
+  else if(c>=8){rank="A";msg="すばらしい！あと少しで満点！";}
+  else if(c>=6){rank="B";msg="いい調子！まちがえた問題を復習しよう";}
+  else{rank="C";msg="ここからが本番！もう一度チャレンジしよう";}
+  const rk=el("rank");rk.textContent=rank;rk.className=rank;
+  el("stars").textContent="★".repeat(Math.max(1,Math.ceil(c/2)))+"☆".repeat(5-Math.max(1,Math.ceil(c/2)));
+  el("result-msg").textContent=msg;
+  el("result-score").textContent=(S.course==="90"?"完答 ":"正解 ")+c+" / "+N+"問　｜　スコア "+S.score+"pt";
+  const key="tenmon1-best-"+S.course+"-"+S.setKey;
+  const prev=Number(localStorage.getItem(key)||0);
+  if(S.score>prev){localStorage.setItem(key,String(S.score));
+    el("result-best").textContent="🎉 ベストスコア更新！（"+prev+" → "+S.score+"）";
+  }else{
+    el("result-best").textContent="ベストスコア："+Math.max(prev,S.score)+"pt";
+  }
+  const rv=el("review");
+  if(S.wrongs.length){
+    rv.innerHTML='<h3>📒 まちがえた問題の徹底復習（'+S.wrongs.length+'問）</h3>'+
+      '<p class="rv-lead">「なぜ自分の答えが違うのか」まで読むのが、点数が伸びる一番の近道。1問ずつじっくり読もう！</p>'+
+      S.wrongs.map(reviewCard).join("");
+  }else{
+    rv.innerHTML='<div class="rv-perfect">🎉 まちがえた問題はなし！この調子で次のセットへ！</div>';
+  }
+  window.scrollTo(0,0);
+}
+
+/* 結果画面：まちがえた問題の手厚い解説カード */
+function reviewCard(w){
+  const q=w.q;
+  const qtext=q.q.replace(/\n/g,"<br>");
+  let h='<div class="rv-card"><div class="rv-no">第'+w.no+'問</div><div class="rv-q">'+qtext+'</div>';
+  if(q.sh){
+    h+='<details class="rv-sh"><summary>📊 資料をもう一度見る</summary>'+(typeof q.sh==="function"?q.sh():q.sh)+'</details>';
+  }
+  if(w.ans||w.ord){ h+=reviewSpecial(q,w); }
+  else if(w.sel){ /* 90点コース：部品選択 */
+    const wrongSel=w.sel.filter(i=>!q.c[i].ok);
+    const missed=q.c.map((c,i)=>i).filter(i=>q.c[i].ok&&w.sel.indexOf(i)<0);
+    const okSel=w.sel.filter(i=>q.c[i].ok);
+    if(okSel.length){
+      h+='<div class="rv-sec rv-good"><div class="rv-lbl">✅ 選べた正しい部品</div>'+
+        okSel.map(i=>'<div class="rv-line">「'+q.c[i].t+'」</div>').join("")+'</div>';
+    }
+    if(wrongSel.length){
+      h+='<div class="rv-sec rv-you"><div class="rv-lbl">❌ あなたが選んだ「まちがいの部品」― なぜ違う？</div>'+
+        wrongSel.map(i=>'<div class="rv-line"><b>「'+q.c[i].t+'」</b><div class="rv-why">→ '+q.c[i].fb+'</div></div>').join("")+'</div>';
+    }
+    if(missed.length){
+      h+='<div class="rv-sec rv-miss"><div class="rv-lbl">😮 選び忘れた正しい部品 ― なぜ必要？</div>'+
+        missed.map(i=>'<div class="rv-line"><b>「'+q.c[i].t+'」</b><div class="rv-why">→ '+q.c[i].fb+'</div></div>').join("")+'</div>';
+    }
+    h+='<div class="rv-sec rv-model"><div class="rv-lbl">🧩 正しい部品だけで組み立てた模範解答</div><div class="rv-mtext">'+q.m+'</div></div>';
+  }else{ /* 50点・70点コース：4択 */
+    const why=(q.w&&q.w[w.picked])||"この選択肢は、問われている内容とは別のことがらを指している。";
+    h+='<div class="rv-sec rv-you"><div class="rv-lbl">❌ あなたの答え</div><div class="rv-line"><b>'+q.c[w.picked]+'</b></div>'+
+       '<div class="rv-why">🤔 <b>なぜ違う？</b> '+why+'</div></div>';
+    h+='<div class="rv-sec rv-right"><div class="rv-lbl">⭕ 正しくは</div><div class="rv-line"><b>'+q.c[q.a]+'</b></div>'+
+       '<div class="rv-why">💡 '+q.e+'</div></div>';
+    const others=q.c.map((c,i)=>i).filter(i=>i!==q.a&&i!==w.picked&&q.w&&q.w[i]);
+    if(others.length){
+      h+='<details class="rv-more"><summary>🔍 ほかの選択肢もチェック（ひっかけ対策）</summary>'+
+        others.map(i=>'<div class="rv-line"><b>'+q.c[i]+'</b><div class="rv-why">→ '+q.w[i]+'</div></div>').join("")+'</details>';
+    }
+    if(q.m){
+      h+='<div class="rv-sec rv-model"><div class="rv-lbl">✍️ 記述で書くならこう</div><div class="rv-mtext">'+q.m+'</div></div>';
+    }
+  }
+  return h+'</div>';
+}
+
+function closeWelcome(){hide("welcome");show("home");window.scrollTo(0,0);}
+function openWelcome(){hide("home");show("welcome");window.scrollTo(0,0);}
+function retry(){startSet(S.setIdx);}
+function goHome(){stopLabTimer();hide("lab");hide("quiz");hide("result");hide("sets");hide("intro90");hide("welcome");show("home");window.scrollTo(0,0);}
+function backToSets(){hide("quiz");hide("result");renderSets();show("sets");window.scrollTo(0,0);}
+
+function goHomeBtn(){
+  const inQuiz=!el("quiz").classList.contains("hidden")&&S&&S.idx<N;
+  if(inQuiz&&!confirm("途中でやめてホームにもどりますか？\n（この回のスコアは記録されません）"))return;
+  goHome();
+}
+function syncHomeBtn(){const atHome=!el("home").classList.contains("hidden")||!el("welcome").classList.contains("hidden");document.body.classList.toggle("inapp",!atHome);}
+
+/* ================= 🧪 インタラクティブ教材 ================= */
+const LABS=[
+ {t:"🌍 南中高度シミュレーター",d:"トレーニング(1)(2)｜地球を横から見て、緯度と季節を変えると南中高度の角がその場で変わる。計算練習つき",f:labAlt},
+ {t:"🌐 透明半球と太陽の通り道",d:"トレーニング(3)(4)(5)｜季節・緯度を変えて、透明半球と真横から見た図で通り道を確かめる。作図クイズつき",f:labDome},
+ {t:"📏 紙テープで時刻計算ドリル",d:"トレーニング(6)｜テープの長さから日の出・日の入り・南中の時刻を求める。問題は何度でも自動で出る",f:labTape},
+ {t:"⭐ 北の空の星時計（北斗七星）",d:"トレーニング(7)｜時刻と月を動かすと北斗七星が回る。「何時間後？何か月後？」の練習つき",f:labStar},
+ {t:"🌙 月の満ち欠けと日食・月食",d:"トレーニング(8)(9)｜月を公転させると、形・見える方角・時刻が変わる。月の形クイズつき",f:labMoon},
+ {t:"✨ 金星の見え方シミュレーター",d:"日にちを進めると、金星の位置・形・大きさが変わる。よいの明星？明けの明星？",f:labVenus},
+ {t:"♈ 地球の公転と季節の星座",d:"月と時刻を選ぶと、真夜中・夕方・明け方に南の空に見える星座が分かる",f:labZodiac},
+];
+let labTimer=null;
+function stopLabTimer(){if(labTimer){clearInterval(labTimer);labTimer=null;}}
+function openLab(){hide("home");hide("welcome");show("lab");renderLabMenu();}
+function renderLabMenu(){
+  stopLabTimer();
+  let h='<div class="lead">🧪 <b>さわって理解する教材</b>だよ。教材ページの「トレーニング」の問題を、動かして確かめられるようにしたよ。スライダーやボタンを動かして、図が「どう動くのか」を見てみよう。各教材の<b>🎯練習モード</b>で腕だめしもできる！</div><div class="set-grid">';
+  LABS.forEach((L,i)=>{h+='<button class="setbtn" onclick="labOpen('+i+')"><span><span class="sn">'+L.t+'</span><br><span class="sd">'+L.d+'</span></span><span class="sb">ひらく ▶</span></button>';});
+  h+='</div><div class="btn-row"><button class="btn home" onclick="goHome()">ホームにもどる</button></div>';
+  el("lab-body").innerHTML=h;window.scrollTo(0,0);
+}
+function labOpen(i){
+  stopLabTimer();
+  el("lab-body").innerHTML='<div class="lab-head">'+LABS[i].t+'</div><div id="lab-x" class="lab-card"></div>'+
+    '<div class="btn-row"><button class="btn home" onclick="renderLabMenu()">教材一覧にもどる</button></div>';
+  LABS[i].f(el("lab-x"));window.scrollTo(0,0);
+}
+function seg(opts,cur,fn){return '<div class="seg">'+opts.map(o=>'<button class="segbtn'+(String(o[0])===String(cur)?' on':'')+'" onclick="'+fn+'(\''+o[0]+'\')">'+o[1]+'</button>').join("")+'</div>';}
+function rnd(a){return a[Math.floor(Math.random()*a.length)];}
+function numIn(id,ph){return '<input class="lab-in" id="'+id+'" type="text" inputmode="decimal" autocomplete="off" placeholder="'+(ph||"")+'">';}
+function readNum(id){const v=parseFloat(toHalf(el(id).value));return isNaN(v)?null:v;}
+function arrowDefs(id,col){return '<defs><marker id="'+id+'" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8z" fill="'+col+'"/></marker></defs>';}
+
+/* ---------- 1. 南中高度シミュレーター（トレーニング(1)(2)） ---------- */
+let SA={lat:35,s:"su",q:null};
+function labAlt(){SA.q=null;
+  el("lab-x").innerHTML='<div class="lab-lbl">① 季節</div><div id="sa-seg"></div>'+
+  '<div class="lab-lbl">② 緯度 <span id="sa-latv" class="lab-chip"></span></div><input type="range" class="lab-range" min="-90" max="90" step="1" id="sa-lat" oninput="saLat(this.value)">'+
+  '<div class="seg">'+[[0,"赤道"],[25,"北緯25°"],[35,"北緯35°"],[40,"北緯40°"],[90,"北極点"],[-35,"南緯35°"]].map(o=>'<button class="segbtn sm" onclick="saLat('+o[0]+',1)">'+o[1]+'</button>').join("")+'</div>'+
+  '<div id="sa-fig"></div><div id="sa-res" class="lab-res"></div>'+
+  '<div class="lab-tip">💡 トレーニング(1)の作図のコツ：<b>地平線（観測地点での接線）</b>と<b>太陽の光</b>がつくる角が南中高度。季節を変えても<b>地軸の傾き（23.4°）の向き</b>が変わるだけで、太陽の光はいつも同じ向きから来る。</div>'+
+  '<div class="lab-train"><div class="lab-lbl">🎯 練習モード：南中高度の計算（トレーニング(2)）</div><div id="sa-q"></div></div>';
+  saRender(true);saNewQ();}
+function saSeason(v){SA.s=v;saRender(false);}
+function saLat(v,fromBtn){SA.lat=+v;if(fromBtn)el("sa-lat").value=SA.lat;saRender(false);}
+function saRender(first){
+  el("sa-seg").innerHTML=seg([["su","夏至"],["eq","春分・秋分"],["wi","冬至"]],SA.s,"saSeason");
+  if(first)el("sa-lat").value=SA.lat;
+  el("sa-latv").textContent=latName(SA.lat);
+  const dec=SEASON[SA.s].d,lat=SA.lat;
+  const W=360,H=270,cx=205,cy=140,R=82;
+  let s='<svg viewBox="0 0 '+W+' '+H+'" class="lab-svg">'+arrowDefs("sr","#f59f00");
+  for(let y=60;y<=220;y+=40)s+='<line x1="8" y1="'+y+'" x2="62" y2="'+y+'" stroke="#f59f00" stroke-width="2.5" marker-end="url(#sr)"/>';
+  s+='<text x="34" y="'+(H-10)+'" font-size="11" font-weight="800" fill="#e67700" text-anchor="middle">太陽の光</text>';
+  /* 夜側 */
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+R+'" fill="#d0ebff" stroke="#1c7ed6" stroke-width="2"/>';
+  s+='<path d="M'+cx+','+(cy-R)+' A'+R+','+R+' 0 0 1 '+cx+','+(cy+R)+'z" fill="#1c3a47" opacity=".55"/>';
+  /* 公転面に垂直な線・地軸・赤道 */
+  s+='<line x1="'+cx+'" y1="'+(cy-R-26)+'" x2="'+cx+'" y2="'+(cy+R+26)+'" stroke="#adb5bd" stroke-dasharray="4 3"/>';
+  const N=[Math.cos((90+dec)*D2R),Math.sin((90+dec)*D2R)],Eq=[Math.cos((180+dec)*D2R),Math.sin((180+dec)*D2R)];
+  s+='<line x1="'+(cx-N[0]*(R+30))+'" y1="'+(cy+N[1]*(R+30))+'" x2="'+(cx+N[0]*(R+30))+'" y2="'+(cy-N[1]*(R+30))+'" stroke="#c92a2a" stroke-width="2.2"/>';
+  s+='<text x="'+(cx+N[0]*(R+40))+'" y="'+(cy-N[1]*(R+40)+4)+'" font-size="11" font-weight="800" fill="#c92a2a" text-anchor="middle">地軸</text>';
+  s+='<line x1="'+(cx-Eq[0]*R)+'" y1="'+(cy+Eq[1]*R)+'" x2="'+(cx+Eq[0]*R)+'" y2="'+(cy-Eq[1]*R)+'" stroke="#2b8a3e" stroke-width="1.6" stroke-dasharray="5 3"/>';
+  s+='<text x="'+(cx-Eq[0]*(R-28))+'" y="'+(cy+Eq[1]*(R-28)-5)+'" font-size="10" font-weight="800" fill="#2b8a3e" text-anchor="middle">赤道</text>';
+  if(dec!==0)s+='<text x="'+(cx+(dec>0?-16:16))+'" y="'+(cy-R-30)+'" font-size="10" fill="#c92a2a" text-anchor="middle">23.4°</text>';
+  /* 観測地点 */
+  const ua=(180+dec-lat)*D2R,u=[Math.cos(ua),Math.sin(ua)];
+  const P=[cx+R*u[0],cy-R*u[1]];
+  const sunUp=-u[0]>0.0001;
+  const alt=noonAlt(lat,dec);
+  /* 接線（地平線） */
+  let t=[-u[1],u[0]]; if(t[0]>0)t=[-t[0],-t[1]];
+  if(Math.abs(t[0])<1e-6&&t[1]<0)t=[0,1];
+  s+='<line x1="'+(P[0]-t[0]*46)+'" y1="'+(P[1]+t[1]*46)+'" x2="'+(P[0]+t[0]*58)+'" y2="'+(P[1]-t[1]*58)+'" stroke="#5c940d" stroke-width="2.6"/>';
+  s+='<text x="'+(P[0]+t[0]*66)+'" y="'+(P[1]-t[1]*66+4)+'" font-size="10" font-weight="800" fill="#5c940d" text-anchor="middle">地平線</text>';
+  s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+P[0]+'" y2="'+P[1]+'" stroke="#495057" stroke-dasharray="3 3"/>';
+  if(sunUp&&alt>0){
+    s+='<line x1="'+(P[0]-70)+'" y1="'+P[1]+'" x2="'+P[0]+'" y2="'+P[1]+'" stroke="#f59f00" stroke-width="3"/>';
+    const r=24,a2=Math.PI;let a1=Math.atan2(t[1],t[0]);if(a1<0)a1+=2*Math.PI;
+    const A1=[P[0]+r*Math.cos(a1),P[1]-r*Math.sin(a1)],A2=[P[0]-r,P[1]];
+    const sweep=(a1<a2)?0:1;
+    s+='<path d="M'+A1[0].toFixed(1)+','+A1[1].toFixed(1)+' A'+r+','+r+' 0 0 '+sweep+' '+A2[0].toFixed(1)+','+A2[1].toFixed(1)+'" fill="none" stroke="#d6336c" stroke-width="2.4"/>';
+    s+='<text x="'+(P[0]-r-24)+'" y="'+(P[1]-(t[1]>0?8:-16))+'" font-size="12" font-weight="900" fill="#d6336c" text-anchor="middle">'+r1(alt)+'°</text>';
+  }
+  s+='<circle cx="'+P[0]+'" cy="'+P[1]+'" r="5" fill="#d6336c" stroke="#fff" stroke-width="1.5"/>';
+  s+='<text x="'+cx+'" y="'+(H-8)+'" font-size="10.5" fill="#495057" text-anchor="middle">点線＝公転面に垂直な方向</text>';
+  s+='</svg>';
+  el("sa-fig").innerHTML=s;
+  let res;
+  if(alt<=0||!sunUp){res='<b>'+latName(lat)+'・'+SEASON[SA.s].n+'</b>：太陽は1日中<b>地平線の下</b>（昇らない＝極夜）。地軸が太陽と反対に傾いているため。';}
+  else{
+    let f;
+    if(lat>=dec&&lat>0){f="90° − "+lat+"°"+(dec>0?" ＋ 23.4°":dec<0?" − 23.4°":"")+" ＝ <b>"+r1(alt)+"°</b>";}
+    else f="90° − |"+lat+"° − ("+dec+"°)| ＝ <b>"+r1(alt)+"°</b>";
+    const dir=Math.abs(lat-dec)<0.05?"<b>真上（天頂）</b>":lat>dec?"<b>南</b>の空":"<b>北</b>の空";
+    res='<b>'+latName(lat)+'・'+SEASON[SA.s].n+'</b>　南中高度 '+f+'<br><small>太陽は正午に '+dir+' で最も高くなる。</small>';
+  }
+  el("sa-res").innerHTML=res;
+}
+function saNewQ(){
+  let lat=rnd([20,25,30,32,34,35,36,38,40,42,43,45,0,90]),s=rnd(["su","eq","wi"]);if(lat===90&&s==="wi")s="su";
+  SA.q={lat:lat,s:s,a:r1(noonAlt(lat,SEASON[s].d))};
+  el("sa-q").innerHTML='<div class="lab-qtext">'+latName(lat)+'の地点で、<b>'+SEASON[s].n+'</b>の日の南中高度は何度？</div>'+
+   '<div class="lab-ans">'+numIn("sa-in","数字")+'<span>°</span><button class="lab-go" onclick="saCheck()">答える</button></div><div id="sa-fb"></div>';
+}
+function saCheck(){
+  const v=readNum("sa-in");if(v===null)return;
+  const q=SA.q,dec=SEASON[q.s].d,ok=Math.abs(v-q.a)<0.06;
+  let how;
+  if(q.lat===90)how="北極点は緯度90°。90−90＝0°"+(dec>0?"、夏至は＋23.4°で <b>23.4°</b>":dec<0?"、冬至は−23.4°で<b>0°以下＝太陽は昇らない（答えは0とする）</b>":"（太陽は地平線すれすれをまわる）");
+  else if(q.lat===0)how="赤道は緯度0°。春分・秋分は90−0＝90°（真上）。夏至・冬至は太陽が真上から23.4°ずれるので 90−23.4＝<b>66.6°</b>";
+  else how="春分・秋分の 90−"+q.lat+"＝"+(90-q.lat)+"° が基準。"+(dec>0?"夏至は＋23.4°":dec<0?"冬至は−23.4°":"春分・秋分はそのまま")+" → <b>"+q.a+"°</b>";
+  el("sa-fb").innerHTML='<div class="lab-fb '+(ok?"ok":"ng")+'">'+(ok?"⭕ 正解！":"❌ 正解は "+SA.q.a+"°")+'<br><small>'+how+'</small></div><button class="lab-go" onclick="saShow()">図で確かめる</button> <button class="lab-go next" onclick="saNewQ()">次の問題 ▶</button>';
+}
+function saShow(){SA.lat=SA.q.lat;SA.s=SA.q.s;el("sa-lat").value=SA.lat;saRender(false);el("sa-fig").scrollIntoView({behavior:"smooth",block:"center"});}
+
+/* ---------- 2. 透明半球と太陽の通り道（トレーニング(3)(4)(5)） ---------- */
+let DM={lat:35,s:"su",t:9,all:true,q:null};
+function labDome(){DM.q=null;
+  el("lab-x").innerHTML='<div class="lab-lbl">① 季節</div><div id="dm-seg"></div>'+
+  '<label class="lab-chk"><input type="checkbox" id="dm-all" checked onchange="DM.all=this.checked;dmRender()"> 3つの季節を同時に表示（トレーニング(5)）</label>'+
+  '<div class="lab-lbl">② 観測地点 <span id="dm-latv" class="lab-chip"></span></div><input type="range" class="lab-range" min="-35" max="90" step="1" id="dm-lat" oninput="dmLat(this.value)">'+
+  '<div class="seg">'+[[0,"赤道"],[35,"北緯35°"],[-35,"南緯35°"],[66,"北緯66°"],[90,"北極点"]].map(o=>'<button class="segbtn sm" onclick="dmLat('+o[0]+',1)">'+o[1]+'</button>').join("")+'</div>'+
+  '<div class="lab-lbl">③ 時刻 <span id="dm-tv" class="lab-chip"></span> <button class="lab-mini" onclick="dmPlay()">▶ 1日を再生</button></div><input type="range" class="lab-range" min="0" max="24" step="0.25" id="dm-t" oninput="dmT(this.value)">'+
+  '<div class="lab-two"><div><div class="lab-cap">透明半球（ななめから）</div><div id="dm-fig"></div></div><div><div class="lab-cap">真横（西）から見た図</div><div id="dm-side"></div></div></div>'+
+  '<div id="dm-res" class="lab-res"></div>'+
+  '<div class="lab-tip">💡 作図のコツ：①季節が変わっても、通り道は夏至の線と<b>平行</b>（傾きは同じ）。②春分・秋分は<b>真東から昇り真西に沈む</b>（真横の図では、線が円の中心を通る）。③緯度が変わると<b>線の傾き</b>が変わる（赤道では地平線に垂直）。</div>'+
+  '<div class="lab-train"><div class="lab-lbl">🎯 練習モード：通り道はどれ？（トレーニング(3)(4)）</div><div id="dm-q"></div></div>';
+  el("dm-lat").value=DM.lat;el("dm-t").value=DM.t;dmRender();dmNewQ();}
+function dmSeason(v){DM.s=v;dmRender();}
+function dmLat(v,b){DM.lat=+v;if(b)el("dm-lat").value=DM.lat;dmRender();}
+function dmT(v){stopLabTimer();DM.t=+v;dmRender();}
+function dmPlay(){stopLabTimer();DM.t=0;labTimer=setInterval(()=>{DM.t=Math.min(24,DM.t+0.25);el("dm-t").value=DM.t;dmRender();if(DM.t>=24)stopLabTimer();},60);}
+function dmDome(lat,show,hl,sunT,qPaths){
+  const W=300,H=200,R=120,cx=150,cy=140;
+  let s='<svg viewBox="0 0 '+W+' '+H+'" class="lab-svg">'+domeBase(R,cx,cy);
+  if(qPaths){qPaths.forEach(q=>{s+='<polyline points="'+polyPts(q.pts)+'" fill="none" stroke="'+q.col+'" stroke-width="'+(q.w||2.4)+'"'+(q.dash?' stroke-dasharray="5 4"':'')+'/>';if(q.lb){const m=q.pts.reduce((a,b)=>b[1]<a[1]?b:a);s+='<circle cx="'+m[0]+'" cy="'+m[1]+'" r="3" fill="'+q.col+'"/><text x="'+(m[0]-8)+'" y="'+(m[1]-6)+'" font-size="13" font-weight="900" fill="'+q.col+'" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">'+q.lb+'</text>';}});}
+  else{
+  show.forEach(k=>{const d=SEASON[k].d;const pts=dayPath(lat,d,R,cx,cy);if(pts.length<2)return;
+    s+='<polyline points="'+polyPts(pts)+'" fill="none" stroke="'+SEASON[k].col+'" stroke-width="'+(k===hl?3:1.6)+'" opacity="'+(k===hl?1:.55)+'"/>';
+    if(k===hl){for(let h=0;h<24;h++){const v=sunVec(lat,d,15*(h-12));if(v.z>0.02){const p=domeP(v,R,cx,cy);s+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="2.3" fill="'+SEASON[k].col+'"/>';}}
+      const g=domeP(sunVec(lat,d,0),R,cx,cy);if(sunVec(lat,d,0).z>0){s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+g[0]+'" y2="'+g[1]+'" stroke="#495057" stroke-dasharray="3 3"/>';}}
+  });
+  if(sunT!=null){const v=sunVec(lat,SEASON[hl].d,15*(sunT-12));if(v.z>0){const p=domeP(v,R,cx,cy);s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+p[0]+'" y2="'+p[1]+'" stroke="#f59f00" stroke-width="1.2"/><circle cx="'+p[0]+'" cy="'+p[1]+'" r="8" fill="#ffd43b" stroke="#f08c00" stroke-width="2"/>';}}
+  }
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="3" fill="#1c3a47"/>';
+  return s+'</svg>';
+}
+function dmSide(lat,show,hl){
+  const W=300,H=180,R=118,cx=150,cy=150;
+  let s='<svg viewBox="0 0 '+W+' '+H+'" class="lab-svg">'+sideBase(R,cx,cy,true);
+  show.forEach(k=>{const L=sideLine(lat,SEASON[k].d,R,cx,cy);if(!L)return;
+    s+='<line x1="'+L[0][0]+'" y1="'+L[0][1]+'" x2="'+L[1][0]+'" y2="'+L[1][1]+'" stroke="'+SEASON[k].col+'" stroke-width="'+(k===hl?3.2:1.8)+'" opacity="'+(k===hl?1:.6)+'"/>';
+    s+='<circle cx="'+L[1][0]+'" cy="'+L[1][1]+'" r="3.5" fill="'+SEASON[k].col+'"/>';});
+  return s+'</svg>';
+}
+function dmRender(){
+  el("dm-seg").innerHTML=seg([["su","夏至"],["eq","春分・秋分"],["wi","冬至"]],DM.s,"dmSeason");
+  el("dm-latv").textContent=latName(DM.lat);el("dm-tv").textContent=hm(DM.t);
+  const show=DM.all?["su","eq","wi"]:[DM.s];
+  el("dm-fig").innerHTML=dmDome(DM.lat,show,DM.s,DM.t);
+  el("dm-side").innerHTML=dmSide(DM.lat,show,DM.s);
+  const d=SEASON[DM.s].d,H0=riseH(DM.lat,d),alt=noonAlt(DM.lat,d);
+  let r='<b>'+latName(DM.lat)+'・'+SEASON[DM.s].n+'</b><br>';
+  if(H0===null)r+='☀️ 太陽は1日中沈まない（<b>白夜</b>）。南中高度 '+r1(alt)+'°';
+  else if(H0===0||alt<=0)r+='🌑 太陽は1日中昇らない（<b>極夜</b>）。';
+  else{const v=sunVec(DM.lat,d,-H0);const where=Math.abs(v.n)<0.02?"真東":v.n>0?"真東より<b>北寄り</b>":"真東より<b>南寄り</b>";
+    r+='日の出 <b>'+hm(12-H0/15)+'</b>（'+where+'）／日の入り <b>'+hm(12+H0/15)+'</b><br>南中高度 <b>'+r1(alt)+'°</b>（'+(DM.lat>d?"南":DM.lat<d?"北":"真上")+'の空）／昼の長さ <b>'+hm(H0*2/15).replace("時","時間")+'</b>';}
+  const v=sunVec(DM.lat,d,15*(DM.t-12));
+  r+='<br><small>'+hm(DM.t)+'の太陽：'+(v.z>0?'高度 約'+Math.round(Math.asin(v.z)/D2R)+'°':'地平線の下（夜）')+'</small>';
+  el("dm-res").innerHTML=r;
+}
+function dmNewQ(){
+  const target=rnd(["eq","wi"]),lat=35;
+  const R=120,cx=150,cy=140;
+  const good=dayPath(lat,SEASON[target].d,R,cx,cy);
+  const bad1=dayPath(target==="eq"?0:55,SEASON[target].d,R,cx,cy);
+  const bad2=dayPath(lat,SEASON[target==="eq"?"wi":"eq"].d,R,cx,cy);
+  const opts=shuffle([{lat:lat,dec:SEASON[target].d,pts:good,ok:true,why:"夏至の線と<b>平行</b>で、"+(target==="eq"?"<b>真東から昇り真西に沈む</b>":"<b>南寄り</b>から昇り南寄りに沈む")+"。"},{lat:target==="eq"?0:55,dec:SEASON[target].d,pts:bad1,ok:false,why:"夏至の線と<b>平行になっていない</b>（傾きがちがう＝緯度がちがう地点の通り道）。"},{lat:lat,dec:SEASON[target==="eq"?"wi":"eq"].d,pts:bad2,ok:false,why:target==="eq"?"これは<b>冬至</b>の通り道（南寄りから昇る）。":"これは<b>春分・秋分</b>の通り道（真東から昇る）。"}]);
+  const cols=["#7048e8","#d6336c","#0c8599"],lbs=["ア","イ","ウ"];
+  opts.forEach((o,i)=>{o.col=cols[i];o.lb=lbs[i];});
+  DM.q={opts:opts,target:target};
+  const paths=[{pts:dayPath(lat,23.4,R,cx,cy),col:"#e8590c",w:3,lb:"夏至"}].concat(opts.map(o=>({pts:o.pts,col:o.col,lb:o.lb,dash:true})));
+  el("dm-q").innerHTML='<div class="lab-qtext">北緯35°の地点で、夏至の日の太陽の動きを記録した（オレンジの線）。同じ地点の<b>'+SEASON[target].n+'の日</b>の通り道はどれ？</div>'+
+   '<div class="lab-two"><div><div class="lab-cap">透明半球（ななめから）</div>'+dmDome(lat,[],null,null,paths)+'</div><div><div class="lab-cap">真横（西）から見た図</div>'+dmQSide(lat,opts)+'</div></div><div class="seg">'+lbs.map((l,i)=>'<button class="segbtn" onclick="dmAns('+i+')">'+l+'</button>').join("")+'</div><div id="dm-fb"></div>';
+}
+function dmQSide(lat,opts){
+  const W=300,H=180,R=118,cx=150,cy=150;
+  let s='<svg viewBox="0 0 '+W+' '+H+'" class="lab-svg">'+sideBase(R,cx,cy,false);
+  const L0=sideLine(lat,23.4,R,cx,cy);s+='<line x1="'+L0[0][0]+'" y1="'+L0[0][1]+'" x2="'+L0[1][0]+'" y2="'+L0[1][1]+'" stroke="#e8590c" stroke-width="3"/>';
+  opts.forEach(o=>{const L=sideLine(o.lat,o.dec,R,cx,cy);if(!L)return;s+='<line x1="'+L[0][0]+'" y1="'+L[0][1]+'" x2="'+L[1][0]+'" y2="'+L[1][1]+'" stroke="'+o.col+'" stroke-width="2.4" stroke-dasharray="5 4"/><text x="'+(L[1][0]+8)+'" y="'+(L[1][1]+4)+'" font-size="13" font-weight="900" fill="'+o.col+'" paint-order="stroke" stroke="#fff" stroke-width="3">'+o.lb+'</text>';});
+  return s+'</svg>';
+}
+function dmAns(i){
+  const o=DM.q.opts[i];
+  el("dm-fb").innerHTML='<div class="lab-fb '+(o.ok?"ok":"ng")+'">'+(o.ok?"⭕ 正解！":"❌ ざんねん")+'<br><small>'+o.lb+'：'+o.why+(o.ok?"":" 正解は "+DM.q.opts.find(x=>x.ok).lb+"。")+'</small></div><button class="lab-go next" onclick="dmNewQ()">次の問題 ▶</button>';
+}
+
+/* ---------- 3. 紙テープで時刻計算ドリル（トレーニング(6)） ---------- */
+let TP=null;
+function labTape(){
+  el("lab-x").innerHTML='<div class="lab-note">透明半球に記録した太陽の動きを紙テープに写しとったよ。<b>1時間ごとの点の間隔</b>を使って、日の出・日の入り・南中の時刻を求めよう。◎は南中した位置。</div>'+
+  '<div id="tp-fig"></div><div id="tp-ask"></div><div id="tp-fb"></div>'+
+  '<div class="lab-tip">💡 解き方：①1時間の間隔（cm）を見つける ②「縁までの長さ ÷ 1時間の長さ」で何時間分かを出す ③小数の時間は×60で分に直す ④最初（最後）の点の時刻から引く（足す）。南中の時刻は<b>日の出と日の入りのちょうど真ん中</b>にもなる。</div>';
+  tpNew();}
+function tpNew(){
+  const L=rnd([1.8,2.4,2.7,3.0,3.3,3.6]);
+  const season=rnd([["春分",[350,380],[700,740]],["夏至",[270,300],[690,740]],["冬至",[400,420],[700,740]]]);
+  let sr,tr,ss,guard=0;
+  do{sr=season[1][0]+10*Math.floor(Math.random()*((season[1][1]-season[1][0])/10+1));
+    tr=season[2][0]+10*Math.floor(Math.random()*((season[2][1]-season[2][0])/10+1));
+    ss=2*tr-sr;guard++;}while(guard<200&&(sr%60>40||ss%60<20));
+  const first=Math.floor(sr/60)+1,last=Math.ceil(ss/60)-1;
+  const len=m=>Math.round(L*m/60*100)/100;
+  TP={L:L,sr:sr,ss:ss,tr:tr,first:first,last:last,season:season[0],pre:len(first*60-sr),post:len(ss-last*60),mark:Math.floor(tr/60),mOff:len(tr-Math.floor(tr/60)*60)};
+  tpDraw(false);
+  el("tp-ask").innerHTML='<div class="lab-qtext">この日（'+TP.season+'のころ）の時刻を求めよう。</div>'+
+   [["sr","日の出"],["ss","日の入り"],["tr","南中"]].map(o=>'<div class="lab-ans"><span class="lab-al">'+o[1]+'</span>'+numIn("tp-"+o[0]+"h","時")+'<span>時</span>'+numIn("tp-"+o[0]+"m","分")+'<span>分</span></div>').join("")+
+   '<button class="lab-go" onclick="tpCheck()">答え合わせ</button> <button class="lab-go next" onclick="tpNew()">別の問題 ▶</button>';
+  el("tp-fb").innerHTML="";
+}
+function tpDraw(ans){
+  const T=TP,tot=(T.ss-T.sr)/60,W=360,x0=8,x1=352,sc=(x1-x0)/tot;
+  const X=m=>x0+(m-T.sr)/60*sc;
+  let s='<svg viewBox="0 0 '+W+' 112" class="lab-svg"><rect x="'+x0+'" y="34" width="'+(x1-x0)+'" height="22" rx="3" fill="#fff9db" stroke="#c9a227"/>';
+  for(let h=T.first;h<=T.last;h++){const x=X(h*60);s+='<circle cx="'+x+'" cy="45" r="3.4" fill="#1c3a47"/><text x="'+x+'" y="'+(h%2?28:18)+'" font-size="10" text-anchor="middle">'+h+'時</text>';}
+  const xm=X(T.tr);s+='<circle cx="'+xm+'" cy="45" r="5" fill="none" stroke="#d6336c" stroke-width="2"/><circle cx="'+xm+'" cy="45" r="1.8" fill="#d6336c"/>';
+  const dim=(a,b,y,t,c)=>'<line x1="'+a+'" y1="'+y+'" x2="'+b+'" y2="'+y+'" stroke="'+c+'" stroke-width="1.3"/><line x1="'+a+'" y1="'+(y-4)+'" x2="'+a+'" y2="'+(y+4)+'" stroke="'+c+'"/><line x1="'+b+'" y1="'+(y-4)+'" x2="'+b+'" y2="'+(y+4)+'" stroke="'+c+'"/><text x="'+((a+b)/2)+'" y="'+(y+13)+'" font-size="10.5" font-weight="800" fill="'+c+'" text-anchor="middle">'+t+'</text>';
+  s+=dim(x0,X(T.first*60),66,fmtN(T.pre),"#1c7ed6");
+  const mid=T.first+Math.max(1,Math.floor((T.last-T.first)/2)-1);
+  s+=dim(X(mid*60),X(mid*60+60),66,fmtN(T.L),"#e8590c");
+  s+=dim(X(T.last*60),x1,66,fmtN(T.post),"#1c7ed6");
+  if(T.mOff>0)s+=dim(X(T.mark*60),xm,90,"◎まで "+fmtN(T.mOff),"#d6336c");
+  s+='<text x="'+x0+'" y="108" font-size="9.5" fill="#5b7884">東の縁（日の出）</text><text x="'+x1+'" y="108" font-size="9.5" fill="#5b7884" text-anchor="end">西の縁（日の入り）</text></svg>';
+  el("tp-fig").innerHTML='<div class="lab-note">1時間ごとの間隔：どこも <b>'+fmtN(T.L)+'cm</b>（単位はすべてcm）</div>'+s;
+}
+function tpCheck(){
+  const T=TP;let all=true,h='';
+  const rows=[["sr","日の出",T.sr,T.pre,"最初の点（"+T.first+"時）から引く","−"],["ss","日の入り",T.ss,T.post,"最後の点（"+T.last+"時）に足す","＋"],["tr","南中",T.tr,T.mOff,T.mark+"時の点に足す","＋"]];
+  rows.forEach(r=>{const hh=readNum("tp-"+r[0]+"h"),mm=readNum("tp-"+r[0]+"m");const ok=hh!==null&&mm!==null&&hh*60+mm===r[2];if(!ok)all=false;
+    const mins=Math.round(r[3]/T.L*60);
+    let step=fmtN(r[3])+"÷"+fmtN(T.L)+"＝"+fmtN(r[3]/T.L)+"時間＝<b>"+(mins>=60?Math.floor(mins/60)+"時間":"")+(mins%60)+"分</b> → "+r[4]+"。";
+    if(r[0]==="tr"&&T.mOff===0)step="◎は"+T.mark+"時の点と重なっている。";
+    h+='<div class="fb-item">'+(ok?"✅":"❌")+" <b>"+r[1]+"</b>　正解 "+hm(r[2]/60)+'<div class="rv-why">'+step+'</div></div>';});
+  h+='<div class="fb-item">🔎 チェック：日の出 '+hm(T.sr/60)+' と日の入り '+hm(T.ss/60)+' のまん中は '+hm(T.tr/60)+' ＝ 南中の時刻と一致！</div>';
+  el("tp-fb").innerHTML='<div class="lab-fb '+(all?"ok":"ng")+'">'+(all?"⭕ 全問正解！":"🔺 解き方を確認しよう")+'</div>'+h;
+}
+
+/* ---------- 4. 北の空の星時計（トレーニング(7)） ---------- */
+let ST={t:20,m:0,q:null};
+function labStar(){ST={t:20,m:0,q:null};
+  el("lab-x").innerHTML='<div class="lab-note">基準：<b>4月10日 午後8時</b>に、北斗七星の星Aが<b>a</b>の位置に見えた。北極星を中心に空を12等分（1目もり＝30°）。</div>'+
+  '<div class="lab-lbl">① 時刻（同じ日の夜） <span id="st-tv" class="lab-chip"></span></div><input type="range" class="lab-range" min="18" max="30" step="1" id="st-t" oninput="stT(this.value)">'+
+  '<div class="lab-lbl">② 日にち（同じ時刻で何か月後） <span id="st-mv" class="lab-chip"></span></div><input type="range" class="lab-range" min="0" max="11" step="1" id="st-m" oninput="stM(this.value)">'+
+  '<div id="st-fig"></div><div id="st-res" class="lab-res"></div>'+
+  '<div class="lab-tip">💡 北の空の星は北極星を中心に<b>反時計回り</b>。<b>日周運動＝1時間に15°（2時間で1目もり）</b>、<b>年周運動＝1か月に30°（1か月で1目もり）</b>。時刻と月の両方が変わるときは、角度を<b>足し算・引き算</b>して考える。</div>'+
+  '<div class="lab-train"><div class="lab-lbl">🎯 練習モード：何時間後？何か月後？（トレーニング(7)）</div><div id="st-q"></div></div>';
+  el("st-t").value=20;el("st-m").value=0;stRender();stNewQ();}
+function stT(v){ST.t=+v;stRender();}
+function stM(v){ST.m=+v;stRender();}
+function stAngle(t,m){return 60+15*(t-20)+30*m;}
+function stRender(){
+  const ang=stAngle(ST.t,ST.m),idx=((Math.round((ang-60)/30)%12)+12)%12,exact=Math.abs((ang-60)/30-Math.round((ang-60)/30))<1e-6;
+  el("st-tv").textContent=(ST.t<24?(ST.t<12?"午前":"午後")+(ST.t>12?ST.t-12:ST.t):"翌日 午前"+(ST.t-24))+"時";
+  const mon=((3+ST.m)%12)+1;
+  el("st-mv").textContent=ST.m===0?"4月10日（基準）":ST.m+"か月後（"+mon+"月10日）";
+  el("st-fig").innerHTML=starClock(300,ang,{arrow:true,mark:exact?idx:null});
+  const dt=ST.t-20;
+  el("st-res").innerHTML='時刻で <b>'+(dt>=0?"+":"")+(15*dt)+'°</b>（'+(dt>=0?dt+'時間後':(-dt)+'時間前')+'×15°）＋ 月で <b>+'+(30*ST.m)+'°</b>（'+ST.m+'か月×30°）＝ aから反時計回りに <b>'+(15*dt+30*ST.m)+'°</b><br>星Aの位置 → '+(exact?'<b>'+STAR_L[idx]+'</b>':'<b>'+STAR_L[((Math.floor((ang-60)/30)%12)+12)%12]+'</b>と<b>'+STAR_L[((Math.floor((ang-60)/30)+1)%12+12)%12]+'</b>の間');
+}
+function stNewQ(){
+  const type=rnd([1,1,2,2,3]);let q;
+  if(type===1){const k=rnd([1,2,3,4,5]);q={type:1,to:k,a:k*2,unit:"時間後",text:"4月10日の夜、星Aが<b>"+STAR_L[k]+"</b>の位置に見えるのは、午後8時から何時間後？"};}
+  else if(type===2){const k=rnd([1,2,3,4,5,6,7,8,9,10,11]);q={type:2,to:k,a:k,unit:"か月後",text:"午後8時に星Aが<b>"+STAR_L[k]+"</b>の位置に見えるのは、何か月後？"};}
+  else{const t=rnd([22,24]);const k=rnd([3,4,5,6,7,8,9,10,11]);const mm=(30*k-15*(t-20))/30;
+    if(mm<1||mm>11)return stNewQ();
+    q={type:3,to:k,t:t,a:mm,unit:"か月後",text:(t===24?"午前0時":"午後10時")+"に星Aが<b>"+STAR_L[k]+"</b>の位置に見えるのは、何か月後？"};}
+  ST.q=q;
+  el("st-q").innerHTML='<div class="lab-qtext">'+q.text+'</div><div class="lab-ans">'+numIn("st-in","数字")+'<span>'+q.unit+'</span><button class="lab-go" onclick="stCheck()">答える</button></div><div id="st-fb"></div>';
+}
+function stCheck(){
+  const v=readNum("st-in");if(v===null)return;const q=ST.q,ok=Math.abs(v-q.a)<1e-6;
+  let how;
+  if(q.type===1)how="aから"+STAR_L[q.to]+"まで反時計回りに"+q.to+"目もり＝"+(30*q.to)+"°。1時間に15°なので "+(30*q.to)+"÷15＝<b>"+q.a+"時間後</b>。";
+  else if(q.type===2)how="aから"+STAR_L[q.to]+"まで"+(30*q.to)+"°。1か月に30°なので <b>"+q.a+"か月後</b>。";
+  else how="aから"+STAR_L[q.to]+"まで"+(30*q.to)+"°。午後8時→"+(q.t===24?"午前0時":"午後10時")+"の"+(q.t-20)+"時間で"+(15*(q.t-20))+"°進むので、残り"+(30*q.to-15*(q.t-20))+"°÷30°＝<b>"+q.a+"か月後</b>。";
+  el("st-fb").innerHTML='<div class="lab-fb '+(ok?"ok":"ng")+'">'+(ok?"⭕ 正解！":"❌ 正解は "+q.a+q.unit)+'<br><small>'+how+'</small></div><button class="lab-go" onclick="stShow()">星時計で確かめる</button> <button class="lab-go next" onclick="stNewQ()">次の問題 ▶</button>';
+}
+function stShow(){const q=ST.q;ST.t=q.type===1?20+q.a:q.type===3?q.t:20;ST.m=q.type===1?0:q.a;el("st-t").value=ST.t;el("st-m").value=ST.m;stRender();el("st-fig").scrollIntoView({behavior:"smooth",block:"center"});}
+
+/* ---------- 5. 月の満ち欠けと日食・月食（トレーニング(8)(9)） ---------- */
+let MN={th:90,q:null};
+function labMoon(){MN={th:90,q:null};
+  el("lab-x").innerHTML='<div class="lab-lbl">月の位置（公転）<span id="mn-v" class="lab-chip"></span> <button class="lab-mini" onclick="mnPlay()">▶ 1か月を再生</button></div><input type="range" class="lab-range" min="0" max="359" step="1" id="mn-th" oninput="mnSet(this.value)">'+
+  '<div class="seg">'+[[0,"新月"],[45,"三日月"],[90,"上弦"],[180,"満月"],[270,"下弦"]].map(o=>'<button class="segbtn sm" onclick="mnSet('+o[0]+',1)">'+o[1]+'</button>').join("")+'</div>'+
+  '<div class="lab-two"><div><div class="lab-cap">北極側から見た図</div><div id="mn-fig"></div></div><div><div class="lab-cap">地球から見た月の形</div><div id="mn-look"></div></div></div>'+
+  '<div id="mn-res" class="lab-res"></div>'+
+  '<div class="lab-tip">💡 月は約29.5日で地球のまわりを<b>反時計回り</b>に公転。太陽の光はいつも同じ向きから当たるので、月の半分は常に光っている。地球から見える「光った部分」の形が変わる＝満ち欠け。<br>🌑 新月のときに太陽・月・地球が一直線→<b>日食</b>／🌕 満月のときに太陽・地球・月が一直線→<b>月食</b>（月の通り道が少し傾いているので毎月は起こらない）。</div>'+
+  '<div class="lab-train"><div class="lab-lbl">🎯 練習モード：見える月の形は？（トレーニング(8)）</div><div id="mn-q"></div></div>';
+  el("mn-th").value=MN.th;mnRender();mnNewQ();}
+function mnSet(v,b){stopLabTimer();MN.th=+v;if(b)el("mn-th").value=MN.th;mnRender();}
+function mnPlay(){stopLabTimer();MN.th=0;labTimer=setInterval(()=>{MN.th=(MN.th+3)%360;el("mn-th").value=MN.th;mnRender();if(MN.th>=357){stopLabTimer();}},70);}
+function mnWhere(th,t){
+  const T=12+th/15;let h=t-T;h=((h+12)%24+24)%24-12;
+  if(th<8||th>352)return "見えない（太陽と同じ方向）";
+  if(Math.abs(h)>6)return "見えない（地平線の下）";
+  if(h<-4.5)return "東の空";if(h<-1.5)return "南東の空";if(h<=1.5)return "南の空";if(h<=4.5)return "南西の空";return "西の空";
+}
+function mnRender(){
+  const th=MN.th,W=300,H=240,cx=140,cy=120,R=82;
+  el("mn-v").textContent=moonName(th)+"（約"+Math.round(th/360*29.5)+"日目）";
+  let s='<svg viewBox="0 0 '+W+' '+H+'" class="lab-svg">'+arrowDefs("ms","#f59f00");
+  for(let y=30;y<=210;y+=36)s+='<line x1="'+(W-4)+'" y1="'+y+'" x2="'+(W-40)+'" y2="'+y+'" stroke="#f59f00" stroke-width="2" marker-end="url(#ms)"/>';
+  s+='<text x="'+(W-22)+'" y="'+(H-4)+'" font-size="9.5" font-weight="800" fill="#e67700" text-anchor="middle">太陽の光</text>';
+  const ecl=(th<6||th>354)?"sun":(Math.abs(th-180)<6?"moon":null);
+  if(ecl==="moon")s+='<rect x="'+(cx-R-14)+'" y="'+(cy-20)+'" width="'+(R+14)+'" height="40" fill="#1c3a47" opacity=".25"/>';
+  if(ecl==="sun")s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+(W-40)+'" y2="'+cy+'" stroke="#e03131" stroke-width="2" stroke-dasharray="4 3"/>';
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+R+'" fill="none" stroke="#9ec5dd" stroke-dasharray="4 3"/>';
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="18" fill="#74c0fc"/><path d="M'+cx+','+(cy-18)+' A18,18 0 0 0 '+cx+','+(cy+18)+'z" fill="#1c3a47" opacity=".75"/>';
+  s+='<text x="'+(cx)+'" y="'+(cy-24)+'" font-size="9" text-anchor="middle" fill="#495057">夕方</text><text x="'+(cx)+'" y="'+(cy+32)+'" font-size="9" text-anchor="middle" fill="#495057">明け方</text><text x="'+(cx-34)+'" y="'+(cy+3)+'" font-size="9" text-anchor="middle" fill="#495057">真夜中</text><text x="'+(cx+33)+'" y="'+(cy+3)+'" font-size="9" text-anchor="middle" fill="#495057">正午</text>';
+  const mx=cx+R*Math.cos(th*D2R),my=cy-R*Math.sin(th*D2R);
+  s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+mx+'" y2="'+my+'" stroke="#adb5bd" stroke-dasharray="2 2"/>';
+  s+='<circle cx="'+mx+'" cy="'+my+'" r="11" fill="#3b4a5a"/><path d="M'+mx+','+(my-11)+' A11,11 0 0 1 '+mx+','+(my+11)+'z" fill="#ffd43b"/>';
+  s+='</svg>';
+  el("mn-fig").innerHTML=s;
+  el("mn-look").innerHTML='<svg viewBox="0 0 160 160" class="lab-svg" style="max-width:170px;margin:0 auto;"><rect width="160" height="160" rx="14" fill="#14213d"/>'+phaseSvg(th,52,80,80)+'</svg><div class="lab-cap" style="text-align:center;">'+moonName(th)+'</div>';
+  const T=12+th/15;
+  let r='<table class="shiryo-table"><tr><th>夕方 18時</th><th>真夜中 0時</th><th>明け方 6時</th></tr><tr><td>'+mnWhere(th,18)+'</td><td>'+mnWhere(th,24)+'</td><td>'+mnWhere(th,6)+'</td></tr></table>';
+  if(!(th<8||th>352))r+='<div style="margin-top:6px;">南中する時刻：約 <b>'+hm(T)+'</b>（月の出 約'+hm(T-6)+'・月の入り 約'+hm(T+6)+'）</div>';
+  if(ecl==="sun")r+='<div class="lab-alert">🌑 太陽・<b>月</b>・地球が一直線！ → <b>日食</b>が起こる可能性（月が太陽をかくす）</div>';
+  if(ecl==="moon")r+='<div class="lab-alert">🌕 太陽・<b>地球</b>・月が一直線！ → <b>月食</b>が起こる可能性（月が地球の影に入る）</div>';
+  el("mn-res").innerHTML=r;
+}
+function mnNewQ(){
+  const times=[[18,"夕方"],[24,"真夜中"],[6,"明け方"]],dirs=[[-3,"南東"],[0,"南"],[3,"南西"]];
+  const t=rnd(times),d=rnd(dirs);
+  const th=((15*(t[0]-d[0]-12))%360+360)%360;
+  const pool=[45,90,135,180,225,270,315].filter(x=>x!==th);
+  const opts=shuffle([th].concat(shuffle(pool).slice(0,3)));
+  MN.q={th:th,t:t,d:d,opts:opts};
+  el("mn-q").innerHTML='<div class="lab-qtext"><b>'+t[1]+'</b>、<b>'+d[1]+'</b>の空に見える月の形はどれ？</div><div class="lab-moons">'+
+   opts.map((o,i)=>'<button class="lab-moonbtn" onclick="mnAns('+i+')"><svg viewBox="0 0 60 60">'+'<rect width="60" height="60" rx="8" fill="#14213d"/>'+phaseSvg(o,22,30,30)+'</svg><span>'+"アイウエ"[i]+'</span></button>').join("")+'</div><div id="mn-fb"></div>';
+}
+function mnAns(i){
+  const q=MN.q,ok=q.opts[i]===q.th;
+  const tr=((q.t[0]-q.d[0])%24+24)%24;
+  el("mn-fb").innerHTML='<div class="lab-fb '+(ok?"ok":"ng")+'">'+(ok?"⭕ 正解！":"❌ 正解は "+"アイウエ"[q.opts.indexOf(q.th)])+'<br><small>'+q.t[1]+'に'+q.d[1]+'に見える月は、約'+hm(tr)+'に南中する月（'+(q.d[0]===0?"いま南中":q.d[0]<0?"南中の約3時間前":"南中の約3時間後")+'）。南中が'+hm(tr)+'なのは<b>'+moonName(q.th)+'</b>。</small></div><button class="lab-go" onclick="mnSet('+q.th+',1);el(\'mn-fig\').scrollIntoView({behavior:\'smooth\',block:\'center\'})">図で確かめる</button> <button class="lab-go next" onclick="mnNewQ()">次の問題 ▶</button>';
+}
+
+/* ---------- 6. 金星の見え方 ---------- */
+let VN={d:0,q:null};
+function labVenus(){VN={d:146,q:null};
+  el("lab-x").innerHTML='<div class="lab-note">北極側から見た図。<b>地球を下に固定</b>して、金星が追いこしていく様子を見るよ（金星は地球より速く公転する）。</div>'+
+  '<div class="lab-lbl">日にち <span id="vn-v" class="lab-chip"></span> <button class="lab-mini" onclick="vnPlay()">▶ 再生</button></div><input type="range" class="lab-range" min="0" max="584" step="1" id="vn-d" oninput="vnSet(this.value)">'+
+  '<div class="lab-two"><div><div class="lab-cap">太陽・金星・地球の位置</div><div id="vn-fig"></div></div><div><div class="lab-cap">望遠鏡で見た金星（同じ倍率）</div><div id="vn-look"></div></div></div>'+
+  '<div id="vn-res" class="lab-res"></div>'+
+  '<div class="lab-tip">💡 金星は地球の<b>内側</b>を公転 → 地球から見ていつも太陽の近くにある → <b>真夜中には見えない</b>。太陽より左（東）にあると<b>夕方の西の空（よいの明星）</b>、右（西）にあると<b>明け方の東の空（明けの明星）</b>。地球に近いほど<b>大きく、大きく欠けて</b>見える。</div>'+
+  '<div class="lab-train"><div class="lab-lbl">🎯 練習モード：いつ・どこに見える？</div><div id="vn-q"></div></div>';
+  el("vn-d").value=VN.d;vnRender();vnNewQ();}
+function vnSet(v){stopLabTimer();VN.d=+v;vnRender();}
+function vnPlay(){stopLabTimer();VN.d=0;labTimer=setInterval(()=>{VN.d=Math.min(584,VN.d+3);el("vn-d").value=VN.d;vnRender();if(VN.d>=584)stopLabTimer();},50);}
+function vnCalc(psi){
+  const V=[0.72*Math.cos(psi*D2R),0.72*Math.sin(psi*D2R)],E=[0,-1];
+  const EV=[V[0]-E[0],V[1]-E[1]],dist=Math.hypot(EV[0],EV[1]);
+  const elong=Math.acos(Math.max(-1,Math.min(1,EV[1]/dist)))/D2R;
+  const east=V[0]<0;
+  const VS=[-V[0],-V[1]],VE=[E[0]-V[0],E[1]-V[1]];
+  const ca=(VS[0]*VE[0]+VS[1]*VE[1])/(Math.hypot(VS[0],VS[1])*dist);
+  const alpha=Math.acos(Math.max(-1,Math.min(1,ca)))/D2R;
+  const th=east?180-alpha:180+alpha;
+  return {V:V,dist:dist,elong:elong,east:east,th:th,frac:(1+Math.cos(alpha*D2R))/2,vis:elong>=10};
+}
+function vnPsi(d){return -90+360*d/584;}
+function vnRender(){
+  const psi=vnPsi(VN.d),c=vnCalc(psi);
+  el("vn-v").textContent=VN.d===0?"内合（太陽と地球の間）":VN.d+"日後";
+  const W=300,H=250,cx=150,cy=115,RE=100;
+  let s='<svg viewBox="0 0 '+W+' '+H+'" class="lab-svg">';
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+RE+'" fill="none" stroke="#9ec5dd" stroke-dasharray="4 3"/><circle cx="'+cx+'" cy="'+cy+'" r="'+(RE*0.72)+'" fill="none" stroke="#e599f7" stroke-dasharray="4 3"/>';
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="11" fill="#ffa94d"/>';
+  const E=[cx,cy+RE],Vp=[cx+RE*c.V[0],cy-RE*c.V[1]];
+  s+='<line x1="'+E[0]+'" y1="'+E[1]+'" x2="'+cx+'" y2="'+cy+'" stroke="#ffa94d" stroke-dasharray="3 3"/>';
+  s+='<line x1="'+E[0]+'" y1="'+E[1]+'" x2="'+(E[0]+(Vp[0]-E[0])*1.35)+'" y2="'+(E[1]+(Vp[1]-E[1])*1.35)+'" stroke="#be4bdb" stroke-width="1.5"/>';
+  const ang=Math.atan2(-c.V[1],-c.V[0]);
+  s+='<circle cx="'+Vp[0]+'" cy="'+Vp[1]+'" r="7" fill="#3b4a5a"/>';
+  s+='<path d="M'+(Vp[0]+7*Math.cos(ang+Math.PI/2))+','+(Vp[1]-7*Math.sin(ang+Math.PI/2))+' A7,7 0 0 1 '+(Vp[0]+7*Math.cos(ang-Math.PI/2))+','+(Vp[1]-7*Math.sin(ang-Math.PI/2))+'z" fill="#f3d9fa"/>';
+  s+='<circle cx="'+E[0]+'" cy="'+E[1]+'" r="9" fill="#74c0fc"/><text x="'+(E[0]+14)+'" y="'+(E[1]+18)+'" font-size="10" font-weight="800">地球</text>';
+  s+='<text x="'+(E[0]-70)+'" y="'+(H-6)+'" font-size="10" font-weight="800" fill="#1491bd">← 東（夕方）</text><text x="'+(E[0]+16)+'" y="'+(H-6)+'" font-size="10" font-weight="800" fill="#1491bd">西（明け方）→</text>';
+  s+='</svg>';
+  el("vn-fig").innerHTML=s;
+  const size=Math.min(58,16/c.dist);
+  el("vn-look").innerHTML='<svg viewBox="0 0 160 160" class="lab-svg" style="max-width:170px;margin:0 auto;"><rect width="160" height="160" rx="14" fill="#14213d"/>'+(c.vis?phaseSvg(c.th,size,80,80,{lit:"#fff3bf"}):'<text x="80" y="84" font-size="13" fill="#adb5bd" text-anchor="middle">見えない</text>')+'</svg>';
+  let r='地球からの距離：<b>'+c.dist.toFixed(2)+'</b>（地球と太陽の距離を1とする）／太陽からの離れ具合：<b>約'+Math.round(c.elong)+'°</b><br>';
+  if(!c.vis)r+='🚫 太陽とほぼ同じ方向にあるので、<b>見えない</b>。';
+  else r+=(c.east?'🌆 <b>夕方の西の空</b>に見える＝<b>よいの明星</b>（右側が光る）':'🌅 <b>明け方の東の空</b>に見える＝<b>明けの明星</b>（左側が光る）')+'<br>形：光っている部分 約'+Math.round(c.frac*100)+'%（'+(c.frac<0.35?"細く大きく欠けている":c.frac<0.65?"半月に近い形":"丸に近い形")+'）／大きさ：'+(c.dist<0.6?"<b>とても大きい</b>":c.dist<1.1?"中くらい":"小さい")+'<br><small>真夜中は？ → 地球の内側を回る金星は太陽から約47°以上はなれないので、真夜中には見えない。</small>';
+  el("vn-res").innerHTML=r;
+}
+function vnNewQ(){
+  let d,c;do{d=Math.floor(Math.random()*585);c=vnCalc(vnPsi(d));}while(Math.abs(c.elong-10)<4);
+  VN.q={d:d,c:c};
+  const opts=["夕方の西の空","明け方の東の空","真夜中の南の空","見えない（太陽と同じ方向）"];
+  el("vn-q").innerHTML='<div class="lab-qtext">図の位置の金星は、いつ・どこに見える？</div>'+vnMini(c)+'<div class="seg">'+opts.map((o,i)=>'<button class="segbtn sm" onclick="vnAns('+i+')">'+o+'</button>').join("")+'</div><div id="vn-fb"></div>';
+}
+function vnMini(c){
+  const W=220,H=160,cx=110,cy=72,RE=62,E=[cx,cy+RE],Vp=[cx+RE*c.V[0],cy-RE*c.V[1]];
+  return '<svg viewBox="0 0 '+W+' '+H+'" class="lab-svg" style="max-width:260px;margin:0 auto;"><circle cx="'+cx+'" cy="'+cy+'" r="'+RE+'" fill="none" stroke="#9ec5dd" stroke-dasharray="4 3"/><circle cx="'+cx+'" cy="'+cy+'" r="'+(RE*0.72)+'" fill="none" stroke="#e599f7" stroke-dasharray="4 3"/><circle cx="'+cx+'" cy="'+cy+'" r="8" fill="#ffa94d"/><circle cx="'+Vp[0]+'" cy="'+Vp[1]+'" r="6" fill="#be4bdb"/><circle cx="'+E[0]+'" cy="'+E[1]+'" r="7" fill="#74c0fc"/><text x="'+(E[0]+11)+'" y="'+(E[1]+14)+'" font-size="9">地球</text><text x="'+(Vp[0])+'" y="'+(Vp[1]-9)+'" font-size="9" text-anchor="middle" fill="#862e9c">金星</text></svg>';
+}
+function vnAns(i){
+  const c=VN.q.c,ans=!c.vis?3:c.east?0:1,ok=i===ans;
+  const why=!c.vis?"太陽とほぼ同じ方向（約"+Math.round(c.elong)+"°）なので、太陽の光にかくれて見えない。":c.east?"太陽より<b>左（東）</b>側にある → 太陽が沈んだあと、<b>夕方の西の空</b>に見える（よいの明星）。":"太陽より<b>右（西）</b>側にある → 太陽が昇る前の<b>明け方の東の空</b>に見える（明けの明星）。";
+  el("vn-fb").innerHTML='<div class="lab-fb '+(ok?"ok":"ng")+'">'+(ok?"⭕ 正解！":"❌ ざんねん")+'<br><small>'+why+(i===2?" ※金星が真夜中に見えることはない。":"")+'</small></div><button class="lab-go" onclick="vnSet('+VN.q.d+');el(\'vn-d\').value='+VN.q.d+';el(\'vn-fig\').scrollIntoView({behavior:\'smooth\',block:\'center\'})">図で確かめる</button> <button class="lab-go next" onclick="vnNewQ()">次の問題 ▶</button>';
+}
+
+/* ---------- 7. 地球の公転と季節の星座 ---------- */
+const ZOD=["いて座","やぎ座","みずがめ座","うお座","おひつじ座","おうし座","ふたご座","かに座","しし座","おとめ座","てんびん座","さそり座"];
+let ZD={m:7,t:24,q:null};
+function labZodiac(){ZD={m:7,t:24,q:null};
+  el("lab-x").innerHTML='<div class="lab-lbl">① 月 <span id="zd-mv" class="lab-chip"></span></div><input type="range" class="lab-range" min="1" max="12" step="1" id="zd-m" oninput="zdM(this.value)">'+
+  '<div class="lab-lbl">② 時刻</div><div id="zd-t"></div>'+
+  '<div id="zd-fig"></div><div id="zd-res" class="lab-res"></div>'+
+  '<div class="lab-tip">💡 太陽と<b>同じ方向</b>の星座は昼の空にあって見えない。<b>真夜中に南の空</b>に見えるのは、地球から見て<b>太陽と反対側</b>の星座。地球が公転すると、見える星座が1か月に約30°ずつ変わる（年周運動）。</div>'+
+  '<div class="lab-train"><div class="lab-lbl">🎯 練習モード：南の空の星座は？</div><div id="zd-q"></div></div>';
+  el("zd-m").value=ZD.m;zdRender();zdNewQ();}
+function zdM(v){ZD.m=+v;zdRender();}
+function zdT(v){ZD.t=+v;zdRender();}
+function zdSouth(m,t){return ((m-1+Math.round((t-12)/2))%12+12)%12;}
+function zdRender(){
+  el("zd-mv").textContent=ZD.m+"月1日ごろ";
+  el("zd-t").innerHTML=seg([[18,"夕方 18時"],[21,"21時"],[24,"真夜中 0時"],[6,"明け方 6時"]],ZD.t,"zdT");
+  const W=340,H=350,cx=170,cy=180,RZ=135,RE=66;
+  const sunI=ZD.m-1,southI=zdSouth(ZD.m,ZD.t);
+  const zAng=i=>-90+30*i; /* 星座iの方向（いて座=下） */
+  let s='<svg viewBox="0 0 '+W+' '+H+'" class="lab-svg"><rect width="'+W+'" height="'+H+'" rx="14" fill="#0b1d33"/>';
+  for(let i=0;i<12;i++){const a=zAng(i)*D2R,x=cx+RZ*Math.cos(a),y=cy-RZ*Math.sin(a);
+    const col=i===southI?"#ffd43b":i===sunI?"#868e96":"#a5c8e4";
+    s+='<circle cx="'+x+'" cy="'+y+'" r="'+(i===southI?27:23)+'" fill="'+(i===southI?"rgba(255,212,59,.18)":"rgba(165,200,228,.08)")+'" stroke="'+col+'" stroke-width="'+(i===southI?2:1)+'"/>';
+    s+='<text x="'+x+'" y="'+(y+4)+'" font-size="'+(ZOD[i].length>4?9:10)+'" font-weight="800" fill="'+col+'" text-anchor="middle">'+ZOD[i]+'</text>';}
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+RE+'" fill="none" stroke="#4dabf7" stroke-dasharray="4 3"/>';
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="12" fill="#ffa94d"/><text x="'+cx+'" y="'+(cy+4)+'" font-size="9" font-weight="800" text-anchor="middle">太陽</text>';
+  const ea=(zAng(sunI)+180)*D2R,Ex=cx+RE*Math.cos(ea),Ey=cy-RE*Math.sin(ea);
+  const sa=zAng(sunI)*D2R;
+  s+='<line x1="'+Ex+'" y1="'+Ey+'" x2="'+(cx+(RZ-22)*Math.cos(sa))+'" y2="'+(cy-(RZ-22)*Math.sin(sa))+'" stroke="#868e96" stroke-dasharray="3 3"/>';
+  const qa=zAng(southI)*D2R;
+  s+='<line x1="'+Ex+'" y1="'+Ey+'" x2="'+(cx+(RZ-26)*Math.cos(qa))+'" y2="'+(cy-(RZ-26)*Math.sin(qa))+'" stroke="#ffd43b" stroke-width="2"/>';
+  s+='<circle cx="'+Ex+'" cy="'+Ey+'" r="10" fill="#74c0fc"/><text x="'+Ex+'" y="'+(Ey+4)+'" font-size="8.5" font-weight="900" text-anchor="middle">地球</text>';
+  s+='<text x="12" y="18" font-size="10" fill="#a5c8e4">北極側から見た図（公転は反時計回り）</text></svg>';
+  el("zd-fig").innerHTML=s;
+  const tl={18:"夕方18時",21:"21時",24:"真夜中0時",6:"明け方6時"}[ZD.t];
+  el("zd-res").innerHTML=ZD.m+'月・'+tl+'に<b>南の空</b>に見える星座 → <b style="color:#b8860b">'+ZOD[southI]+'</b><br>太陽と同じ方向で<b>見えない</b>星座 → '+ZOD[sunI]+'<br><small>真夜中に南の空＝太陽と反対側の '+ZOD[(sunI+6)%12]+'。時刻が2時間進むごとに、南の空の星座は1つ東どなり（反時計回り）へ移る。</small>';
+}
+function zdNewQ(){
+  const m=rnd([1,2,3,4,5,6,7,8,9,10,11,12]),t=rnd([[24,"真夜中"],[18,"夕方"],[6,"明け方"],[24,"真夜中"]]);
+  const a=zdSouth(m,t[0]);
+  const opts=shuffle([a,(a+6)%12,(a+3)%12,(a+9)%12]);
+  ZD.q={m:m,t:t,a:a,opts:opts};
+  el("zd-q").innerHTML='<div class="lab-qtext"><b>'+m+'月</b>の<b>'+t[1]+'</b>に、南の空に見える星座はどれ？</div><div class="seg">'+opts.map((o,i)=>'<button class="segbtn sm" onclick="zdAns('+i+')">'+ZOD[o]+'</button>').join("")+'</div><div id="zd-fb"></div>';
+}
+function zdAns(i){
+  const q=ZD.q,ok=q.opts[i]===q.a,sunI=q.m-1;
+  const why=q.m+"月は太陽が"+ZOD[sunI]+"の方向。"+(q.t[0]===24?"真夜中の南は太陽と<b>反対側</b>":q.t[0]===18?"夕方の南は太陽から<b>東へ90°（3つ先）</b>":"明け方の南は太陽から<b>西へ90°（3つ前）</b>")+" → <b>"+ZOD[q.a]+"</b>。";
+  el("zd-fb").innerHTML='<div class="lab-fb '+(ok?"ok":"ng")+'">'+(ok?"⭕ 正解！":"❌ 正解は "+ZOD[q.a])+'<br><small>'+why+'</small></div><button class="lab-go" onclick="ZD.m='+q.m+';ZD.t='+q.t[0]+';el(\'zd-m\').value='+q.m+';zdRender();el(\'zd-fig\').scrollIntoView({behavior:\'smooth\',block:\'center\'})">図で確かめる</button> <button class="lab-go next" onclick="zdNewQ()">次の問題 ▶</button>';
+}
+
+</script>
+</body>
+</html>
