@@ -175,6 +175,8 @@ main{max-width:760px;margin:0 auto;padding:16px 14px 50px;}
 .btn-row{display:grid;gap:10px;margin-top:18px;}
 .btn{width:100%;border:none;border-radius:12px;padding:13px;font-size:15px;font-weight:800;font-family:inherit;cursor:pointer;}
 .btn.retry{background:var(--green);color:#fff;box-shadow:0 3px 0 #74a82c;}
+.btn.labgo{background:linear-gradient(135deg,#7b5fd6,#5a8fe0);color:#fff;box-shadow:0 3px 0 #4e3aa0;}
+.rv-lab{background:#f6f1ff;border:2px dashed #b9a3ef;border-radius:12px;padding:9px 11px;margin-top:10px;font-size:13.5px;line-height:1.7;color:#3b2d6b;}
 .btn.home{background:#e4eef3;color:var(--ink);box-shadow:0 3px 0 #c3d4dc;}
 .btn:active{transform:translateY(2px);box-shadow:none;}
 
@@ -450,6 +452,7 @@ body.inapp .brand-txt p{display:none;}
       <div id="review" class="review"></div>
       <div class="btn-row">
         <button class="btn retry" id="retry-btn" onclick="retry()">もう一度チャレンジ</button>
+        <button class="btn labgo" onclick="openLabFromResult()">🧪 インタラクティブ教材</button>
         <button class="btn home" onclick="backToSets()">セット選択にもどる</button>
       </div>
     </div>
@@ -1661,13 +1664,16 @@ function reviewCard(w){
       h+='<div class="rv-sec rv-model"><div class="rv-lbl">✍️ 記述で書くならこう</div><div class="rv-mtext">'+q.m+'</div></div>';
     }
   }
+  if(S.course==="70"&&q.lab!=null&&LABS[q.lab]){
+    h+='<div class="rv-lab">🧪 <b>動かして確かめよう！</b>この問題は、インタラクティブ教材<b>「'+LABS[q.lab].t+'」</b>で実際に動かして確認できるよ。<br>👉 いちばん下の<b>「🧪 インタラクティブ教材」</b>ボタンから開こう（関係する教材には💡の札が付いているよ）。</div>';
+  }
   return h+'</div>';
 }
 
 function closeWelcome(){hide("welcome");show("home");window.scrollTo(0,0);}
 function openWelcome(){hide("home");show("welcome");window.scrollTo(0,0);}
 function retry(){startSet(S.setIdx);}
-function goHome(){stopLabTimer();hide("lab");hide("quiz");hide("result");hide("sets");hide("intro90");hide("welcome");show("home");window.scrollTo(0,0);}
+function goHome(){stopLabTimer();LAB_FROM_RESULT=false;hide("lab");hide("quiz");hide("result");hide("sets");hide("intro90");hide("welcome");show("home");window.scrollTo(0,0);}
 function backToSets(){hide("quiz");hide("result");renderSets();show("sets");window.scrollTo(0,0);}
 
 function goHomeBtn(){
@@ -1695,7 +1701,7 @@ function labHint(q){
   if(!S||S.course!=="70"||q.lab==null||!LABS[q.lab])return "";
   if(!LH.labs.includes(q.lab))LH.labs.push(q.lab);
   LH.isNew=true;lhSave();paintLabEntry();
-  return '<div class="lab-hint">🧪 <b>ちょっと待って！</b>この問題は、インタラクティブ教材の<b>「'+LABS[q.lab].t+'」</b>で、実際に動かして確かめられるよ。<br>👉 ホームの<b>紫のボタン</b>の中を探してみよう！</div>';
+  return ""; /* 答え合わせ画面での予告はやめ、結果画面で案内する（2026-10-16） */
 }
 function paintLabEntry(){
   document.querySelectorAll(".lab-entry").forEach(b=>{
@@ -1707,12 +1713,15 @@ function paintLabEntry(){
 }
 let labTimer=null;
 function stopLabTimer(){if(labTimer){clearInterval(labTimer);labTimer=null;}}
+let LAB_FROM_RESULT=false;
+function openLabFromResult(){LAB_FROM_RESULT=true;hide("result");openLab();}
+function backToResult(){stopLabTimer();LAB_FROM_RESULT=false;hide("lab");show("result");window.scrollTo(0,0);}
 function openLab(){LH.isNew=false;lhSave();paintLabEntry();hide("home");hide("welcome");show("lab");renderLabMenu();}
 function renderLabMenu(){
   stopLabTimer();
   let h='<div class="lead">🧪 <b>さわって理解する教材</b>だよ。教材ページの「トレーニング」の問題を、動かして確かめられるようにしたよ。スライダーやボタンを動かして、図が「どう動くのか」を見てみよう。各教材の<b>🎯練習モード</b>で腕だめしもできる！</div><div class="set-grid">';
   LABS.forEach((L,i)=>{h+='<button class="setbtn" onclick="labOpen('+i+')"><span><span class="sn">'+L.t+'</span><br><span class="sd">'+L.d+'</span>'+(LH.labs.includes(i)?'<br><span class="hint-tag">💡 さっきまちがえた問題のヒントがここに！</span>':'')+'</span><span class="sb">ひらく ▶</span></button>';});
-  h+='</div><div class="btn-row"><button class="btn home" onclick="goHome()">ホームにもどる</button></div>';
+  h+='</div><div class="btn-row">'+(LAB_FROM_RESULT?'<button class="btn retry" onclick="backToResult()">📒 結果・復習にもどる</button>':'')+'<button class="btn home" onclick="goHome()">ホームにもどる</button></div>';
   el("lab-body").innerHTML=h;window.scrollTo(0,0);
 }
 function labOpen(i){
