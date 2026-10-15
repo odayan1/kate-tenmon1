@@ -1239,6 +1239,15 @@ function shuffle(arr){
   for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
   return a;
 }
+/* 同じ資料(sh)を使う問題は「ひとかたまり・元の順番のまま」で出す。かたまり同士の順番だけシャッフル */
+function groupShuffle(arr){
+  const groups=[],m=new Map();
+  arr.forEach(q=>{
+    if(q.sh){if(!m.has(q.sh)){const g=[];m.set(q.sh,g);groups.push(g);}m.get(q.sh).push(q);}
+    else groups.push([q]);
+  });
+  return shuffle(groups).flat();
+}
 function el(id){return document.getElementById(id);}
 function show(id){el(id).classList.remove("hidden");if(typeof syncHomeBtn==="function"&&el("home"))syncHomeBtn();}
 function hide(id){el(id).classList.add("hidden");}
@@ -1246,15 +1255,15 @@ function hide(id){el(id).classList.add("hidden");}
 /* セット定義 */
 const SETS={
  "50":[
-  {key:"ch1",name:"① 天体の1日の動き",sub:"恒星・天球・天頂・南中・日周運動・自転・透明半球（10問）",get:()=>shuffle(CH1)},
-  {key:"ch2",name:"② 天体の1年の動き",sub:"年周運動・公転・黄道・夏至/冬至・地軸の傾き・南中高度（10問）",get:()=>shuffle(CH2)},
-  {key:"ch3",name:"③ 月や惑星の動きと見え方",sub:"月の満ち欠け・上弦/下弦・日食・月食・金星（10問）",get:()=>shuffle(CH3)},
-  {key:"ch4",name:"④ 太陽系と恒星",sub:"黒点・プロミネンス・コロナ・地球型/木星型惑星・小惑星・銀河系（10問）",get:()=>shuffle(CH4)},
+  {key:"ch1",name:"① 天体の1日の動き",sub:"恒星・天球・天頂・南中・日周運動・自転・透明半球（10問）",get:()=>groupShuffle(CH1)},
+  {key:"ch2",name:"② 天体の1年の動き",sub:"年周運動・公転・黄道・夏至/冬至・地軸の傾き・南中高度（10問）",get:()=>groupShuffle(CH2)},
+  {key:"ch3",name:"③ 月や惑星の動きと見え方",sub:"月の満ち欠け・上弦/下弦・日食・月食・金星（10問）",get:()=>groupShuffle(CH3)},
+  {key:"ch4",name:"④ 太陽系と恒星",sub:"黒点・プロミネンス・コロナ・地球型/木星型惑星・小惑星・銀河系（10問）",get:()=>groupShuffle(CH4)},
   {key:"mix",name:"🔀 全範囲ミックス",sub:"全40問からランダム10問。仕上げの腕試し！",get:()=>shuffle(ALL50).slice(0,N)},
  ],
  "70":[
-  {key:"s1",name:"資料セット①（1日・1年の動き）",sub:"透明半球の角・テープで日の出・南中高度の計算・星の動き・手順の並べ替え（10問）",get:()=>shuffle(Q70)},
-  {key:"s2",name:"資料セット②（月・金星・太陽系）",sub:"月の位置と形・金星の見え方・星の年周運動の計算・惑星の表（10問）",get:()=>shuffle(Q70B)},
+  {key:"s1",name:"資料セット①（1日・1年の動き）",sub:"透明半球の角・テープで日の出・南中高度の計算・星の動き・手順の並べ替え（10問）",get:()=>groupShuffle(Q70)},
+  {key:"s2",name:"資料セット②（月・金星・太陽系）",sub:"月の位置と形・金星の見え方・星の年周運動の計算・惑星の表（10問）",get:()=>groupShuffle(Q70B)},
  ],
  "90":[
   {key:"s1",name:"説明セット①（1日・1年の動き）",sub:"日周運動の理由・透明半球の記録・季節の変化・北極星・南中高度の求め方（10問）",get:()=>shuffle(Q90)},
