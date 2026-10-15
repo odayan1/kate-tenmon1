@@ -211,6 +211,12 @@ footer b{color:var(--blue);}
 .lab-entry b{font-size:16px;color:#6a4fc4;}
 .lab-entry small{font-size:11.5px;color:#48616d;}
 .lab-entry .le-go{margin-left:auto;color:#6a4fc4;font-weight:900;}
+.lab-hint{margin-top:10px;background:#f6f1ff;border:2px dashed #b9a3ef;border-radius:14px;padding:10px 12px;font-size:13.5px;line-height:1.7;color:#3b2d6b;}
+.lab-entry{position:relative;}
+.lab-entry.has-new{border-color:#8f6ce0;animation:labpulse 1.6s ease-in-out infinite;}
+@keyframes labpulse{0%,100%{box-shadow:0 2px 8px rgba(110,80,200,.12);}50%{box-shadow:0 0 0 7px rgba(143,108,224,.30);}}
+.new-badge{position:absolute;top:-10px;right:12px;background:#e8467c;color:#fff;font-size:11px;font-weight:900;border-radius:999px;padding:2px 10px;box-shadow:0 2px 6px rgba(232,70,124,.35);}
+.hint-tag{display:inline-block;margin-top:5px;background:#fff3c4;color:#8a5a00;border:1.5px solid #f2cf5b;border-radius:999px;font-size:11px;font-weight:800;padding:1px 9px;}
 .lab-head{font-size:17px;font-weight:900;color:#6a4fc4;margin:2px 0 10px;}
 .lab-card{background:#fff;border-radius:16px;padding:14px;box-shadow:0 2px 8px rgba(31,120,150,.10);}
 .lab-lbl{font-size:12px;font-weight:800;color:#1491bd;margin:10px 0 4px;}
@@ -918,88 +924,88 @@ function tapeFig(){
 
 /* kind:"num"…blanks:[{l,a,u,tol,miss:{誤答値:解説}}] / kind:"order"…items:[正しい順] */
 const Q70 = [
- {sh:domeFig,
+ {lab:1,sh:domeFig,
   q:"資料で、この日の太陽の南中高度を表す角はどれ？",
   c:["∠AOG","∠COG","∠BOG","∠GOD"],a:0,
   e:"太陽は<b>南</b>の空で最も高くなる → Aが<b>南</b>。南中高度は「南の地平線」から太陽までの角＝<b>∠AOG</b>。",
   w:[null,"Cは<b>北</b>。南中高度は<b>南</b>の地平線（A）から測る。∠COGは北側から測った角になってしまう。",
      "Bは<b>東</b>（日の出側）。南中高度は南の地平線からの角。",
      "Dは<b>西</b>。南中高度は南の地平線からの角。"]},
- {kind:"num",sh:tapeFig,
+ {lab:2,kind:"num",sh:tapeFig,
   q:"資料から、この日の日の出の時刻を求めなさい。",
   blanks:[{l:"時",a:5,u:"時",miss:{"6":"9.9÷2.7＝3.66…時間＝<b>3時間40分</b>。9時から引くと5時20分。時間の割り算のあとの<b>分への直し方</b>を確認しよう。","3":"「何時間前か」（3時間40分）をそのまま答えている。<b>9時から引く</b>。"}},
           {l:"分",a:20,u:"分",miss:{"40":"40分は「9時の何時間<b>何分前</b>か」の分の部分。9時−3時間40分＝<b>5時20分</b>。","66":"3.66…時間の小数部分をそのまま分にしている。0.66…時間×60＝<b>40分</b>。"}}],
   e:"1時間＝2.7cm なので、9.9÷2.7＝3.66…時間＝<b>3時間40分</b>。日の出は 9時の3時間40分前＝<b>5時20分</b>。"},
- {kind:"num",
+ {lab:0,kind:"num",
   q:"北緯36°の地点で、夏至の日の太陽の南中高度は何度か。（地軸の傾きは23.4°とする）",
   blanks:[{l:"",a:77.4,u:"°",tol:0.05,miss:{"54":"54°は<b>春分・秋分</b>の南中高度（90−36）。夏至は23.4°<b>足す</b>。","30.6":"30.6°は<b>冬至</b>（54−23.4）。夏至は足す。","36":"緯度をそのまま答えている。","59.4":"36に23.4を足している。90から緯度を引いた54°に23.4°を足す。"}}],
   e:"春分・秋分＝90−36＝54°。夏至は＋23.4° → 54＋23.4＝<b>77.4°</b>。"},
- {kind:"num",sh:domeFig,
+ {lab:2,kind:"num",sh:domeFig,
   q:"資料の透明半球で、Aから天頂を通ってCまでの曲線の長さは50.0cm、AからGまでの曲線の長さは20.0cmだった。この日の南中高度は何度か。",
   blanks:[{l:"",a:72,u:"°",tol:0.05,miss:{"20":"長さ（cm）をそのまま答えている。長さを<b>角度に直す</b>。","144":"A〜Cの半円を<b>360°</b>として計算している。半円は<b>180°</b>。","40":"20÷50を<b>100倍</b>（%）している。180°にかける。"}}],
   e:"A→天頂→C は半円＝<b>180°</b>。20.0÷50.0×180＝<b>72°</b>。"},
- {sh:sideFig,
+ {lab:1,sh:sideFig,
   q:"資料で、冬至の日の太陽の動きを表している線はどれ？",
   c:["ア","イ","ウ","どれも同じ線になる"],a:2,
   e:"冬至は南中高度が<b>最も低い</b> → 一番下の<b>ウ</b>。3本の線は<b>平行</b>で、季節によって高さだけがずれる。",
   w:["アは南中高度が<b>最も高い</b>線＝<b>夏至</b>。","イは真ん中＝<b>春分・秋分</b>（地平線と交わる点が円の中心＝真東・真西）。",null,
      "季節によって南中高度が変わるので、線の<b>高さ</b>がちがう。傾きだけが同じ（平行）。"]},
- {sh:altGraph,
+ {lab:0,sh:altGraph,
   q:"もし地軸が公転面に対して垂直だったとすると、資料のグラフはどうなると考えられるか。",
   c:["1年中55°の、水平な直線になる","山がもっと高く、谷がもっと深くなる","山と谷の月が入れかわる","1年中90°の、水平な直線になる"],a:0,
   e:"地軸が傾いていなければ、1年中<b>春分・秋分と同じ</b>状態 → 南中高度は 90−35＝<b>55°で一定</b>。季節の変化もなくなる。",
   w:[null,"変化の大きさは<b>地軸の傾き</b>で決まる。傾きがなくなれば変化そのものがなくなる。",
      "傾きがなければ、夏・冬という区別がなくなる。入れかわるのではない。",
      "90°になるのは<b>赤道上</b>の春分・秋分。北緯35°では 90−35＝55°。"]},
- {
+ {lab:3,
   q:"同じ時刻にオリオン座を観察すると、1か月後にはどの向きに約何度移動して見えるか。",
   c:["東から西へ約30°","西から東へ約30°","東から西へ約15°","東から西へ約1°"],a:0,
   e:"年周運動：同じ時刻の星座は<b>東から西へ、1か月で約30°</b>（360°÷12か月）。地球の<b>公転</b>による見かけの動き。",
   w:[null,"向きが逆。星座は日周運動と同じく<b>東から西へ</b>ずれていく。",
      "約15°は、日周運動で<b>1時間</b>に動く角度。",
      "約1°は、<b>1日</b>で動く角度。1か月では約30°。"]},
- {kind:"order",
+ {lab:1,kind:"order",
   q:"透明半球を使って太陽の1日の動きを記録する手順を、正しい順にタップして並べなさい。",
   items:["紙に透明半球と同じ大きさの円をかき、中心に印をつけて方位を記入する","透明半球を円に合わせて固定し、方位を合わせて日当たりのよい水平な場所に置く","1時間ごとに、ペン先の影が円の中心にくる位置に印をつけ、時刻を記入する","記録した点をなめらかな線で結び、透明半球の縁までのばす","紙テープを曲線に当てて点を写しとり、点の間隔をはかる"],
   e:"<b>円をかく → 透明半球を固定 → 1時間ごとに記録 → 線で結んで縁までのばす → テープで間隔をはかる</b>。縁までのばした点が<b>日の出・日の入りの位置</b>。",
   w:"「点を結ぶ」は記録が<b>全部終わってから</b>。テープで間隔をはかるのは、曲線を縁までのばしたあと（日の出・日の入りの時刻を求めるため）。"},
- {kind:"order",
+ {lab:1,kind:"order",
   q:"北緯35°の地点で、夏至の日の太陽が動いて見える順に、タップして並べなさい。",
   items:["北東の地平線から昇る","南東の空を通る","南の空で最も高くなる（南中）","南西の空を通る","北西の地平線に沈む"],
   e:"夏至は<b>北寄り（北東）から昇り</b>、南の空で南中し、<b>北寄り（北西）に沈む</b>。東→南→西の順は1年中同じ。",
   w:"太陽は<b>東→南→西</b>の順に動く。夏至は昇る・沈む位置が<b>北寄り</b>（冬至は南寄り）。"},
- {kind:"num",sh:starFig,
+ {lab:3,kind:"num",sh:starFig,
   q:"この日の夜、星Aがcの位置に見えるのは、午後8時から何時間後か。",
   blanks:[{l:"",a:4,u:"時間後",miss:{"2":"1時間に<b>30°</b>と考えている。日周運動は1時間に<b>15°</b>。","60":"角度（60°）を答えている。15°で1時間なので<b>60÷15</b>。","20":"<b>時計回り</b>に数えている。北の空の星は<b>反時計回り</b>（a→b→c）。"}}],
   e:"aからcは<b>反時計回りに2目もり＝60°</b>。日周運動は1時間に15° → 60÷15＝<b>4時間後</b>。"},
 ];
 
 const Q70B = [
- {sh:moonOrbitFig,
+ {lab:4,sh:moonOrbitFig,
   q:"資料で、夕方、南の空に上弦の月が見えるのは、月がどの位置にあるときか。",
   c:["A","C","E","G"],a:0,
   e:"太陽の光が右から当たる図で、<b>Aの月</b>は地球から見ると<b>右半分</b>が光る＝上弦の月。夕方をむかえている地点（地球の上側）から見ると、南の空にある。",
   w:[null,"Cは太陽と同じ方向＝<b>新月</b>。見えない。",
      "Eは月の<b>左半分</b>が光って見える＝<b>下弦の月</b>（明け方に南の空）。",
      "Gは太陽と反対側＝<b>満月</b>。夕方は東の空から昇ってくる。"]},
- {kind:"order",
+ {lab:4,kind:"order",
   q:"毎日夕方の同じ時刻に月を観察した。見える月を、日がたつ順にタップして並べなさい。",
   items:["西の空の細い三日月","南西の空の、半分より少し細い月","南の空の上弦の月","南東の空の、満月に近い月","東の空の満月"],
   e:"同じ時刻の月は、日がたつにつれて<b>西→南→東</b>へ移り、形は<b>三日月→上弦→満月</b>と満ちていく。",
   w:"位置は<b>西から東へ</b>移る（1日の中の動きとは逆）。形は細い→半月→まる、と満ちていく順。"},
- {kind:"order",
+ {lab:4,kind:"order",
   q:"新月から次の新月までの月の満ち欠けを、正しい順にタップして並べなさい。",
   items:["新月","三日月","上弦の月","満月","下弦の月"],
   e:"<b>新月 → 三日月 → 上弦の月（右半分） → 満月 → 下弦の月（左半分） → 新月</b>。約29.5日の周期。",
   w:"上弦（右半分が光る）は満月<b>の前</b>、下弦（左半分）は満月<b>のあと</b>。"},
- {sh:venusFig,
+ {lab:5,sh:venusFig,
   q:"資料で、夕方の西の空に見え、しかも最も大きく見えて大きく欠けているのは、金星がどの位置にあるときか。",
   c:["ア","イ","ウ","エ"],a:0,
   e:"図の<b>左側（ア・イ）</b>が夕方西の空＝よいの明星。そのうち地球に<b>近い</b>アは、<b>大きく見えて大きく欠ける</b>。",
   w:[null,"イも夕方西の空に見えるが、地球から<b>遠い</b>ので小さく、あまり欠けない（半月より丸い形）。",
      "ウは図の<b>右側</b>＝<b>明け方の東の空</b>（明けの明星）。",
      "エも<b>明け方の東の空</b>。地球から遠いので小さく、丸に近い形。"]},
- {sh:venusFig,
+ {lab:5,sh:venusFig,
   q:"資料で、明け方の東の空に見える金星の位置の組み合わせはどれ？",
   c:["アとイ","ウとエ","アとウ","イとエ"],a:1,
   e:"地球の自転は反時計回り。図の<b>右側（ウ・エ）</b>の金星は、<b>明け方の東の空</b>に見える＝明けの明星。",
@@ -1013,11 +1019,11 @@ const Q70B = [
   w:[null,"逆。直径の大きい<b>木星型惑星</b>のほうが<b>密度は小さい</b>（木星1.33、土星0.69）。",
      "水星（0.38）・金星（0.95）・火星（0.53）は地球より<b>小さい</b>。",
      "<b>土星</b>は0.69g/cm³で、水より小さい。"]},
- {kind:"num",sh:starFig,
+ {lab:3,kind:"num",sh:starFig,
   q:"星Aが午後10時にkの位置に見えるのは、資料の日から約何か月後か。",
   blanks:[{l:"",a:9,u:"か月後",miss:{"10":"aからkの<b>300°</b>を全部「月」で動かしている。午後8時→10時の<b>2時間分（30°）</b>も反時計回りに進むので、その分を引く。","11":"2時間分（30°）を<b>足して</b>いる。時刻がおそくなる分も同じ向きに進むので、月の分は<b>少なくてよい</b>。","2":"<b>時計回り</b>に数えている。星は反時計回り（a→b→c…）。"}}],
   e:"a→kは反時計回りに10目もり＝<b>300°</b>。午後8時→10時の2時間で<b>30°</b>進むので、残り270°を年周運動（1か月30°）で動かす → 270÷30＝<b>9か月後</b>。"},
- {kind:"num",
+ {lab:6,kind:"num",
   q:"ある星座が、1月15日の午後10時に南中した。2月15日に同じ星座が南中するのは、午後何時ごろか。",
   blanks:[{l:"午後",a:8,u:"時ごろ",miss:{"12":"1か月で2時間<b>おそく</b>なると考えている。同じ位置にくる時刻は1か月で約2時間<b>早く</b>なる。","9":"1か月で1時間と考えている。1か月で30°＝日周運動の<b>2時間</b>分。","10":"年周運動で、同じ時刻に見える位置は1か月で約30°西へずれる。南中する時刻は<b>変わる</b>。"}}],
   e:"1か月で星座は約30°西へずれる＝日周運動の<b>2時間分</b>早く同じ位置にくる。午後10時−2時間＝<b>午後8時ごろ</b>。"},
@@ -1449,7 +1455,7 @@ function finishSpecial(q,ok,rec,html){
   el("verdict").textContent=ok?"⭕ 正解！":"❌ ざんねん…";
   el("verdict").className="verdict "+(ok?"ok":"ng");
   el("gotpt").textContent=ok?"+"+got+"pt"+(S.streak>=2?"（"+S.streak+"連続正解ボーナス！）":""):"";
-  el("expl").innerHTML=html;
+  el("expl").innerHTML=html+(ok?"":labHint(q));
   el("model-wrap").innerHTML="";
   el("next-btn").textContent=S.idx===N-1?"結果を見る ▶":"次へ ▶";
   show("feedback");
@@ -1552,7 +1558,7 @@ function answer(di,btn){
   el("verdict").textContent= ok ? "⭕ 正解！" : "❌ ざんねん…";
   el("verdict").className="verdict "+(ok?"ok":"ng");
   el("gotpt").textContent= ok ? "+"+got+"pt"+(S.streak>=2?"（"+S.streak+"連続正解ボーナス！）":"") : "正解は上の緑の選択肢だよ";
-  el("expl").innerHTML="💡 "+q.e;
+  el("expl").innerHTML="💡 "+q.e+(ok?"":labHint(q));
   const mw=el("model-wrap");
   if(q.m){
     mw.innerHTML='<div class="model-box"><div class="mb-title">✍️ 実際に記述・説明するならこう書く！</div><div class="mb-text">'+q.m+'</div></div>'+
@@ -1672,18 +1678,37 @@ const LABS=[
  {t:"✨ 金星の見え方シミュレーター",d:"日にちを進めると、金星の位置・形・大きさが変わる。よいの明星？明けの明星？",f:labVenus},
  {t:"♈ 地球の公転と季節の星座",d:"月と時刻を選ぶと、真夜中・夕方・明け方に南の空に見える星座が分かる",f:labZodiac},
 ];
+/* ---- 教材の「気づかせ」：ボタンで飛ばさず、ホームの紫ボタンに NEW! を付けて自分で見つけさせる ---- */
+const LH_KEY="kateLabHint:"+location.pathname;
+let LH=(()=>{try{const v=JSON.parse(localStorage.getItem(LH_KEY));if(v&&Array.isArray(v.labs))return v;}catch(e){}return {isNew:false,labs:[]};})();
+function lhSave(){try{localStorage.setItem(LH_KEY,JSON.stringify(LH));}catch(e){}}
+function labHint(q){
+  if(!S||S.course!=="70"||q.lab==null||!LABS[q.lab])return "";
+  if(!LH.labs.includes(q.lab))LH.labs.push(q.lab);
+  LH.isNew=true;lhSave();paintLabEntry();
+  return '<div class="lab-hint">🧪 <b>ちょっと待って！</b>この問題は、インタラクティブ教材の<b>「'+LABS[q.lab].t+'」</b>で、実際に動かして確かめられるよ。<br>👉 ホームの<b>紫のボタン</b>の中を探してみよう！</div>';
+}
+function paintLabEntry(){
+  document.querySelectorAll(".lab-entry").forEach(b=>{
+    b.classList.toggle("has-new",!!LH.isNew);
+    let bd=b.querySelector(".new-badge");
+    if(LH.isNew&&!bd){bd=document.createElement("span");bd.className="new-badge";bd.textContent="🔓 NEW!";b.appendChild(bd);}
+    if(!LH.isNew&&bd)bd.remove();
+  });
+}
 let labTimer=null;
 function stopLabTimer(){if(labTimer){clearInterval(labTimer);labTimer=null;}}
-function openLab(){hide("home");hide("welcome");show("lab");renderLabMenu();}
+function openLab(){LH.isNew=false;lhSave();paintLabEntry();hide("home");hide("welcome");show("lab");renderLabMenu();}
 function renderLabMenu(){
   stopLabTimer();
   let h='<div class="lead">🧪 <b>さわって理解する教材</b>だよ。教材ページの「トレーニング」の問題を、動かして確かめられるようにしたよ。スライダーやボタンを動かして、図が「どう動くのか」を見てみよう。各教材の<b>🎯練習モード</b>で腕だめしもできる！</div><div class="set-grid">';
-  LABS.forEach((L,i)=>{h+='<button class="setbtn" onclick="labOpen('+i+')"><span><span class="sn">'+L.t+'</span><br><span class="sd">'+L.d+'</span></span><span class="sb">ひらく ▶</span></button>';});
+  LABS.forEach((L,i)=>{h+='<button class="setbtn" onclick="labOpen('+i+')"><span><span class="sn">'+L.t+'</span><br><span class="sd">'+L.d+'</span>'+(LH.labs.includes(i)?'<br><span class="hint-tag">💡 さっきまちがえた問題のヒントがここに！</span>':'')+'</span><span class="sb">ひらく ▶</span></button>';});
   h+='</div><div class="btn-row"><button class="btn home" onclick="goHome()">ホームにもどる</button></div>';
   el("lab-body").innerHTML=h;window.scrollTo(0,0);
 }
 function labOpen(i){
   stopLabTimer();
+  LH.labs=LH.labs.filter(x=>x!==i);lhSave();
   el("lab-body").innerHTML='<div class="lab-head">'+LABS[i].t+'</div><div id="lab-x" class="lab-card"></div>'+
     '<div class="btn-row"><button class="btn home" onclick="renderLabMenu()">教材一覧にもどる</button></div>';
   LABS[i].f(el("lab-x"));window.scrollTo(0,0);
@@ -2124,6 +2149,7 @@ function zdAns(i){
   el("zd-fb").innerHTML='<div class="lab-fb '+(ok?"ok":"ng")+'">'+(ok?"⭕ 正解！":"❌ 正解は "+ZOD[q.a])+'<br><small>'+why+'</small></div><button class="lab-go" onclick="ZD.m='+q.m+';ZD.t='+q.t[0]+';el(\'zd-m\').value='+q.m+';zdRender();el(\'zd-fig\').scrollIntoView({behavior:\'smooth\',block:\'center\'})">図で確かめる</button> <button class="lab-go next" onclick="zdNewQ()">次の問題 ▶</button>';
 }
 
+paintLabEntry();
 </script>
 </body>
 </html>
